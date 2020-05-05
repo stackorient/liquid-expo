@@ -69,6 +69,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_icons:
+    dependency: "direct main"
+    description:
+      name: flutter_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -81,6 +88,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.12"
+  liquid:
+    dependency: "direct main"
+    description:
+      path: liquid
+      ref: master
+      resolved-ref: "8d90b8b3f1586e101e97cc87c9b0499c37db1f24"
+      url: "git@github.com:stackorient/Liquid-Flutter.git"
+    source: git
+    version: "1.0.0+1"
   matcher:
     dependency: transitive
     description:

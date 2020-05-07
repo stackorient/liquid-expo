@@ -23,29 +23,10 @@ class MyApp extends StatelessWidget {
     return LiquidApp(
       title: 'Liquid Expo',
       theme: theme,
-      home: AppEntry(),
       initialRoute: RouteManager.initialRoute,
       onGenerateRoute: _routeManager.onGenerateRoute,
       navigatorKey: _routeManager.navigtor,
       navigatorObservers: [_routeManager.observer],
-    );
-  }
-}
-
-class AppEntry extends StatefulWidget {
-  @override
-  _AppEntryState createState() => _AppEntryState();
-}
-
-class _AppEntryState extends State<AppEntry> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff0062E7),
-        title: NavBar(),
-      ),
-      body: HomePage(),
     );
   }
 }

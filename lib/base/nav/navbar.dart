@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:liquid/liquid.dart';
 
+import '../../core/core.dart';
+
 class NavBar extends StatelessWidget {
   final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
 
@@ -12,7 +14,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _theme = LiquidTheme.of(context);
-
+    final _currentRoute = injector<RouteManager>().currentRoute;
     return LBox(
       margin: LBoxEdgeInsets.aboveMD(
         EdgeInsets.symmetric(horizontal: 70.0),
@@ -23,7 +25,7 @@ class NavBar extends StatelessWidget {
           buildMenuBtn(),
           buildLogo(),
           buildLiquidText(_theme),
-          buildNavMenu(),
+          buildNavMenu(_currentRoute, _theme),
           LBox(
             visibility: LBoxVisibility(xs: false, sm: false, xl: false),
             child: buildDropdown(),
@@ -70,13 +72,12 @@ class NavBar extends StatelessWidget {
       visibility: LBoxVisibility(xs: false),
       child: Row(
         children: <Widget>[
-          SizedBox(width: 30.0),
           LFlatButton.text(
             text: "SPONSOR",
             type: LElementType.warning,
             onPressed: () {},
           ),
-          SizedBox(width: 15.0),
+          SizedBox(width: 10.0),
           LFlatButton.text(
             text: "Pub",
             type: LElementType.light,
@@ -118,7 +119,7 @@ class NavBar extends StatelessWidget {
     );
   }
 
-  LBox buildNavMenu() {
+  LBox buildNavMenu(String currentRoute, LiquidThemeData theme) {
     return LBox(
       visibility: LBoxVisibility(sm: false, xs: false),
       padding: LBoxEdgeInsets.aboveMD(
@@ -129,13 +130,29 @@ class NavBar extends StatelessWidget {
         children: [
           LOutlineButton.text(
             text: "Home",
-            textStyle: TextStyle(color: Colors.white),
-            onPressed: () {},
+            textStyle: TextStyle(color: Colors.white).weight(
+                currentRoute == homeRoute
+                    ? FontWeight.w700
+                    : FontWeight.normal),
+            onPressed: () {
+              injector<RouteManager>()
+                  .navigtor
+                  .currentState
+                  .pushReplacementNamed(homeRoute);
+            },
           ),
           LOutlineButton.text(
             text: "Documentation",
-            textStyle: TextStyle(color: Colors.white),
-            onPressed: () {},
+            textStyle: TextStyle(color: Colors.white).weight(
+                currentRoute == docsRoute
+                    ? FontWeight.w700
+                    : FontWeight.normal),
+            onPressed: () {
+              injector<RouteManager>()
+                  .navigtor
+                  .currentState
+                  .pushReplacementNamed(docsRoute);
+            },
           ),
           LOutlineButton.text(
             text: "Examples",

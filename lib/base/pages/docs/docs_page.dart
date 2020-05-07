@@ -33,12 +33,13 @@ class _DocsPageState extends State<DocsPage> {
       body: LRow(
         columns: [
           LColumn.child(
-            md: 2,
-            lg: 2,
+            visibility: LBoxVisibility.belowMD(false),
+            md: 3,
+            lg: 3,
             xl: 2,
             child: LBox(
               height: LBoxDimension.all(mq.size.height),
-              decoration: LBoxDecoration.aboveMD(
+              decoration: LBoxDecoration.aboveSM(
                 BoxDecoration(
                   border: Border(
                     right: BorderSide(color: Colors.black12, width: 1.0),

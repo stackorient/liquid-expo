@@ -11,6 +11,8 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _theme = LiquidTheme.of(context);
+
     return LBox(
       margin: LBoxEdgeInsets.aboveMD(
         EdgeInsets.symmetric(horizontal: 70.0),
@@ -20,7 +22,7 @@ class NavBar extends StatelessWidget {
         children: [
           buildMenuBtn(),
           buildLogo(),
-          buildLiquidText(),
+          buildLiquidText(_theme),
           buildNavMenu(),
           LBox(
             visibility: LBoxVisibility(xs: false, sm: false, xl: false),
@@ -49,7 +51,7 @@ class NavBar extends StatelessWidget {
       trigger: LOutlineButton.icon(
         icon: Text("More"),
         label: Icon(Icons.keyboard_arrow_down),
-        shape: RoundedRectangleBorder(side: BorderSide.none),
+        buttonShape: RoundedRectangleBorder(side: BorderSide.none),
         textStyle: TextStyle(color: Colors.white),
         onPressed: _openDropDown,
       ),
@@ -68,16 +70,16 @@ class NavBar extends StatelessWidget {
       visibility: LBoxVisibility(xs: false),
       child: Row(
         children: <Widget>[
-          SizedBox(width: 50.0),
+          SizedBox(width: 30.0),
           LFlatButton.text(
             text: "SPONSOR",
-            type: ButtonType.warning,
+            type: LElementType.warning,
             onPressed: () {},
           ),
           SizedBox(width: 15.0),
           LFlatButton.text(
-            text: "Download",
-            type: ButtonType.light,
+            text: "Pub",
+            type: LElementType.light,
             onPressed: () {},
           ),
         ],
@@ -119,7 +121,7 @@ class NavBar extends StatelessWidget {
   LBox buildNavMenu() {
     return LBox(
       visibility: LBoxVisibility(sm: false, xs: false),
-      padding: LBoxEdgeInsets.all(
+      padding: LBoxEdgeInsets.aboveMD(
         EdgeInsets.only(left: 25.0),
       ),
       child: LButtonGroup(
@@ -145,12 +147,12 @@ class NavBar extends StatelessWidget {
     );
   }
 
-  Padding buildLiquidText() {
+  Padding buildLiquidText(LiquidThemeData theme) {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
       child: Text(
         "Liquid",
-        style: LiquidTypographyTheme().h5.family('Poppins'),
+        style: theme.typographyTheme.h5.family('Poppins'),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid/liquid.dart';
 
+import 'widgets/home_drawer.dart';
 import '../../nav/navbar.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,6 +14,7 @@ class HomePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: NavBar(),
       ),
+      drawer: HomeDrawer(),
       body: ListView(
         children: <Widget>[
           LAnimatedBox(

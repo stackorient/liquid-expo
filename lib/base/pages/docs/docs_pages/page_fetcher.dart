@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'env.dart';
 import 'getting_started/getting_started_pages.dart';
+import 'layout/overview.dart';
 
 Widget getPage(String pageKey) {
   switch (pageKey) {
@@ -11,6 +12,9 @@ Widget getPage(String pageKey) {
       return Center(
         child: Text("Themeing page"),
       );
+
+    case layout_overview:
+      return LayoutOverview();
     default:
       return Center(
         child: Text("Not Found"),

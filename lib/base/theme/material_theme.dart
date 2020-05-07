@@ -24,6 +24,7 @@ final ThemeData theme = ThemeData(
     color: Color(0xff0062E7),
   ),
   scaffoldBackgroundColor: Colors.white,
+  textSelectionColor: Colors.black38,
   pageTransitionsTheme: PageTransitionsTheme(builders: {
     TargetPlatform.android: kIsWeb
         ? CupertinoPageTransitionsBuilder()

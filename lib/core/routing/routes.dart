@@ -1,2 +1,2 @@
 const String homeRoute = '/';
-const String docRoute = '/docs';
+const String docsRoute = '/docs';

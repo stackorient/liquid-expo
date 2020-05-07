@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:liquid/liquid.dart';
 
-import '../../../base.dart';
-
 class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = LiquidTheme.of(context);
-    return LBox(
-        decoration: LBoxDecoration.belowMD(
-          BoxDecoration(
-            color: Colors.white,
-          ),
-        ),
+    return Drawer(
+      child: SafeArea(
         child: ListView(
+          shrinkWrap: true,
           children: <Widget>[
             buildDrawerItems(),
           ],
-        ));
+        ),
+      ),
+    );
   }
 
-  LBox buildDrawerItems() {
-    return LBox(
-        child: LListGroup(
-            backgroundColor: Colors.white,
-            borderColor: Colors.white,
-            flush: true,
-            children: [
+  Widget buildDrawerItems() {
+    return LListGroup(
+        backgroundColor: Colors.white,
+        borderColor: Colors.white,
+        flush: true,
+        children: [
           LListItem(
             title: Text(
               'Home',
@@ -47,6 +42,6 @@ class HomeDrawer extends StatelessWidget {
               'Home',
             ),
           ),
-        ]));
+        ]);
   }
 }

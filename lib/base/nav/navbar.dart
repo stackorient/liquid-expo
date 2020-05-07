@@ -22,7 +22,7 @@ class NavBar extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          buildMenuBtn(),
+          buildMenuBtn(context),
           buildLogo(),
           buildLiquidText(_theme),
           buildNavMenu(_currentRoute, _theme),
@@ -179,14 +179,16 @@ class NavBar extends StatelessWidget {
         height: 42.0,
       );
 
-  LBox buildMenuBtn() {
+  LBox buildMenuBtn(BuildContext context) {
     return LBox(
       visibility: LBoxVisibility.aboveSM(false),
       margin: LBoxEdgeInsets.belowMD(EdgeInsets.only(right: 10.0)),
       child: LIconButton(
         icon: Icon(Icons.menu),
         color: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
       ),
     );
   }

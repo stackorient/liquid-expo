@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:liquid/liquid.dart';
 
 import '../../code_highlight.dart';
@@ -69,6 +70,51 @@ class MyApp extends StatelessWidget {
         ),
         SizedBox(height: 35.0),
         Text(
+          "Features",
+          style: _theme.typographyTheme.h4,
+        ),
+        Text(
+          "Liquid comes with a powerful grid system, extensive array of prebuilt"
+          " components, utilities and raw components to extend from.",
+          style: _theme.typographyTheme.p,
+        ),
+        LRow(
+          margin: const EdgeInsets.symmetric(vertical: 20.0),
+          gutter: 10.0,
+          columns: [
+            LColumn.child(
+              child: LAlert(
+                heading: LAlertHeading(
+                  text: "Powerful Grid System",
+                ),
+                text: "Use our powerful grid engine to build layouts of all"
+                    "shapes and sizes. Liquid comes with 12 column system with five default responsive tiers.",
+              ),
+            ),
+            LColumn.child(
+              child: LAlert(
+                type: LElementType.success,
+                heading: LAlertHeading(
+                  text: "Extensive Prebuilt Components",
+                ),
+                text: "Liquid Components are build from the ground up"
+                    "to work perfectly on Web, IOS, Android and Desktop. incluing Forms, Collapse, ScrollSpy and others.",
+              ),
+            ),
+            LColumn.child(
+              child: LAlert(
+                type: LElementType.warning,
+                heading: LAlertHeading(
+                  text: "Utilities",
+                ),
+                text:
+                    "Liquid also comes with Utility methods, thanks to the dart"
+                    "extension methods.",
+              ),
+            ),
+          ],
+        ),
+        Text(
           "Quick Start",
           style: _theme.typographyTheme.h4,
         ),
@@ -94,12 +140,14 @@ class MyApp extends StatelessWidget {
           context,
           _step2,
         ),
-        Text(
-          "LiquidApp will provide LiquidTheme, LiquidStateManager to Buttons, Models, ScrollSpy, DropDown and Other Liquid Components.\n"
-          "Note : LiquidApp wraps MaterialApp internally",
-          style: _theme.typographyTheme.p.copyWith(height: 1.5),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Text(
+            "LiquidApp will provide LiquidTheme, LiquidStateManager to Buttons, Models, ScrollSpy, DropDown and Other Liquid Components.\n"
+            "Note : LiquidApp wraps MaterialApp internally",
+            style: _theme.typographyTheme.p,
+          ),
         ),
-        SizedBox(height: 12.0),
       ],
     );
   }

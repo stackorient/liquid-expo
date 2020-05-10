@@ -145,6 +145,11 @@ flutter:
         - asset: fonts/Poppins/Poppins-ThinItalic.ttf
           weight: 100
           style: italic
+
+    - family: Roboto Mono
+      fonts:
+        - asset: fonts/Roboto_Mono/RobotoMono-Regular.ttf
+          weight: 400
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -169,7 +169,8 @@ class NavBar extends StatelessWidget {
       padding: const EdgeInsets.only(left: 10.0),
       child: Text(
         "Liquid",
-        style: theme.typographyTheme.h5.family('Poppins'),
+        style:
+            theme.typographyTheme.h5.family('Poppins').withColor(Colors.white),
       ),
     );
   }

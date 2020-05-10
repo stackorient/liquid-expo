@@ -92,12 +92,13 @@ class _DocsPageState extends State<DocsPage> {
 
   ExpansionTile buildMenu(String menuName, Map<String, String> menuMap) {
     return ExpansionTile(
-      initiallyExpanded: true,
+      initiallyExpanded: menuName == "Getting Started",
       title: Text(menuName),
       children: <Widget>[
         LListGroup(
           flush: true,
           dense: true,
+          radius: 0.0,
           children: [
             for (final menu in menuMap.entries)
               LListItem(

@@ -4,6 +4,8 @@ const layout_overview = 'p1s0';
 const layout_grid = 'p1s1';
 const layout_utils = 'p1s2';
 const component_alert = 'p2s0';
+const component_badge = 'p2s1';
+const component_breadCrumb = 'p2s2';
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -16,7 +18,8 @@ final Map<String, Map<String, String>> docsMenus = {
     "Utilities for layout": layout_utils,
   },
   "Components": {
-    "Alert": component_alert,
-    "Alert2": component_alert,
+    "LAlert": component_alert,
+    "LBadge": component_badge,
+    "LBreadCrumb": component_breadCrumb,
   }
 };

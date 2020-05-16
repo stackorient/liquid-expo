@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/badge.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/breadcrumb.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
 
 import 'components/components.dart';
 import 'env.dart';
@@ -28,6 +29,8 @@ Widget getPage(String pageKey) {
     case component_breadCrumb:
       return BreadCrumbPage();
 
+    case component_button:
+      return ButtonPage();
     default:
       return Center(
         child: Text("Not Found"),

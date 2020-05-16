@@ -6,6 +6,7 @@ const layout_utils = 'p1s2';
 const component_alert = 'p2s0';
 const component_badge = 'p2s1';
 const component_breadCrumb = 'p2s2';
+const component_button = 'p2s3';
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -21,5 +22,6 @@ final Map<String, Map<String, String>> docsMenus = {
     "LAlert": component_alert,
     "LBadge": component_badge,
     "LBreadCrumb": component_breadCrumb,
+    "LButton types": component_button,
   }
 };

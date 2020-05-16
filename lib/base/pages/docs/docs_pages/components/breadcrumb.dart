@@ -3,7 +3,7 @@ import 'package:liquid/liquid.dart';
 import '../../code_highlight.dart';
 
 class BreadCrumbPage extends StatelessWidget {
-  final _title = "LBreadCrumb";
+  final _title = "LBreadCrumbs";
   final _subtitle =
       "Indicate the current page’s location within a navigational hierarchy that automatically adds separators.";
 
@@ -14,7 +14,7 @@ LBreadCrumbs(
      LBreadCrumbItem(
        'text1',
        activeColor: _theme.colors.primary,
-       // active: true,
+       active: true,
        onTap: () {},
      ),
      LBreadCrumbItem(
@@ -42,7 +42,7 @@ LBreadCrumbs(
      LBreadCrumbItem(
        'text1',
        activeColor: _theme.colors.primary,
-       // active: true,
+       active: true,
        onTap: () {},
      ),
      LBreadCrumbItem(
@@ -58,22 +58,6 @@ LBreadCrumbs(
        onTap: () {},
      )
    ],
- ),
-  
-  """;
-
-  final _closeCode = """
-
- LAlert(
-   type: LElementType.success,
-   heading: LAlertHeading(
-     style: _theme.typographyTheme.h6.withColor(Colors.white),
-     text: "Welcome to LAlert",
-     onClose: (){},
-   ),
-   text:
-       "Aww yeah, you successfully read this important alert message." 
-       "Created by @heypnd and @heyrjs,",
  ),
   
   """;
@@ -127,7 +111,7 @@ LBreadCrumbs(
                   LBreadCrumbItem(
                     'text1',
                     activeColor: _theme.colors.primary,
-                    // active: true,
+                    active: true,
                     onTap: () {},
                   ),
                   LBreadCrumbItem(
@@ -177,7 +161,7 @@ LBreadCrumbs(
                   LBreadCrumbItem(
                     'text1',
                     activeColor: _theme.colors.primary,
-                    // active: true,
+                    active: true,
                     onTap: () {},
                   ),
                   LBreadCrumbItem(
@@ -228,7 +212,7 @@ LBreadCrumbs(
                   LBreadCrumbItem(
                     'text1',
                     activeColor: _theme.colors.primary,
-                    // active: true,
+                    active: true,
                     onTap: () {},
                   ),
                   LBreadCrumbItem(

@@ -4,6 +4,7 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/breadcrumb.
 import 'package:liquid_website/base/pages/docs/docs_pages/components/button_group.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
 
+import 'components/card.dart';
 import 'components/components.dart';
 import 'env.dart';
 import 'getting_started/getting_started_pages.dart';
@@ -35,6 +36,9 @@ Widget getPage(String pageKey) {
 
     case component_button_group:
       return ButtonGroup();
+
+    case component_card:
+      return CardPage();
     default:
       return Center(
         child: Text("Not Found"),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/badge.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/breadcrumb.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/button_group.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
 
 import 'components/components.dart';
@@ -31,6 +32,9 @@ Widget getPage(String pageKey) {
 
     case component_button:
       return ButtonPage();
+
+    case component_button_group:
+      return ButtonGroup();
     default:
       return Center(
         child: Text("Not Found"),

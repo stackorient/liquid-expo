@@ -3,6 +3,7 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/badge.dart'
 import 'package:liquid_website/base/pages/docs/docs_pages/components/breadcrumb.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/button_group.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.dart';
 
 import 'components/card.dart';
 import 'components/components.dart';
@@ -39,6 +40,9 @@ Widget getPage(String pageKey) {
 
     case component_card:
       return CardPage();
+
+    case component_carousel:
+      return CarouselPage();
     default:
       return Center(
         child: Text("Not Found"),

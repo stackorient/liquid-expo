@@ -10,19 +10,21 @@ Widget codeText(BuildContext context, String code, {String lang = 'dart'}) {
   final _themeModeOn = _mq.platformBrightness == Brightness.dark;
   return Stack(
     children: <Widget>[
-      Container(
-        constraints: BoxConstraints(minWidth: double.infinity),
-        padding: const EdgeInsets.symmetric(vertical: 15.0),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(5.0),
-          child: HighlightView(
-            code,
-            language: lang,
-            theme: _themeModeOn ? atomOneDarkTheme : atomOneLightTheme,
-            padding: EdgeInsets.all(12),
-            textStyle: TextStyle(
-              fontFamily: 'Roboto Mono',
-              fontSize: _mq.isSM || _mq.isXS ? 12.8 : 14.0,
+      SingleChildScrollView(
+        child: Container(
+          constraints: BoxConstraints(minWidth: double.infinity),
+          padding: const EdgeInsets.symmetric(vertical: 15.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(5.0),
+            child: HighlightView(
+              code,
+              language: lang,
+              theme: _themeModeOn ? atomOneDarkTheme : atomOneLightTheme,
+              padding: EdgeInsets.all(12),
+              textStyle: TextStyle(
+                fontFamily: 'Roboto Mono',
+                fontSize: _mq.isSM || _mq.isXS ? 12.8 : 14.0,
+              ),
             ),
           ),
         ),

@@ -6,6 +6,7 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dar
 import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/header_tag.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/progress_indicator.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/spinner.dart';
 
 import 'components/card.dart';
 import 'components/components.dart';
@@ -55,6 +56,9 @@ Widget getPage(String pageKey) {
 
     case component_progress_indicator:
       return ProgressPage();
+
+    case component_spinner:
+      return SpinnerPage();
     default:
       return Center(
         child: Text("Not Found"),

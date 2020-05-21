@@ -15,6 +15,7 @@ const component_list_group = 'p2s8';
 const component_progress_indicator = 'p2s9';
 const component_spinner = 'p2s10';
 const component_model = "p2s11";
+const component_scroll_spy = "p2s12";
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -30,14 +31,15 @@ final Map<String, Map<String, String>> docsMenus = {
     "LAlert": component_alert,
     "LBadge": component_badge,
     "LBreadCrumb": component_breadCrumb,
-    "LButton types": component_button,
+    "LButton": component_button,
     "LButtonGroup": component_button_group,
     "LCard": component_card,
     "LCarousel": component_carousel,
     "LHeaderTag": component_header_tag,
     "LListGroup": component_list_group,
-    "Progress": component_progress_indicator,
-    "Spinner": component_spinner,
-    "Model": component_model,
+    "LProgress": component_progress_indicator,
+    "LSpinner": component_spinner,
+    "LModel": component_model,
+    "LScrollSpy": component_scroll_spy,
   }
 };

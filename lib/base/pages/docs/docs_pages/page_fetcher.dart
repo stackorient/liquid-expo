@@ -7,6 +7,7 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.da
 import 'package:liquid_website/base/pages/docs/docs_pages/components/header_tag.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/models.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/progress_indicator.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/scroll_spy.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/spinner.dart';
 
 import 'components/card.dart';
@@ -63,6 +64,10 @@ Widget getPage(String pageKey) {
 
     case component_model:
       return ModelPage();
+
+    case component_scroll_spy:
+      return ScrollSpyPage();
+
     default:
       return Center(
         child: Text("Not Found"),

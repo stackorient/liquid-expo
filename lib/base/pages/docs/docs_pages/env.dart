@@ -12,6 +12,7 @@ const component_card = 'p2s5';
 const component_carousel = 'p2s6';
 const component_header_tag = 'p2s7';
 const component_list_group = 'p2s8';
+const component_progress_indicator = 'p2s9';
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -33,5 +34,6 @@ final Map<String, Map<String, String>> docsMenus = {
     "LCarousel": component_carousel,
     "LHeaderTag": component_header_tag,
     "LListGroup": component_list_group,
+    "Progress": component_progress_indicator,
   }
 };

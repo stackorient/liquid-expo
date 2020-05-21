@@ -16,6 +16,8 @@ const component_progress_indicator = 'p2s9';
 const component_spinner = 'p2s10';
 const component_model = "p2s11";
 const component_scroll_spy = "p2s12";
+const component_collapse = "p2s13";
+const component_Expansion_panel = "p2s14";
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -41,5 +43,7 @@ final Map<String, Map<String, String>> docsMenus = {
     "LSpinner": component_spinner,
     "LModel": component_model,
     "LScrollSpy": component_scroll_spy,
+    "LCollapse": component_collapse,
+    "LExpansionPanel": component_Expansion_panel,
   }
 };

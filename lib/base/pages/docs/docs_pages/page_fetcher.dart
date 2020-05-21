@@ -4,6 +4,8 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/breadcrumb.
 import 'package:liquid_website/base/pages/docs/docs_pages/components/button_group.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/collapse.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/expansion.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/header_tag.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/models.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/progress_indicator.dart';
@@ -67,6 +69,12 @@ Widget getPage(String pageKey) {
 
     case component_scroll_spy:
       return ScrollSpyPage();
+
+    case component_collapse:
+      return CollapsePage();
+
+    case component_Expansion_panel:
+      return ExpansionPage();
 
     default:
       return Center(

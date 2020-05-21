@@ -106,167 +106,46 @@ positionTween: Tween(
   end: Offset.zero,
 ),
 
+alignment: Alignment.topCenter
+
  //From Bottom
 positionTween: Tween(
    begin: Offset(0.0, 10.0),
    end: Offset.zero,
  ),
+
+ alignment: Alignment.bottomCenter
+
  //From Left
  positionTween: Tween(
    begin: Offset(-10.0, 0.0),
    end: Offset.zero,
  ),
+
+ alignment: Alignment.centerLeft
+
  //From Right
  positionTween: Tween(
    begin: Offset(10.0, 0.0),
    end: Offset.zero,
  ),
 
+ alignment: Alignment.centerRight
+
   """;
 
-  void _showModel(BuildContext context) {
+  void _showModel(
+      BuildContext context, Offset offset, AlignmentGeometry alignment) {
     showLModel(
       context,
       positionTween: Tween(
-        begin: Offset(0.0, -10.0),
+        begin: offset,
         end: Offset.zero,
       ),
       barrierDismissable: true,
       builder: (context) {
         return LModel(
-          positon: MainAxisAlignment.start,
-          header: LModelHeader(
-            title: "LModel",
-            onClose: () async {
-              print("Model Closed");
-              print("Terms Accepted: false");
-            },
-          ),
-          body: LModelBody(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: LText(
-                "Created by \l.color(hex=#0000EE){@heypnd} and \l.color(hex=#0000EE){@heyrjs}",
-              ),
-            ),
-          ),
-          footer: LModelFooter(
-            actions: <Widget>[
-              LFlatButton.text(
-                text: "Accept",
-                onPressed: () async {
-                  final _ =
-                      await LiquidStateManager.of(context).popModel<bool>(true);
-                  print("Terms Accepted: $_");
-                },
-                type: LElementType.primary,
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  void _showBottomModel(BuildContext context) {
-    showLModel(
-      context,
-      positionTween: Tween(
-        begin: Offset(0.0, 10.0),
-        end: Offset.zero,
-      ),
-      barrierDismissable: true,
-      builder: (context) {
-        return LModel(
-          positon: MainAxisAlignment.start,
-          header: LModelHeader(
-            title: "LModel",
-            onClose: () async {
-              print("Model Closed");
-              print("Terms Accepted: false");
-            },
-          ),
-          body: LModelBody(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: LText(
-                "Created by \l.color(hex=#0000EE){@heypnd} and \l.color(hex=#0000EE){@heyrjs}",
-              ),
-            ),
-          ),
-          footer: LModelFooter(
-            actions: <Widget>[
-              LFlatButton.text(
-                text: "Accept",
-                onPressed: () async {
-                  final _ =
-                      await LiquidStateManager.of(context).popModel<bool>(true);
-                  print("Terms Accepted: $_");
-                },
-                type: LElementType.primary,
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  void _showLeftModel(BuildContext context) {
-    showLModel(
-      context,
-      positionTween: Tween(
-        begin: Offset(-10.0, 0.0),
-        end: Offset.zero,
-      ),
-      barrierDismissable: true,
-      builder: (context) {
-        return LModel(
-          positon: MainAxisAlignment.start,
-          header: LModelHeader(
-            title: "LModel",
-            onClose: () async {
-              print("Model Closed");
-              print("Terms Accepted: false");
-            },
-          ),
-          body: LModelBody(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: LText(
-                "Created by \l.color(hex=#0000EE){@heypnd} and \l.color(hex=#0000EE){@heyrjs}",
-              ),
-            ),
-          ),
-          footer: LModelFooter(
-            actions: <Widget>[
-              LFlatButton.text(
-                text: "Accept",
-                onPressed: () async {
-                  final _ =
-                      await LiquidStateManager.of(context).popModel<bool>(true);
-                  print("Terms Accepted: $_");
-                },
-                type: LElementType.primary,
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  void _showRightModel(BuildContext context) {
-    showLModel(
-      context,
-      positionTween: Tween(
-        begin: Offset(10.0, 0.0),
-        end: Offset.zero,
-      ),
-      barrierDismissable: true,
-      builder: (context) {
-        return LModel(
-          positon: MainAxisAlignment.start,
+          positon: alignment,
           header: LModelHeader(
             title: "LModel",
             onClose: () async {
@@ -347,7 +226,6 @@ positionTween: Tween(
                 lg: 4,
                 xl: 4,
                 child: LModel(
-                  positon: MainAxisAlignment.start,
                   header: LModelHeader(
                     title: "LModel",
                     onClose: () async {
@@ -367,11 +245,7 @@ positionTween: Tween(
                     actions: <Widget>[
                       LFlatButton.text(
                         text: "Accept",
-                        onPressed: () async {
-                          final _ = await LiquidStateManager.of(context)
-                              .popModel<bool>(true);
-                          print("Terms Accepted: $_");
-                        },
+                        onPressed: () {},
                         type: LElementType.primary,
                       ),
                     ],
@@ -399,7 +273,8 @@ positionTween: Tween(
                 xl: 4,
                 child: LFlatButton.text(
                   text: "Live Demo",
-                  onPressed: () => _showModel(context),
+                  onPressed: () => _showModel(
+                      context, Offset(0.0, -10.0), Alignment.topCenter),
                 ),
               ),
               LColumn.child(
@@ -430,19 +305,23 @@ positionTween: Tween(
                 children: [
                   LFlatButton.text(
                     text: "From Top",
-                    onPressed: () => _showModel(context),
+                    onPressed: () => _showModel(
+                        context, Offset(0.0, -10.0), Alignment.topCenter),
                   ),
                   LFlatButton.text(
                     text: "From Bottom",
-                    onPressed: () => _showBottomModel(context),
+                    onPressed: () => _showModel(
+                        context, Offset(0.0, 10.0), Alignment.bottomCenter),
                   ),
                   LFlatButton.text(
                     text: "From Left",
-                    onPressed: () => _showLeftModel(context),
+                    onPressed: () => _showModel(
+                        context, Offset(-10.0, 0.0), Alignment.centerLeft),
                   ),
                   LFlatButton.text(
                     text: "From Right",
-                    onPressed: () => _showRightModel(context),
+                    onPressed: () => _showModel(
+                        context, Offset(10.0, 0.0), Alignment.centerRight),
                   ),
                 ],
               ),

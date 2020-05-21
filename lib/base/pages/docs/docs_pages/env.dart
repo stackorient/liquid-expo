@@ -10,6 +10,8 @@ const component_button = 'p2s3';
 const component_button_group = 'p2s4';
 const component_card = 'p2s5';
 const component_carousel = 'p2s6';
+const component_header_tag = 'p2s7';
+const component_list_group = 'p2s8';
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -29,5 +31,7 @@ final Map<String, Map<String, String>> docsMenus = {
     "LButtonGroup": component_button_group,
     "LCard": component_card,
     "LCarousel": component_carousel,
+    "LHeaderTag": component_header_tag,
+    "LListGroup": component_list_group,
   }
 };

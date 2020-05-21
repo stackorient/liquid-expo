@@ -4,9 +4,11 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/breadcrumb.
 import 'package:liquid_website/base/pages/docs/docs_pages/components/button_group.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/header_tag.dart';
 
 import 'components/card.dart';
 import 'components/components.dart';
+import 'components/list_group.dart';
 import 'env.dart';
 import 'getting_started/getting_started_pages.dart';
 import 'layout/overview.dart';
@@ -43,6 +45,12 @@ Widget getPage(String pageKey) {
 
     case component_carousel:
       return CarouselPage();
+
+    case component_header_tag:
+      return HeaderTagPage();
+
+    case component_list_group:
+      return ListGroupPage();
     default:
       return Center(
         child: Text("Not Found"),

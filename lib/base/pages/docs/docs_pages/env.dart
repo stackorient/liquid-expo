@@ -14,6 +14,7 @@ const component_header_tag = 'p2s7';
 const component_list_group = 'p2s8';
 const component_progress_indicator = 'p2s9';
 const component_spinner = 'p2s10';
+const component_model = "p2s11";
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -37,5 +38,6 @@ final Map<String, Map<String, String>> docsMenus = {
     "LListGroup": component_list_group,
     "Progress": component_progress_indicator,
     "Spinner": component_spinner,
+    "Model": component_model,
   }
 };

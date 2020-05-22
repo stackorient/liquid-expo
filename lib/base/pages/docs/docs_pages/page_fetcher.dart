@@ -5,6 +5,7 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/button_grou
 import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/collapse.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/dropdown.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/expansion.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/form.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/header_tag.dart';
@@ -79,6 +80,9 @@ Widget getPage(String pageKey) {
 
     case component_form:
       return FormPage();
+
+    case component_dropdown:
+      return DropdownPage();
 
     default:
       return Center(

@@ -19,6 +19,7 @@ const component_scroll_spy = "p2s12";
 const component_collapse = "p2s13";
 const component_Expansion_panel = "p2s14";
 const component_form = "p2s15";
+const component_dropdown = "p2s16";
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
@@ -47,5 +48,6 @@ final Map<String, Map<String, String>> docsMenus = {
     "LCollapse": component_collapse,
     "LExpansionPanel": component_Expansion_panel,
     "LForm": component_form,
+    "LDropdown": component_dropdown,
   }
 };

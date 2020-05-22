@@ -6,6 +6,7 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dar
 import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/collapse.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/expansion.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/components/form.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/header_tag.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/models.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/progress_indicator.dart';
@@ -75,6 +76,9 @@ Widget getPage(String pageKey) {
 
     case component_Expansion_panel:
       return ExpansionPage();
+
+    case component_form:
+      return FormPage();
 
     default:
       return Center(

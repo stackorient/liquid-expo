@@ -248,22 +248,22 @@ Padding(
         ),
         SizedBox(height: 35.0),
         LText("\l.h4.bold{Features}\n"),
-        LText("\l.bullet1.h5.bold{States}\n"
-            "   \l.bullet1.bold{isEnabled} - True if field is enabled.\n"
-            "   \l.bullet1.bold{isPristine} - True if the field has not been modified.\n"
-            "   \l.bullet1.bold{isDirty} - True if the field has been modified.\n"
-            "   \l.bullet1.bold{isValid} - True if the current value is valid.change when [validate] method is called\n"
-            "   \l.bullet1.bold{isInvalid} - True if the current value is invalid, change when [validate] method is called\n"
-            "   \l.bullet1.bold{isTouched} - True if the field is touched.\n"
-            "   \l.bullet1.bold{isUntouched} - True if the field is touched.\n"
-            "   \l.bullet1.bold{errorText} - The current validation error returned by the [LFormField.validator]\n\n"),
-        LText("\l.bullet1.h5.bold{Serializer}\n"
-            "   \l.bullet1.bold{serialize()} - return a serialized map of the form fields"
+        LText("\l.bullet.h5.bold{States}\n"
+            "   \l.bullet.bold{isEnabled} - True if field is enabled.\n"
+            "   \l.bullet.bold{isPristine} - True if the field has not been modified.\n"
+            "   \l.bullet.bold{isDirty} - True if the field has been modified.\n"
+            "   \l.bullet.bold{isValid} - True if the current value is valid.change when [validate] method is called\n"
+            "   \l.bullet.bold{isInvalid} - True if the current value is invalid, change when [validate] method is called\n"
+            "   \l.bullet.bold{isTouched} - True if the field is touched.\n"
+            "   \l.bullet.bold{isUntouched} - True if the field is touched.\n"
+            "   \l.bullet.bold{errorText} - The current validation error returned by the [LFormField.validator]\n\n"),
+        LText("\l.bullet.h5.bold{Serializer}\n"
+            "   \l.bullet.bold{serialize()} - return a serialized map of the form fields"
             " you need to provide [name] parameter to field constructor for serializing that particular field.\n"),
         Padding(
           padding: const EdgeInsets.only(top: 25.0),
           child: LText(
-            " \l.h4.bold{Form Manager}\n"
+            "\l.h4.bold{Form Manager}\n"
             "With \l.bold{LFormManager} we don't need to build controllers for every textFormField.",
           ),
         ),
@@ -395,27 +395,27 @@ Padding(
           ),
         ),
         LText(
-            "\l.bullet1.h6.bold{LAlphaNumericValidator} - It only validates the strings holding only alpha-numeric values.\n\n"
-            "\l.bullet1.h6.bold{LCreditCardValidator} - It validates the credit card numbers for different credit cards.\n"
-            "   \l.bullet1.bold{LVisaCardValidator}\n"
-            "   \l.bullet1.bold{LMasterCardValidator}\n"
-            "   \l.bullet1.bold{LAmericanCardValidator}\n"
-            "   \l.bullet1.bold{LDinersCardValidator}\n"
-            "   \l.bullet1.bold{LDiscoverCardValidator}\n"
-            "   \l.bullet1.bold{LJCBCardValidator}\n\n"
-            "\l.bullet1.h6.bold{LEmailValidator} - An \l.bold{LCombinedValidator} that validates by combining \l.bold{LCommonEmailValidator} and \l.bold{LUnCommonEmailValidator}.\n\n"
-            "\l.bullet1.h6.bold{IP Address validators} - It validates ip addresses over \l.bold{LIPv4Validator} and \l.bold{LIPv6Validator}\n\n"
-            "\l.bullet1.h6.bold{Pattern Validators} - There are two different type of  pattern validators.\n"
-            "   \l.bullet1.bold{LSlugValidator} - checks whether the string is a slug.\n"
-            "   \l.bullet1.bold{LDuplicateStringValidator} validates for whether any duplicate strings are there or not. \n\n"
-            "\l.bullet1.h6.bold{LRequiredValidator} - Field is required and cannot be empty.\n\n"
-            "\l.bullet1.h6.bold{LURLValidator} - Validates unified resource locator(URL) links.\n\n"),
+            "\l.bullet.h6.bold{LAlphaNumericValidator} - It only validates the strings holding only alpha-numeric values.\n\n"
+            "\l.bullet.h6.bold{LCreditCardValidator} - It validates the credit card numbers for different credit cards.\n"
+            "   \l.bullet.bold{LVisaCardValidator}\n"
+            "   \l.bullet.bold{LMasterCardValidator}\n"
+            "   \l.bullet.bold{LAmericanCardValidator}\n"
+            "   \l.bullet.bold{LDinersCardValidator}\n"
+            "   \l.bullet.bold{LDiscoverCardValidator}\n"
+            "   \l.bullet.bold{LJCBCardValidator}\n\n"
+            "\l.bullet.h6.bold{LEmailValidator} - An \l.bold{LCombinedValidator} that validates by combining \l.bold{LCommonEmailValidator} and \l.bold{LUnCommonEmailValidator}.\n\n"
+            "\l.bullet.h6.bold{IP Address validators} - It validates ip addresses over \l.bold{LIPv4Validator} and \l.bold{LIPv6Validator}\n\n"
+            "\l.bullet.h6.bold{Pattern Validators} - There are two different type of  pattern validators.\n"
+            "   \l.bullet.bold{LSlugValidator} - checks whether the string is a slug.\n"
+            "   \l.bullet.bold{LDuplicateStringValidator} validates for whether any duplicate strings are there or not. \n\n"
+            "\l.bullet.h6.bold{LRequiredValidator} - Field is required and cannot be empty.\n\n"
+            "\l.bullet.h6.bold{LURLValidator} - Validates unified resource locator(URL) links.\n\n"),
         LText("\l.h4.bold{Regex Validators}\n"
-            "\l.bullet1.h6.bold{LRegexValidator} extends \l.bold{LValidator<T>}\n"
+            "\l.bullet.h6.bold{LRegexValidator} extends \l.bold{LValidator<T>}\n"
             "It validates the data based on regex pattern.\n\n"),
         codeText(context, _regexCode),
         LText("\n\l.h4.bold{Combined Validator}\n"
-            "\l.bullet1.h6.bold{LCombinedValidator} extends \l.bold{LValidator<T>}\n"
+            "\l.bullet.h6.bold{LCombinedValidator} extends \l.bold{LValidator<T>}\n"
             "combine multiple validators in a single validator. \l.bold{LEmailValidator} is"
             "one the default combined validator. Below is its original implementation.\n\n"),
         codeText(context, _combinedCode),
@@ -423,26 +423,26 @@ Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: LText("\l.h5.bold{Validation Type}\n"
               "LCombinedValidator has the following validation types\n\n"
-              "   \l.bullet1.bold{allTrue} - all validators should validate to \l.bold{true}.\n"
-              "   \l.bullet1.bold{allFalse} - all validators should validate to \l.bold{false}.\n"
-              "   \l.bullet1.bold{atLeastOneTrue} - atleast one validator should validate to \l.bold{true}.\n"
-              "   \l.bullet1.bold{atLeastOneFalse} - atleast one validator should validate to \l.bold{false}.\n"
-              "   \l.bullet1.bold{atMostOneTrue} - atmost one validator should validate to \l.bold{true}\n"
-              "   \l.bullet1.bold{atMostOneFalse} - atmost one validator should validate to \l.bold{false}\n"),
+              "   \l.bullet.bold{allTrue} - all validators should validate to \l.bold{true}.\n"
+              "   \l.bullet.bold{allFalse} - all validators should validate to \l.bold{false}.\n"
+              "   \l.bullet.bold{atLeastOneTrue} - atleast one validator should validate to \l.bold{true}.\n"
+              "   \l.bullet.bold{atLeastOneFalse} - atleast one validator should validate to \l.bold{false}.\n"
+              "   \l.bullet.bold{atMostOneTrue} - atmost one validator should validate to \l.bold{true}\n"
+              "   \l.bullet.bold{atMostOneFalse} - atmost one validator should validate to \l.bold{false}\n"),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: LText("\l.h5.bold{LTextFormField}\n"
               "The current state of a [LFormField]. Passed to the [LFormFieldBuilder] method"
               "for use in constructing the form field's widget.\n\n"
-              "   \l.bullet1.bold{isEnabled} - True if field is enabled.\n"
-              "   \l.bullet1.bold{isPristine} - True if the field has not been modified.\n"
-              "   \l.bullet1.bold{isDirty} - True if the field has been modified.\n"
-              "   \l.bullet1.bold{isValid} - True if the current value is valid.change when [validate] method is called\n"
-              "   \l.bullet1.bold{isInvalid} - True if the current value is invalid, change when [validate] method is called\n"
-              "   \l.bullet1.bold{isTouched} - True if the field is touched.\n"
-              "   \l.bullet1.bold{isUntouched} - True if the field is touched.\n"
-              "   \l.bullet1.bold{errorText} - The current validation error returned by the [LFormField.validator]\n"),
+              "   \l.bullet.bold{isEnabled} - True if field is enabled.\n"
+              "   \l.bullet.bold{isPristine} - True if the field has not been modified.\n"
+              "   \l.bullet.bold{isDirty} - True if the field has been modified.\n"
+              "   \l.bullet.bold{isValid} - True if the current value is valid.change when [validate] method is called\n"
+              "   \l.bullet.bold{isInvalid} - True if the current value is invalid, change when [validate] method is called\n"
+              "   \l.bullet.bold{isTouched} - True if the field is touched.\n"
+              "   \l.bullet.bold{isUntouched} - True if the field is touched.\n"
+              "   \l.bullet.bold{errorText} - The current validation error returned by the [LFormField.validator]\n"),
         ),
         LBox(
           height: LBoxDimension.all(450.0),

@@ -24,9 +24,10 @@ LAlert(
      style: _theme.typographyTheme.h6.withColor(Colors.white),
      text: "Welcome to LAlert",
    ),
-   text:
-       "Aww yeah, you successfully read this important alert message." 
-       "Created by @heypnd and @heyrjs,",
+   child: LText(
+           "Aww yeah, you successfully read this important alert message. Created by"
+           " \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs},",
+         ),
  ),
   
   """;
@@ -40,9 +41,10 @@ LAlert(
      text: "Welcome to LAlert",
      onClose: (){},
    ),
-   text:
-       "Aww yeah, you successfully read this important alert message." 
-       "Created by @heypnd and @heyrjs,",
+   child: LText(
+           "Aww yeah, you successfully read this important alert message. Created by"
+           " \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs},",
+         ),
  ),
   
   """;
@@ -229,8 +231,10 @@ LAlert(
                   style: _theme.typographyTheme.h6.withColor(Colors.white),
                   text: "Welcome to LAlert with heading",
                 ),
-                text:
-                    "Aww yeah, you successfully read this important alert message. Created by @heypnd and @heyrjs,",
+                child: LText(
+                  "Aww yeah, you successfully read this important alert message. Created by"
+                  " \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs},",
+                ),
               ),
             ),
             LColumn.child(
@@ -266,8 +270,10 @@ LAlert(
                   text: "Welcome to disposable LAlert",
                   onClose: () {},
                 ),
-                text:
-                    "Aww yeah, you successfully read this important alert message. Created by @heypnd and @heyrjs,",
+                child: LText(
+                  "Aww yeah, you successfully read this important alert message. Created by"
+                  " \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs},",
+                ),
               ),
             ),
             LColumn.child(

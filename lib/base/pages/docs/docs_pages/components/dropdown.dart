@@ -554,7 +554,7 @@ class DropdownPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 25.0),
           child: LText(
-            " \l.h4.bold{With backdrop}\n"
+            "\l.h4.bold{With backdrop}\n"
             "When `scrollable` is `false`, the dropdown will show a backdrop"
             " which on tap event, dismisses the active dropdown"
             " default is Black with opacity 26%",

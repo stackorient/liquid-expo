@@ -215,16 +215,14 @@ LCard(
         )),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "Header and Footer",
-            style: _theme.typographyTheme.h4,
+          child: LText(
+            "\l.h4{Header and Footer}",
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "Add header and Footer elements to the card.",
-            style: _theme.typographyTheme.p,
+          child: LText(
+            "\l.h4{Add header and Footer elements to the card.}",
           ),
         ),
         LRow(

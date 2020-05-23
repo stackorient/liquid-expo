@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid/liquid.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'base/base.dart';
 import 'core/core.dart';
 
@@ -26,6 +28,19 @@ class MyApp extends StatelessWidget {
       initialRoute: RouteManager.initialRoute,
       onGenerateRoute: _routeManager.onGenerateRoute,
       navigatorKey: _routeManager.navigtor,
+      styleSheet: {
+        "link": LStyleBlock(
+            style: LSpanStyle(
+          recognizerHandler: (args) {
+            final href = args.get('href');
+            return TapGestureRecognizer()
+              ..onTap = () => href != null ? launch(href) : null;
+          },
+          style: TextStyle(
+            color: Colors.blue[800],
+          ),
+        ))
+      },
       navigatorObservers: [_routeManager.observer],
     );
   }

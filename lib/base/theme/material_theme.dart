@@ -1,25 +1,36 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-// const MaterialColor _darkblue = MaterialColor(
-//   __darkbluePrimaryValue,
-//   <int, Color>{
-//     50: Color(0xFFE3F2FD),
-//     100: Color(0xFFBBDEFB),
-//     200: Color(0xFF90CAF9),
-//     300: Color(0xFF64B5F6),
-//     400: Color(0xFF42A5F5),
-//     500: Color(__darkbluePrimaryValue),
-//     600: Color(0xFF1E88E5),
-//     700: Color(0xFF1976D2),
-//     800: Color(0xFF1565C0),
-//     900: Color(0xFF0D47A1),
-//   },
-// );
-// const int __darkbluePrimaryValue = 0xFF2196F3;
+const MaterialColor _black = MaterialColor(
+  __blackPrimaryValue,
+  <int, Color>{
+    50: Color(0xFF000000),
+    100: Color(0xFF000000),
+    200: Color(0xFF000000),
+    300: Color(0xFF000000),
+    400: Color(0xFF000000),
+    500: Color(__blackPrimaryValue),
+    600: Color(0xFF000000),
+    700: Color(0xFF000000),
+    800: Color(0xFF000000),
+    900: Color(0xFF000000),
+  },
+);
+const int __blackPrimaryValue = 0xFF000000;
 
 final ThemeData theme = ThemeData(
+  primarySwatch: _black,
   appBarTheme: AppBarTheme(
     color: Color(0xff0062E7),
   ),
   scaffoldBackgroundColor: Colors.white,
+  textSelectionColor: Colors.black38,
+  pageTransitionsTheme: PageTransitionsTheme(builders: {
+    TargetPlatform.android: kIsWeb
+        ? CupertinoPageTransitionsBuilder()
+        : ZoomPageTransitionsBuilder(),
+    TargetPlatform.windows: CupertinoPageTransitionsBuilder(),
+    TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
+    TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+  }),
 );

@@ -119,7 +119,7 @@ packages:
     description:
       path: liquid
       ref: master
-      resolved-ref: "8e5a48997d27c17a0d52d5583a9981e638983615"
+      resolved-ref: "04f95de363342aa8f5bd3c33545cbead621da506"
       url: "git@github.com:stackorient/Liquid-Flutter.git"
     source: git
     version: "1.0.0+1"

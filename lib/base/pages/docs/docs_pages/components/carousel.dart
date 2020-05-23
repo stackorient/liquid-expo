@@ -490,7 +490,7 @@ LCarousel(
                       caption: LCarouselCaption(
                         titleText: "Third Slide",
                         subTitleText:
-                            "By \l.link(href=https://twitter.com/heypnd)@heypnd and \l.link(href=https://twitter.com/heypnd)@heyrjs",
+                            "By \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heypnd){@heyrjs}.",
                         actions: <Widget>[
                           LFlatButton.text(
                             type: LElementType.danger,

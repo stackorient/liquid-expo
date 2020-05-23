@@ -160,7 +160,8 @@ LCard(
                   fit: BoxFit.cover,
                 ),
                 body: LCardBody(
-                  subTitle: "hi how are you? @heyrjs and @heypnd ",
+                  subTitle:
+                      "hi how are you? \l.link(href=https://twitter.com/heyrjs){@heyrjs} and \l.link(href=https://twitter.com/heypnd){@heypnd} ",
                   title: "Hello",
                   child: LOutlineButton.text(
                     text: "welcome",

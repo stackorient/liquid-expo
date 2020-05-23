@@ -92,13 +92,6 @@ LBreadCrumbs(
           "Example",
           style: _theme.typographyTheme.h4,
         ),
-        // Padding(
-        //   padding: const EdgeInsets.symmetric(vertical: 5.0),
-        //   child: Text(
-        //     "Create an Alert box of different types and sizes.",
-        //     style: _theme.typographyTheme.p,
-        //   ),
-        // ),
         LRow(
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -184,7 +177,6 @@ LBreadCrumbs(
             )
           ],
         ),
-
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Text(

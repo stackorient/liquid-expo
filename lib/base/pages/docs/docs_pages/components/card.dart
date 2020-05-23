@@ -207,6 +207,8 @@ LCard(
             child: LCard(
           body: LCardBody(
             title: 'Title to the card body',
+            subTitle:
+                'Created by \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs}',
             child: LFlatButton.text(
               text: 'Welcome',
               type: LElementType.success,

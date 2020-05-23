@@ -122,16 +122,16 @@ class Dropdown2 extends StatelessWidget {
       itemBuilder: (context) => [
         LDropdownItem.header(text: "Option 1"),
         LDropdownItem(
-          text: "First Item",
+          text: "Created by",
           onTap: () {},
         ),
         LDropdownItem(
-          text: "Second Item",
+          text: "\l.link(href=https://twitter.com/heyrjs)@heyrjs",
           onTap: () {
             print("pressed");
           },
           onLongPress: () {
-            print("long pressed");
+            print("\l.link(href=https://twitter.com/heypnd)@heypnd");
           },
         ),
         LDropdownItem(

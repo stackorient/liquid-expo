@@ -21,7 +21,7 @@ LBadge(
        SizedBox(
           width: 10.0,
         ),
-       Text(
+       LText(
          "Badge",
         ),
       ],
@@ -51,7 +51,7 @@ LBadge(
      Icons.star,
      size: 15.0,
    ),
-   label: Text('badge'),
+   label: LText('badge'),
  ),
   
   """;
@@ -63,7 +63,7 @@ LRaisedButton(
    type: LElementType.danger,
    child: Row(
      children: <Widget>[
-       Text('Button'),
+       LText('Button'),
        Spacer(),
        LBadge.icon(
          type: LElementType.light,
@@ -133,7 +133,7 @@ LRaisedButton(
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text(
+                    LText(
                       "Badge",
                     ),
                   ],
@@ -384,7 +384,7 @@ LRaisedButton(
                   type: LElementType.danger,
                   child: Row(
                     children: <Widget>[
-                      Text('Button'),
+                      LText('Button'),
                       Spacer(),
                       LBadge(
                         type: LElementType.light,

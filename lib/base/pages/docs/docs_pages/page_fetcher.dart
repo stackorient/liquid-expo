@@ -15,6 +15,7 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/scroll_spy.
 import 'package:liquid_website/base/pages/docs/docs_pages/components/spinner.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/getting_started/ltext_documentation.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/getting_started/typography.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/more/contact_us.dart';
 
 import 'components/card.dart';
 import 'components/components.dart';
@@ -22,6 +23,7 @@ import 'components/list_group.dart';
 import 'env.dart';
 import 'getting_started/getting_started_pages.dart';
 import 'layout/overview.dart';
+import 'more/about_us.dart';
 
 Widget getPage(String pageKey) {
   switch (pageKey) {
@@ -92,6 +94,12 @@ Widget getPage(String pageKey) {
 
     case component_dropdown:
       return DropdownPage();
+
+    case aboutUs_page:
+      return AboutUsPage();
+
+    case contactUs_page:
+      return ContactUsPage();
 
     default:
       return Center(

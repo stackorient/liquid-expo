@@ -30,16 +30,17 @@ class MyApp extends StatelessWidget {
       navigatorKey: _routeManager.navigtor,
       styleSheet: {
         "link": LStyleBlock(
-            style: LSpanStyle(
-          recognizerHandler: (args) {
-            final href = args.get('href');
-            return TapGestureRecognizer()
-              ..onTap = () => href != null ? launch(href) : null;
-          },
-          style: TextStyle(
-            color: Colors.blue[800],
+          style: LSpanStyle(
+            recognizerHandler: (args) {
+              final href = args.get('href');
+              return TapGestureRecognizer()
+                ..onTap = () => href != null ? launch(href) : null;
+            },
+            style: TextStyle(
+              color: Colors.blue[800],
+            ),
           ),
-        ))
+        ),
       },
       navigatorObservers: [_routeManager.observer],
     );

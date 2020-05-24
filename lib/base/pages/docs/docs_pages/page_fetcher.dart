@@ -13,6 +13,8 @@ import 'package:liquid_website/base/pages/docs/docs_pages/components/models.dart
 import 'package:liquid_website/base/pages/docs/docs_pages/components/progress_indicator.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/scroll_spy.dart';
 import 'package:liquid_website/base/pages/docs/docs_pages/components/spinner.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/getting_started/ltext_documentation.dart';
+import 'package:liquid_website/base/pages/docs/docs_pages/getting_started/typography.dart';
 
 import 'components/card.dart';
 import 'components/components.dart';
@@ -25,6 +27,13 @@ Widget getPage(String pageKey) {
   switch (pageKey) {
     case intro_page:
       return Introduction();
+
+    case typography:
+      return TypographyPage();
+
+    case ltext_documentation:
+      return LTextPage();
+
     case theming_page:
       return Center(
         child: Text("Themeing page"),

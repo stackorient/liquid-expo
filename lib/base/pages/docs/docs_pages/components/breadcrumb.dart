@@ -93,6 +93,7 @@ LBreadCrumbs(
           style: _theme.typographyTheme.h4,
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -143,6 +144,7 @@ LBreadCrumbs(
         ),
         LRow(
           gutter: 10.0,
+          axis: LRowAxis.belowLG(Axis.vertical),
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
@@ -192,6 +194,7 @@ LBreadCrumbs(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [

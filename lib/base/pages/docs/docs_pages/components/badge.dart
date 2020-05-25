@@ -335,6 +335,7 @@ LRaisedButton(
         ),
         LRow(
           gutter: 10.0,
+          axis: LRowAxis.belowLG(Axis.vertical),
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
@@ -372,6 +373,7 @@ LRaisedButton(
         ),
         LRow(
           gutter: 10.0,
+          axis: LRowAxis.belowLG(Axis.vertical),
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(

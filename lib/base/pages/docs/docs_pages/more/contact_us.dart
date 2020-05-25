@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:liquid/liquid.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsPage extends StatelessWidget {
   final _title = "Contact Us";
@@ -31,17 +33,86 @@ class ContactUsPage extends StatelessWidget {
               : _theme.typographyTheme.lead,
         ),
         SizedBox(height: 35.0),
-        LText('\l.h4.bold{Team}\n'),
+        Row(
+          children: <Widget>[
+            LFlatButton.text(
+              size: LElementSize.medium,
+              text: 'StackOrient',
+              fillColor: Colors.blue,
+              onPressed: () => launch('https://stackorient.com/'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.linkedin_square, color: Colors.blue),
+              onPressed: () => launch(
+                  'https://www.linkedin.com/company/stackorient/?viewAsMember=true'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.instagram, color: Colors.pink),
+              onPressed: () =>
+                  launch('https://www.instagram.com/stackorient.inc/?hl=en'),
+            ),
+          ],
+        ),
         LText(
-            'Liquid is maintained and developed \l.link(href=https://twitter.com/heyrjs){@heyrjs} and \l.link(href=https://twitter.com/heypnd){@heypnd} on GitHub. We at \l.quote.bold{StackOrient Technologies} are actively looking to grow our team and would love to hear from you if '
-            'you\'re exited to develop something cool or are passionate to bring innovations.\n\n'),
-        LText(
-            'Liquid is the most advance flutter UI kit for building responsive, beautiful, cross-platform applications. It was created at StackOrient by \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs}. We have made this project to keep responsiveness as one of it'
-            's main feature. Along it we make sure to cover all the problems that we have faced being the flutter developers are solved to much of it'
-            's extent and also we have added some additional components to overcome or reduce the complication, difficulties and the time that is involved in building them.\n\n'),
-        LText('\l.h4.bold{Get Involved}\n'),
-        LText(
-            'Get involved with Liquid development team by opening an issue or submitting a \l.link(href=https://github.com/stackorient){pull request}.'),
+            '\n\n\l.quote.italic{Regarding any query} \l.link(href=mailto:support@stackorient.com){mail} us.\n\n\n\n'),
+        LText('\l.h4.bold{Contact the Team}\n\n'),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            LText('\l.bullet.lead.italic{Pulkit Nanda }\n'),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.linkedin_square, color: Colors.blue),
+              onPressed: () =>
+                  launch('https://www.linkedin.com/in/pulkit-nanda/'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.instagram, color: Colors.pink),
+              onPressed: () =>
+                  launch('https://www.instagram.com/pulkit.nanda/?hl=en'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.twitter, color: Colors.blue),
+              onPressed: () => launch('https://twitter.com/heypnd'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.github),
+              onPressed: () => launch('https://github.com/pulkitnanda49'),
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            LText('\l.bullet.lead.italic{Raj Singh }\n'),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.linkedin_square, color: Colors.blue),
+              onPressed: () => launch('https://www.linkedin.com/in/raj457036/'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.instagram, color: Colors.pink),
+              onPressed: () =>
+                  launch('https://www.instagram.com/hey_raj_here/?hl=en'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.twitter, color: Colors.blue),
+              onPressed: () => launch('https://twitter.com/heyrjs'),
+            ),
+            LIconButton(
+              splashThickness: 5.0,
+              icon: Icon(FontAwesome.github),
+              onPressed: () => launch('https://github.com/raj457036'),
+            ),
+          ],
+        ),
       ],
     );
   }

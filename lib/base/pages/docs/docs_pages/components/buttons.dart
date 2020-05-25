@@ -193,6 +193,7 @@ LOutlineButton.text(
           style: _theme.typographyTheme.h4,
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -243,6 +244,7 @@ LOutlineButton.text(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -289,6 +291,7 @@ LOutlineButton.text(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -427,6 +430,7 @@ LOutlineButton.text(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -471,6 +475,7 @@ LOutlineButton.text(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -514,6 +519,7 @@ LOutlineButton.text(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -557,6 +563,7 @@ LOutlineButton.text(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [

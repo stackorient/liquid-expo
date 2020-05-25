@@ -127,6 +127,7 @@ class ListGroupPage extends StatelessWidget {
           style: _theme.typographyTheme.h4,
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -186,6 +187,7 @@ class ListGroupPage extends StatelessWidget {
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -228,6 +230,7 @@ class ListGroupPage extends StatelessWidget {
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -276,6 +279,7 @@ class ListGroupPage extends StatelessWidget {
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -331,6 +335,7 @@ class ListGroupPage extends StatelessWidget {
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [

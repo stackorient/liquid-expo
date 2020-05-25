@@ -140,6 +140,7 @@ LCard(
           style: _theme.typographyTheme.h4,
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 20.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -229,6 +230,7 @@ LCard(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -271,6 +273,7 @@ LCard(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -311,6 +314,7 @@ LCard(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -355,6 +359,7 @@ LCard(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 20.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [

@@ -269,22 +269,22 @@ class _ScrollSpyState extends State<ScrollSpy> {
             "Provide \l.bold{ItemExtent} and \l.bold{ItemExtentBuilder} equal to null. ",
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(lg: 6, xl: 6, children: [
-                ScrollSpy(
-                  variableHeight: false,
-                ),
-              ]),
-              LColumn.child(
-                child: codeText(context, _linearcode),
-              )
-            ],
-          ),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(lg: 6, xl: 6, children: [
+              ScrollSpy(
+                variableHeight: false,
+              ),
+            ]),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _linearcode)),
+            )
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 25.0),
@@ -293,22 +293,22 @@ class _ScrollSpyState extends State<ScrollSpy> {
             "Use \l.bold{ItemExtentBuilder} to generate height based on item index or item id. ",
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(lg: 6, xl: 6, children: [
-                ScrollSpy(
-                  variableHeight: true,
-                ),
-              ]),
-              LColumn.child(
-                child: codeText(context, _linearcode2),
-              )
-            ],
-          ),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(lg: 6, xl: 6, children: [
+              ScrollSpy(
+                variableHeight: true,
+              ),
+            ]),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _linearcode2)),
+            )
+          ],
         ),
       ],
     );

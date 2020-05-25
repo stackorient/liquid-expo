@@ -82,6 +82,7 @@ LGrowSpinner(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -111,6 +112,7 @@ LGrowSpinner(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -146,6 +148,7 @@ LGrowSpinner(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
@@ -173,6 +176,7 @@ LGrowSpinner(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [

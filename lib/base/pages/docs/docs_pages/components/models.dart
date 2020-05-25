@@ -216,72 +216,72 @@ positionTween: Tween(
             style: _theme.typographyTheme.p,
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 4,
-                xl: 4,
-                child: LModel(
-                  header: LModelHeader(
-                    title: "LModel",
-                    onClose: () async {
-                      print("Model Closed");
-                      print("Terms Accepted: false");
-                    },
-                  ),
-                  body: LModelBody(
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 16.0),
-                      child: LText(
-                        "Created by \l.color(hex=#0000EE){@heypnd} and \l.color(hex=#0000EE){@heyrjs}",
-                      ),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 4,
+              xl: 4,
+              child: LModel(
+                header: LModelHeader(
+                  title: "LModel",
+                  onClose: () async {
+                    print("Model Closed");
+                    print("Terms Accepted: false");
+                  },
+                ),
+                body: LModelBody(
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 16.0),
+                    child: LText(
+                      "Created by \l.color(hex=#0000EE){@heypnd} and \l.color(hex=#0000EE){@heyrjs}",
                     ),
                   ),
-                  footer: LModelFooter(
-                    actions: <Widget>[
-                      LFlatButton.text(
-                        text: "Accept",
-                        onPressed: () {},
-                        type: LElementType.primary,
-                      ),
-                    ],
-                  ),
+                ),
+                footer: LModelFooter(
+                  actions: <Widget>[
+                    LFlatButton.text(
+                      text: "Accept",
+                      onPressed: () {},
+                      type: LElementType.primary,
+                    ),
+                  ],
                 ),
               ),
-              LColumn.child(
-                child: codeText(context, _modalExmpl),
-              )
-            ],
-          ),
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _modalExmpl)),
+            )
+          ],
         ),
         Text(
           "Live Demo",
           style: _theme.typographyTheme.h4,
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 4,
-                xl: 4,
-                child: LFlatButton.text(
-                  text: "Live Demo",
-                  onPressed: () => _showModel(
-                      context, Offset(0.0, -10.0), Alignment.topCenter),
-                ),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 4,
+              xl: 4,
+              child: LFlatButton.text(
+                text: "Live Demo",
+                onPressed: () => _showModel(
+                    context, Offset(0.0, -10.0), Alignment.topCenter),
               ),
-              LColumn.child(
-                child: codeText(context, _linearcode),
-              )
-            ],
-          ),
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _linearcode)),
+            )
+          ],
         ),
         Text(
           "Flow in animations",
@@ -295,6 +295,7 @@ positionTween: Tween(
           ),
         ),
         LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [

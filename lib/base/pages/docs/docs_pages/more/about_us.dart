@@ -35,12 +35,18 @@ class AboutUsPage extends StatelessWidget {
         SizedBox(height: 35.0),
         LText('\l.h4.bold{Team}\n'),
         LText(
-            'Liquid is maintained and developed \l.link(href=https://twitter.com/heyrjs){@heyrjs} and \l.link(href=https://twitter.com/heypnd){@heypnd} on GitHub. We at \l.quote.bold{StackOrient Technologies} are actively looking to grow our team and would love to hear from you if '
+            'Liquid is maintained and developed by \l.link(href=https://twitter.com/heyrjs){@heyrjs} and \l.link(href=https://twitter.com/heypnd){@heypnd} on GitHub. We at \l.quote.bold{StackOrient Technologies} are actively looking to grow our team and would love to hear from you if '
             'you\'re exited to develop something cool or are passionate to bring innovations.\n\n'),
-        LText(
-            'Liquid is the most advance flutter UI kit for building responsive, beautiful, cross-platform applications. It was created at StackOrient by \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs}. We have made this project to keep responsiveness as one of it'
-            's main feature. Along it we make sure to cover all the problems that we have faced being the flutter developers are solved to much of it'
-            's extent and also we have added some additional components to overcome or reduce the complication, difficulties and the time that is involved in building them.\n\n'),
+        LText('Liquid is one of the most advanced flutter UI kit for building '
+            'responsive, beautiful, cross-platform applications. '
+            'It was created at StackOrient by \l.link(href=https://twitter.com/heypnd){@heypnd}'
+            ' and \l.link(href=https://twitter.com/heyrjs){@heyrjs}.\n'
+            'The inspiration of liquid came from the fact that flutter is'
+            ' cross-platform but still when we create an app in flutter it'
+            ' takes a lot of time to manage the alignment and position of '
+            'widgets on different screen sizes. Liquid solves this and many'
+            ' countless problems like styling text, web-supported components,'
+            ' powerful form support along with necessary utilities.\n'),
         LText('\l.h4.bold{Get Involved}\n'),
         LText(
             'Get involved with Liquid development team by opening an issue or submitting a \l.link(href=https://github.com/stackorient){pull request}.'),

@@ -452,6 +452,7 @@ class DropdownPage extends StatelessWidget {
         LBox(
           height: LBoxDimension.all(450.0),
           child: LRow(
+            axis: LRowAxis.belowLG(Axis.vertical),
             gutter: 10.0,
             crossAxisAlignment: CrossAxisAlignment.center,
             columns: [
@@ -471,22 +472,22 @@ class DropdownPage extends StatelessWidget {
             "Whether [LDropdown] should close when a trigger changes its position",
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(lg: 4, xl: 4, children: [
-                Dropdown1(
-                  scrollToClose: true,
-                ),
-              ]),
-              LColumn.child(
-                child: codeText(context, _scrolltoclosecode),
-              )
-            ],
-          ),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(lg: 4, xl: 4, children: [
+              Dropdown1(
+                scrollToClose: true,
+              ),
+            ]),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _scrolltoclosecode)),
+            )
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 25.0),
@@ -496,22 +497,22 @@ class DropdownPage extends StatelessWidget {
             " and `scrollable` is `true` then [LDropdown] will follow trigger on scroll",
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(lg: 4, xl: 4, children: [
-                Dropdown2(
-                  scrollable: true,
-                ),
-              ]),
-              LColumn.child(
-                child: codeText(context, _scrollablecode),
-              )
-            ],
-          ),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(lg: 4, xl: 4, children: [
+              Dropdown2(
+                scrollable: true,
+              ),
+            ]),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _scrollablecode)),
+            )
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 25.0),
@@ -560,24 +561,24 @@ class DropdownPage extends StatelessWidget {
             " default is Black with opacity 26%",
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(lg: 4, xl: 4, children: [
-                Dropdown2(
-                  scrollToClose: false,
-                  scrollable: false,
-                  backdrop: _theme.colors.danger.withOpacity(0.2),
-                ),
-              ]),
-              LColumn.child(
-                child: codeText(context, _backdropcode),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(lg: 4, xl: 4, children: [
+              Dropdown2(
+                scrollToClose: false,
+                scrollable: false,
+                backdrop: _theme.colors.danger.withOpacity(0.2),
               ),
-            ],
-          ),
+            ]),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _backdropcode)),
+            ),
+          ],
         ),
       ],
     );

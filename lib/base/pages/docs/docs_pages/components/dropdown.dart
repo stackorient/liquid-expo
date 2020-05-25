@@ -446,8 +446,8 @@ class DropdownPage extends StatelessWidget {
               : _theme.typographyTheme.lead,
         ),
         SizedBox(height: 35.0),
-        LBox(
-          height: LBoxDimension.all(450.0),
+        Container(
+          constraints: BoxConstraints(maxHeight: 600.0),
           child: LRow(
             axis: LRowAxis.belowLG(Axis.vertical),
             gutter: 10.0,
@@ -463,7 +463,7 @@ class DropdownPage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 25.0),
+          padding: const EdgeInsets.only(top: 15.0),
           child: LText(
             " \l.h4.bold{With Scroll to close}\n"
             "Whether [LDropdown] should close when a trigger changes its position",

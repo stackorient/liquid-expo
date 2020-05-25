@@ -73,27 +73,6 @@ LRaisedButton.text(
   
   """;
 
-  final _buttonCode = """
-
-LRaisedButton(
-   size: LElementSize.medium,
-   type: LElementType.danger,
-   child: Row(
-     children: <Widget>[
-       Text('Button'),
-       Spacer(),
-       LBadge.icon(
-         type: LElementType.light,
-         icon: Icon(Icons.ac_unit),
-         label: Text(''),
-       ),
-     ],
-   ),
-   onPressed: () {},
- ),
-
-  """;
-
   final _raisedButton = """
 
  LRaisedButton(
@@ -445,7 +424,6 @@ LOutlineButton.text(
                     onPressed: () {},
                     pushAction: LRaisedButtonPushAction.elevate,
                   ),
-                  Spacer(),
                   LRaisedButton(
                     type: LElementType.danger,
                     child: Text('Raised with pushDown.'),
@@ -456,7 +434,7 @@ LOutlineButton.text(
               ),
             ),
             LColumn.child(
-              child: codeText(context, _raisedButton),
+              child: codeText(context, _raisedButton, scrollable: false),
             )
           ],
         ),
@@ -489,7 +467,6 @@ LOutlineButton.text(
                     type: LElementType.success,
                     onPressed: () {},
                   ),
-                  Spacer(),
                   LOutlineButton.text(
                     text: 'Pill',
                     type: LElementType.danger,
@@ -533,7 +510,6 @@ LOutlineButton.text(
                     type: LElementType.success,
                     onPressed: () {},
                   ),
-                  Spacer(),
                   LFlatButton.text(
                     text: 'Pill',
                     type: LElementType.danger,
@@ -581,7 +557,6 @@ LOutlineButton.text(
                     radius: 5.0,
                     onPressed: () {},
                   ),
-                  Spacer(),
                   LIconButton(
                     icon: Icon(
                       Icons.adb,

@@ -267,124 +267,124 @@ Padding(
             "With \l.bold{LFormManager} we don't need to build controllers for every textFormField.",
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(
-                lg: 6,
-                xl: 6,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  LForm(
-                    manager: LFormManager(),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        LRow(
-                          gutter: 8.0,
-                          useMediaQuery: false,
-                          columns: [
-                            LColumn.child(
-                              child: LTextFormField(
-                                name: "First Name", // for serialization
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    labelText: 'First Name'),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(
+              lg: 6,
+              xl: 6,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                LForm(
+                  manager: LFormManager(),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      LRow(
+                        axis: LRowAxis.belowLG(Axis.vertical),
+                        gutter: 8.0,
+                        useMediaQuery: false,
+                        columns: [
+                          LColumn.child(
+                            child: LTextFormField(
+                              name: "First Name", // for serialization
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: 'First Name'),
 
-                                initialValue: 'First',
-                                validators: [
-                                  LRequiredValidator(
-                                      invalidMessage: 'Fill first name field.'),
-                                ],
-                              ),
+                              initialValue: 'First',
+                              validators: [
+                                LRequiredValidator(
+                                    invalidMessage: 'Fill first name field.'),
+                              ],
                             ),
-                            LColumn.child(
-                              child: LTextFormField(
-                                name: "Last Name", // for serialization
-                                decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    labelText: 'Last Name'),
+                          ),
+                          LColumn.child(
+                            child: LTextFormField(
+                              name: "Last Name", // for serialization
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: 'Last Name'),
 
-                                initialValue: 'Last',
-                                validators: [
-                                  LRequiredValidator(
-                                      invalidMessage: 'Fill last name field.'),
-                                ],
-                              ),
+                              initialValue: 'Last',
+                              validators: [
+                                LRequiredValidator(
+                                    invalidMessage: 'Fill last name field.'),
+                              ],
                             ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: LTextFormField(
+                          name: "email", // for serialization
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Email-id',
+                          ),
+
+                          initialValue: 'xyz@xyz.com',
+                          validators: [
+                            LRequiredValidator(),
+                            LEmailValidator(
+                                invalidMessage:
+                                    "Please enter correct email address")
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: LTextFormField(
-                            name: "email", // for serialization
-                            decoration: InputDecoration(
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: LTextFormField(
+                          name: "password", // for serialization
+                          decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'Email-id',
-                            ),
+                              labelText: 'Password'),
 
-                            initialValue: 'xyz@xyz.com',
-                            validators: [
-                              LRequiredValidator(),
-                              LEmailValidator(
-                                  invalidMessage:
-                                      "Please enter correct email address")
-                            ],
-                          ),
+                          initialValue: '******',
+                          validators: [
+                            LRequiredValidator(
+                                invalidMessage:
+                                    'Password must be between 5-8 characters.'),
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8.0),
-                          child: LTextFormField(
-                            name: "password", // for serialization
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'Password'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: LRaisedButton.text(
+                          text: "Submit",
+                          margin: const EdgeInsets.symmetric(vertical: 16.0),
+                          onPressed: () {
+                            // Validate will return true if the form is valid, or false if
+                            // the form is invalid.
 
-                            initialValue: '******',
-                            validators: [
-                              LRequiredValidator(
-                                  invalidMessage:
-                                      'Password must be between 5-8 characters.'),
-                            ],
-                          ),
+                            print(LFormManager()
+                                .formState
+                                .isDirty); // print if form is dirty
+
+                            if (LFormManager().formState.validate()) {
+                              // Get Serialized Data
+                              final data = LFormManager().formState.serialize();
+                              print(data); // {'email': 'xyz@xyz.com'}
+
+                            }
+                          },
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: LRaisedButton.text(
-                            text: "Submit",
-                            margin: const EdgeInsets.symmetric(vertical: 16.0),
-                            onPressed: () {
-                              // Validate will return true if the form is valid, or false if
-                              // the form is invalid.
-
-                              print(LFormManager()
-                                  .formState
-                                  .isDirty); // print if form is dirty
-
-                              if (LFormManager().formState.validate()) {
-                                // Get Serialized Data
-                                final data =
-                                    LFormManager().formState.serialize();
-                                print(data); // {'email': 'xyz@xyz.com'}
-
-                              }
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              LColumn.child(
-                child: codeText(context, _linearcode),
-              )
-            ],
-          ),
+                ),
+              ],
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _linearcode)),
+            )
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 25.0),
@@ -444,83 +444,83 @@ Padding(
               "   \l.bullet.bold{isUntouched} - True if the field is touched.\n"
               "   \l.bullet.bold{errorText} - The current validation error returned by the [LFormField.validator]\n"),
         ),
-        LBox(
-          height: LBoxDimension.all(450.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(
-                  lg: 6,
-                  xl: 6,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: LTextFormField(
-                        enabled: true,
-                        onTap: () {},
-                        name: "email", // for serialization
-                        decoration: InputDecoration(
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(
+                lg: 6,
+                xl: 6,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: LTextFormField(
+                      enabled: true,
+                      onTap: () {},
+                      name: "email", // for serialization
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide: BorderSide(
+                              color: _theme.colors.info,
+                            )),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            borderSide: BorderSide(
+                              color: _theme.colors.info,
+                            )),
+                        labelText: 'Email-id',
+                      ),
+
+                      initialValue: 'xyz@xyz.com',
+                      validators: [
+                        LRequiredValidator(),
+                        LEmailValidator(
+                            invalidMessage:
+                                "Please enter correct email address")
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: LTextFormField(
+                      enabled: true,
+                      onTap: () {},
+
+                      name: "password", // for serialization
+                      decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20.0),
                               borderSide: BorderSide(
-                                color: _theme.colors.info,
+                                color: _theme.colors.danger.lighten(0.1),
                               )),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20.0),
                               borderSide: BorderSide(
-                                color: _theme.colors.info,
+                                color: _theme.colors.danger.lighten(0.1),
                               )),
-                          labelText: 'Email-id',
-                        ),
+                          labelText: 'Password'),
 
-                        initialValue: 'xyz@xyz.com',
-                        validators: [
-                          LRequiredValidator(),
-                          LEmailValidator(
-                              invalidMessage:
-                                  "Please enter correct email address")
-                        ],
-                      ),
+                      initialValue: '******',
+                      validators: [
+                        LRequiredValidator(
+                            invalidMessage:
+                                'Password must be between 5-8 characters.'),
+                      ],
                     ),
-                    SizedBox(
-                      height: 40.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: LTextFormField(
-                        enabled: true,
-                        onTap: () {},
-
-                        name: "password", // for serialization
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20.0),
-                                borderSide: BorderSide(
-                                  color: _theme.colors.danger.lighten(0.1),
-                                )),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20.0),
-                                borderSide: BorderSide(
-                                  color: _theme.colors.danger.lighten(0.1),
-                                )),
-                            labelText: 'Password'),
-
-                        initialValue: '******',
-                        validators: [
-                          LRequiredValidator(
-                              invalidMessage:
-                                  'Password must be between 5-8 characters.'),
-                        ],
-                      ),
-                    ),
-                  ]),
-              LColumn.child(
-                child: codeText(context, _fieldCode),
-              )
-            ],
-          ),
+                  ),
+                ]),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(400.0),
+                  child: codeText(context, _fieldCode)),
+            )
+          ],
         ),
       ],
     );

@@ -248,15 +248,16 @@ LCarousel(
           "Example",
           style: _theme.typographyTheme.h4,
         ),
-        LBox(
-          height: LBoxDimension.aboveXS(320.0),
-          child: LRow(
-            gutter: 10.0,
-            mainAxisAlignment: MainAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 4,
-                xl: 6,
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          mainAxisAlignment: MainAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 4,
+              xl: 6,
+              child: LBox(
+                height: LBoxDimension.all(250.0),
                 child: LCarousel(
                   withCaption: true,
                   autoScroll: true,
@@ -298,11 +299,13 @@ LCarousel(
                   ],
                 ),
               ),
-              LColumn.child(
-                child: codeText(context, _code),
-              ),
-            ],
-          ),
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(250.0),
+                  child: codeText(context, _code)),
+            ),
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
@@ -318,15 +321,16 @@ LCarousel(
             style: _theme.typographyTheme.p,
           ),
         ),
-        LBox(
-          height: LBoxDimension.aboveXS(320.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 4,
-                xl: 6,
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 4,
+              xl: 6,
+              child: LBox(
+                height: LBoxDimension.all(250.0),
                 child: LCarousel(
                   withControls: true,
                   canScroll: true,
@@ -352,11 +356,13 @@ LCarousel(
                   ],
                 ),
               ),
-              LColumn.child(
-                child: codeText(context, _headCode),
-              )
-            ],
-          ),
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(250.0),
+                  child: codeText(context, _headCode)),
+            )
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
@@ -372,15 +378,16 @@ LCarousel(
             style: _theme.typographyTheme.p,
           ),
         ),
-        LBox(
-          height: LBoxDimension.aboveXS(320.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 4,
-                xl: 6,
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 4,
+              xl: 6,
+              child: LBox(
+                height: LBoxDimension.all(250.0),
                 child: LCarousel(
                   showIndicator: true,
                   enableIndicatorTapControl: true,
@@ -408,11 +415,13 @@ LCarousel(
                   ],
                 ),
               ),
-              LColumn.child(
-                child: codeText(context, _imageCode),
-              )
-            ],
-          ),
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(250.0),
+                  child: codeText(context, _imageCode)),
+            )
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
@@ -428,15 +437,16 @@ LCarousel(
             style: _theme.typographyTheme.p,
           ),
         ),
-        LBox(
-          height: LBoxDimension.aboveXS(320.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 4,
-                xl: 6,
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 4,
+              xl: 6,
+              child: LBox(
+                height: LBoxDimension.all(250.0),
                 child: LCarousel(
                   withCaption: true,
                   showIndicator: true,
@@ -506,11 +516,13 @@ LCarousel(
                   ],
                 ),
               ),
-              LColumn.child(
-                child: codeText(context, _colorCode),
-              )
-            ],
-          ),
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(250.0),
+                  child: codeText(context, _colorCode)),
+            )
+          ],
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
@@ -526,15 +538,16 @@ LCarousel(
             style: _theme.typographyTheme.p,
           ),
         ),
-        LBox(
-          height: LBoxDimension.aboveXS(320.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 4,
-                xl: 6,
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 4,
+              xl: 6,
+              child: LBox(
+                height: LBoxDimension.all(250.0),
                 child: LCarousel(
                   autoScroll: true,
                   showIndicator: true,
@@ -563,11 +576,13 @@ LCarousel(
                   ],
                 ),
               ),
-              LColumn.child(
-                child: codeText(context, _borderCode),
-              )
-            ],
-          ),
+            ),
+            LColumn.child(
+              child: LBox(
+                  height: LBoxDimension.all(250.0),
+                  child: codeText(context, _borderCode)),
+            )
+          ],
         ),
       ],
     );

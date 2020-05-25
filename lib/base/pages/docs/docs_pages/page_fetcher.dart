@@ -1,25 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'components/badge.dart';
-import 'components/breadcrumb.dart';
-import 'components/button_group.dart';
-import 'components/buttons.dart';
-import 'components/card.dart';
-import 'components/carousel.dart';
-import 'components/collapse.dart';
 import 'components/components.dart';
-import 'components/dropdown.dart';
-import 'components/expansion.dart';
-import 'components/form.dart';
-import 'components/header_tag.dart';
-import 'components/list_group.dart';
-import 'components/models.dart';
-import 'components/progress_indicator.dart';
-import 'components/scroll_spy.dart';
-import 'components/spinner.dart';
 import 'env.dart';
 import 'getting_started/getting_started_pages.dart';
-import 'layout/overview.dart';
+import 'layout/layout_pages.dart';
 import 'more/about_us.dart';
 import 'more/contact_us.dart';
 
@@ -38,12 +22,16 @@ Widget getPage(String pageKey) {
       return LTextPage();
 
     case theming_page:
-      return Center(
-        child: Text("Themeing page"),
-      );
+      return ThemingSection();
 
     case layout_overview:
       return LayoutOverview();
+
+    case layout_grid:
+      return GridSystem();
+
+    case layout_utils:
+      return LayoutUtility();
 
     case component_alert:
       return AlertPage();

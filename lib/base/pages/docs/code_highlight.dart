@@ -8,28 +8,28 @@ import 'package:liquid/liquid.dart';
 Widget codeText(BuildContext context, String code,
     {String lang = 'dart', double fontSize, bool scrollable = true}) {
   final _mq = MediaQuery.of(context);
-  final _themeModeOn = _mq.platformBrightness == Brightness.dark;
 
-  final _codeContent = Container(
+  final _codeContent = HighlightView(
+    code,
+    language: lang,
+    theme: atomOneDarkTheme,
+    padding: EdgeInsets.all(12),
+    textStyle: TextStyle(
+      fontFamily: 'Roboto Mono',
+      fontSize: fontSize ?? (_mq.isXS || _mq.isSM ? 12.0 : 14.0),
+    ),
+  );
+
+  final _scrollable = Container(
     constraints: BoxConstraints(minWidth: double.infinity),
     padding: const EdgeInsets.symmetric(vertical: 15.0),
     child: ClipRRect(
       borderRadius: BorderRadius.circular(5.0),
-      child: HighlightView(
-        code,
-        language: lang,
-        theme: _themeModeOn ? atomOneDarkTheme : atomOneLightTheme,
-        padding: EdgeInsets.all(12),
-        textStyle: TextStyle(
-          fontFamily: 'Roboto Mono',
-          fontSize: fontSize ?? (_mq.isXS || _mq.isSM ? 12.0 : 14.0),
-        ),
-      ),
+      child: scrollable
+          ? SingleChildScrollView(child: _codeContent)
+          : _codeContent,
     ),
   );
-
-  final _scrollable =
-      scrollable ? SingleChildScrollView(child: _codeContent) : null;
 
   return Stack(
     children: <Widget>[

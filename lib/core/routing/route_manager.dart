@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../base/base.dart';
+import '../../base/pages/docs/docs_pages/env.dart';
 import '../injector/injector.dart';
 import 'routes.dart';
 
@@ -38,7 +39,8 @@ class RouteManager extends ChangeNotifier {
         _currentRoute = docsRoute;
         return _getRoute(
             BlocProvider<DocsBloc>(
-              create: (context) => injector<DocsBloc>(),
+              create: (context) => injector<DocsBloc>()
+                ..add(LoadDocFor(intro_page, "Getting Started")),
               child: DocsPage(),
             ),
             settings);

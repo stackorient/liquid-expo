@@ -122,18 +122,20 @@ class _IntroductionState extends State<Introduction> {
 
   void addColum() {
     final colLen = cols.length;
-    if (colLen < 12)
+    setState(() {
       cols.add(
         LColumn.child(
           child: CounterBlock(number: colLen + 1),
         ),
       );
-    setState(() {});
+    });
   }
 
   void removeColumn() {
-    if (cols.length > 1) cols.removeLast();
-    setState(() {});
+    setState(() {
+      cols.removeLast();
+    });
+    print(cols.length);
   }
 
   String getColContent() {
@@ -141,7 +143,6 @@ class _IntroductionState extends State<Introduction> {
 
     final _first = """
 LRow(
-  mode: LGridMode.ratio,
   columns: [
 """;
 
@@ -185,7 +186,7 @@ LRow(
           text: "Continue to Quick Start",
           onPressed: () {
             BlocProvider.of<DocsBloc>(context).add(
-              LoadDocFor(getting_started_page),
+              LoadDocFor(getting_started_page, "Getting Started"),
             );
           },
         ),
@@ -248,7 +249,7 @@ LText(
                   ),
                   codeText(context, """
 LText(
-"The quick \\l.bold.color(hex=#F2994A){brown fox} jumps over the lazy dog.",
+"The quick \\l.italic.underline{brown fox} jumps over the \l.bold{lazy} dog.",
 ),            
                     """),
                   LText(
@@ -475,14 +476,14 @@ size: LElementSize.large,
             heading: LAlertHeading(
               text: "Looks Better In Desktop",
             ),
-            text:
-                "Liquid's LRow becomes vertical in XS breakpoint. so come back to it on device"
-                " with larger screen.\n"
-                "\l.bold{NOTE}: You can change this behaviour using \l.bold{axis} property of \l.bold{LRow}",
+            child: LText(
+              "Liquid's LRow becomes vertical in XS breakpoint. so come back to it on device"
+              " with larger screen.\n"
+              "\l.bold{NOTE}: You can change this behaviour using \l.bold{axis} property of \l.bold{LRow}",
+            ),
           ),
         ),
         LRow(
-          mode: LGridMode.ratio,
           columns: cols,
         ),
         LRow(
@@ -505,7 +506,7 @@ size: LElementSize.large,
                       icon: Icon(Icons.remove),
                       label: Text("Remove Column"),
                       type: LElementType.danger,
-                      onPressed: cols.length > 1 ? removeColumn : null,
+                      onPressed: cols.length >= 2 ? removeColumn : null,
                     ),
                   ),
                 ],

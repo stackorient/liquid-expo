@@ -138,7 +138,7 @@ class MyApp extends StatelessWidget {
             "   \l.bullet{LiquidTheme}\n"
             "   \l.bullet{LiquidStateManager}\n"
             "   \l.bullet{Liquid Style Class Provider}\n"
-            "\.bold{NOTE} : LiquidApp wraps MaterialApp internally. \l.bold.underline{LiquidCupertinoApp} will be available in next major update.",
+            "\l.bold{NOTE} : LiquidApp wraps MaterialApp internally. \l.bold.underline{LiquidCupertinoApp} will be available in next major update.",
           ),
         ),
       ],

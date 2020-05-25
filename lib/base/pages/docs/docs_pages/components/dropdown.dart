@@ -126,12 +126,12 @@ class Dropdown2 extends StatelessWidget {
           onTap: () {},
         ),
         LDropdownItem(
-          text: "\l.link(href=https://twitter.com/heyrjs)@heyrjs",
+          text: "\l.link(href=https://twitter.com/heyrjs){@heyrjs}",
           onTap: () {
             print("pressed");
           },
           onLongPress: () {
-            print("\l.link(href=https://twitter.com/heypnd)@heypnd");
+            print("\l.link(href=https://twitter.com/heypnd){@heypnd}");
           },
         ),
         LDropdownItem(
@@ -170,10 +170,7 @@ class DropdownPage extends StatelessWidget {
 
   LDropdown(
    key: _dropdown,
-   scrollToClose: false,
-   scrollable: true,
-   // backdrop: Colors.red.withOpacity(0.4),
-
+   scrollable: false,
    elevation: 10.0,
    trigger: LFlatButton.text(
      text: "Dropdown",
@@ -457,7 +454,7 @@ class DropdownPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             columns: [
               LColumn(lg: 4, xl: 4, children: [
-                Dropdown1(),
+                Dropdown1(scrollable: false),
               ]),
               LColumn.child(
                 child: codeText(context, _linearcode),
@@ -556,7 +553,7 @@ class DropdownPage extends StatelessWidget {
           padding: const EdgeInsets.only(top: 25.0),
           child: LText(
             "\l.h4.bold{With backdrop}\n"
-            "When `scrollable` is `false`, the dropdown will show a backdrop"
+            "When \l.bold{scrollable} is \lbold{false}, the dropdown will show a backdrop"
             " which on tap event, dismisses the active dropdown"
             " default is Black with opacity 26%",
           ),

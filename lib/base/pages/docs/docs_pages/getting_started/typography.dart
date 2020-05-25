@@ -161,7 +161,7 @@ class TypographyPage extends StatelessWidget {
           child: LText(
             '\l.h5{Example}\n'
             "The below example will create a text with \l.bold{bold}, "
-            "\l.italic{italic} and \l.underline{underline} style applied to \l.lead{World}.\n"
+            "\l.italic{italic} and \l.underline{underline} style applied to \l.bold{World}.\n\n"
             "To know more about \l.bold{LText} or use typography and other features like"
             " \l.bold{inline stylesheet} or \l.bold{link} or \l.bold{capitalize} or other"
             " default style classes do look into \l.color(hex=#0000ff).ltext{LText documentation}. ",
@@ -177,26 +177,24 @@ class TypographyPage extends StatelessWidget {
             },
           ),
         ),
-        LBox(
-          height: LBoxDimension.all(150.0),
-          child: LRow(
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn.child(
-                lg: 6,
-                xl: 6,
-                mainAxisAlignment: MainAxisAlignment.center,
-                child: LText("Hello \l.bold.italic.underline{World}"),
+        LRow(
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              lg: 6,
+              xl: 6,
+              mainAxisAlignment: MainAxisAlignment.center,
+              child: LText("Hello \l.bold.italic.underline{World}"),
+            ),
+            LColumn.child(
+              child: codeText(
+                context,
+                _linearcode,
+                scrollable: mq.isXS || mq.isSM || mq.isMD,
               ),
-              LColumn.child(
-                child: codeText(context, _linearcode),
-              )
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 100.0,
+            )
+          ],
         ),
       ],
     );

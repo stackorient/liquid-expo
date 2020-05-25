@@ -1,7 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:liquid/liquid.dart';
-import 'package:liquid_website/base/base.dart';
+
+import '../../bloc/docs_bloc.dart';
 import '../../code_highlight.dart';
+import '../env.dart';
 
 class TypographyPage extends StatelessWidget {
   final _title = "Typography";
@@ -10,45 +14,45 @@ class TypographyPage extends StatelessWidget {
 
   final _linearcode = """
 
-  LText("Hello \l.bold.italic.underline{World}")
+  LText("Hello \l.bold.italic.underline{World}");
 
   """;
   final _headingcode = """
 
-  LiquidTheme.of(context).typographyTheme.h1
+  LiquidTheme.of(context).typographyTheme.h1;
 
-  LiquidTheme.of(context).typographyTheme.h2
+  LiquidTheme.of(context).typographyTheme.h2;
   
-  LiquidTheme.of(context).typographyTheme.h3
+  LiquidTheme.of(context).typographyTheme.h3;
 
-  LiquidTheme.of(context).typographyTheme.h4
+  LiquidTheme.of(context).typographyTheme.h4;
 
-  LiquidTheme.of(context).typographyTheme.h5
+  LiquidTheme.of(context).typographyTheme.h5;
 
-  LiquidTheme.of(context).typographyTheme.h6
+  LiquidTheme.of(context).typographyTheme.h6;
 
   """;
   final _displaycode = """
 
-  LiquidTheme.of(context).typographyTheme.display1
+  LiquidTheme.of(context).typographyTheme.display1;
 
-  LiquidTheme.of(context).typographyTheme.display2
+  LiquidTheme.of(context).typographyTheme.display2;
 
-  LiquidTheme.of(context).typographyTheme.display3
+  LiquidTheme.of(context).typographyTheme.display3;
 
-  LiquidTheme.of(context).typographyTheme.display4
+  LiquidTheme.of(context).typographyTheme.display4;
 
   """;
 
   final _inlinecode = """
 
-  LText("\l.p{Liquid the most advance flutter UI kit.}\n\n"),
+  LText("\\l.p{Liquid the most advance flutter UI kit.}");
 
-  LText("\l.small{Liquid the most advance flutter UI kit.}\n\n"),
+  LText("\\l.small{Liquid the most advance flutter UI kit.}");
 
-  LText("\l.lead{Liquid the most advance flutter UI kit.}\n\n"),
+  LText("\\l.lead{Liquid the most advance flutter UI kit.}");
 
-  LText("\l.quote{Liquid the most advance flutter UI kit.}\n\n"),
+  LText("\\l.quote{Liquid the most advance flutter UI kit.}");
 
 
   """;
@@ -156,10 +160,24 @@ class TypographyPage extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 25.0),
-          child: LText('\l.h5{Example}\n'
-              "The below example will create a text with bold, italic and underline style applied"
-              " to `World`.\n"
-              "To know more about LText or use typography and other features like inline stylesheet or link and capitalize functions do look into it's documentation. "),
+          child: LText(
+            '\l.h5{Example}\n'
+            "The below example will create a text with \l.bold{bold}, "
+            "\l.italic{italic} and \l.underline{underline} style applied to \l.lead{World}.\n"
+            "To know more about \l.bold{LText} or use typography and other features like"
+            " \l.bold{inline stylesheet} or \l.bold{link} or \l.bold{capitalize} or other"
+            " default style classes do look into \l.color(hex=#0000ff).ltext{LText documentation}. ",
+            inlineStyleSheet: {
+              "ltext": LStyleBlock(
+                style: LSpanStyle(
+                  recognizerHandler: (args) => TapGestureRecognizer()
+                    ..onTap = () => BlocProvider.of<DocsBloc>(context).add(
+                          LoadDocFor(ltext_documentation),
+                        ),
+                ),
+              ),
+            },
+          ),
         ),
         LBox(
           height: LBoxDimension.all(150.0),

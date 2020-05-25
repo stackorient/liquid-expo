@@ -5,30 +5,35 @@ import 'package:flutter_highlight/themes/atom-one-dark.dart';
 import 'package:flutter_highlight/themes/atom-one-light.dart';
 import 'package:liquid/liquid.dart';
 
-Widget codeText(BuildContext context, String code, {String lang = 'dart'}) {
+Widget codeText(BuildContext context, String code,
+    {String lang = 'dart', double fontSize, bool scrollable = true}) {
   final _mq = MediaQuery.of(context);
   final _themeModeOn = _mq.platformBrightness == Brightness.dark;
-  return Stack(
-    children: <Widget>[
-      SingleChildScrollView(
-        child: Container(
-          constraints: BoxConstraints(minWidth: double.infinity),
-          padding: const EdgeInsets.symmetric(vertical: 15.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(5.0),
-            child: HighlightView(
-              code,
-              language: lang,
-              theme: _themeModeOn ? atomOneDarkTheme : atomOneLightTheme,
-              padding: EdgeInsets.all(12),
-              textStyle: TextStyle(
-                fontFamily: 'Roboto Mono',
-                fontSize: _mq.isSM || _mq.isXS ? 12.8 : 14.0,
-              ),
-            ),
-          ),
+
+  final _codeContent = Container(
+    constraints: BoxConstraints(minWidth: double.infinity),
+    padding: const EdgeInsets.symmetric(vertical: 15.0),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(5.0),
+      child: HighlightView(
+        code,
+        language: lang,
+        theme: _themeModeOn ? atomOneDarkTheme : atomOneLightTheme,
+        padding: EdgeInsets.all(12),
+        textStyle: TextStyle(
+          fontFamily: 'Roboto Mono',
+          fontSize: fontSize ?? (_mq.isXS || _mq.isSM ? 12.0 : 14.0),
         ),
       ),
+    ),
+  );
+
+  final _scrollable =
+      scrollable ? SingleChildScrollView(child: _codeContent) : null;
+
+  return Stack(
+    children: <Widget>[
+      _scrollable ?? _codeContent,
       Positioned(
         right: 0.0,
         top: 13.0,

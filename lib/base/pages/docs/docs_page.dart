@@ -19,6 +19,7 @@ class _DocsPageState extends State<DocsPage> {
   void initState() {
     super.initState();
 
+    // initally open intro page
     _openSection(intro_page);
   }
 

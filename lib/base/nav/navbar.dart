@@ -1,3 +1,5 @@
+import 'package:flare_flutter/flare_actor.dart';
+import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:liquid/liquid.dart';
@@ -7,6 +9,17 @@ import '../../core/core.dart';
 class NavBar extends StatelessWidget {
   final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
 
+  final FlareControls controls = FlareControls()
+    ..onCompleted('flow')
+    ..play('flow');
+
+  void replay() => controls.play('flow');
+
+  void startLoop() {
+    controls.isActive.removeListener(replay);
+    controls.isActive.addListener(replay);
+  }
+
   _openDropDown() {
     _dropdown.currentState.toggleDropdown();
   }
@@ -15,6 +28,8 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final _theme = LiquidTheme.of(context);
     final _currentRoute = injector<RouteManager>().currentRoute;
+    startLoop();
+
     return LBox(
       margin: LBoxEdgeInsets.aboveMD(
         EdgeInsets.symmetric(horizontal: 70.0),
@@ -119,6 +134,13 @@ class NavBar extends StatelessWidget {
     );
   }
 
+  void openPage(String routeName) {
+    injector<RouteManager>()
+        .navigtor
+        .currentState
+        .pushReplacementNamed(routeName);
+  }
+
   LBox buildNavMenu(String currentRoute, LiquidThemeData theme) {
     return LBox(
       visibility: LBoxVisibility(sm: false, xs: false),
@@ -134,12 +156,7 @@ class NavBar extends StatelessWidget {
                 currentRoute == homeRoute
                     ? FontWeight.w700
                     : FontWeight.normal),
-            onPressed: () {
-              injector<RouteManager>()
-                  .navigtor
-                  .currentState
-                  .pushReplacementNamed(homeRoute);
-            },
+            onPressed: () => openPage(homeRoute),
           ),
           LOutlineButton.text(
             text: "Documentation",
@@ -147,12 +164,7 @@ class NavBar extends StatelessWidget {
                 currentRoute == docsRoute
                     ? FontWeight.w700
                     : FontWeight.normal),
-            onPressed: () {
-              injector<RouteManager>()
-                  .navigtor
-                  .currentState
-                  .pushReplacementNamed(docsRoute);
-            },
+            onPressed: () => openPage(docsRoute),
           ),
           LOutlineButton.text(
             text: "Examples",
@@ -175,9 +187,17 @@ class NavBar extends StatelessWidget {
     );
   }
 
-  Image buildLogo() => Image.asset(
-        "assets/logos/logo_big_border.png",
-        height: 42.0,
+  Widget buildLogo() => GestureDetector(
+        onTap: () => openPage(homeRoute),
+        child: Container(
+          height: 42.0,
+          width: 42.0,
+          child: FlareActor(
+            "assets/flare/liquid.flr",
+            fit: BoxFit.contain,
+            controller: controls,
+          ),
+        ),
       );
 
   LBox buildMenuBtn(BuildContext context) {

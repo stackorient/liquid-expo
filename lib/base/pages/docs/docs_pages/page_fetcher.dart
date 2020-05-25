@@ -1,32 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/badge.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/breadcrumb.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/button_group.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/buttons.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/carousel.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/collapse.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/dropdown.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/expansion.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/form.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/header_tag.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/models.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/progress_indicator.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/scroll_spy.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/components/spinner.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/getting_started/ltext_documentation.dart';
-import 'package:liquid_website/base/pages/docs/docs_pages/getting_started/typography.dart';
 
+import 'components/badge.dart';
+import 'components/breadcrumb.dart';
+import 'components/button_group.dart';
+import 'components/buttons.dart';
 import 'components/card.dart';
+import 'components/carousel.dart';
+import 'components/collapse.dart';
 import 'components/components.dart';
+import 'components/dropdown.dart';
+import 'components/expansion.dart';
+import 'components/form.dart';
+import 'components/header_tag.dart';
 import 'components/list_group.dart';
+import 'components/models.dart';
+import 'components/progress_indicator.dart';
+import 'components/scroll_spy.dart';
+import 'components/spinner.dart';
 import 'env.dart';
 import 'getting_started/getting_started_pages.dart';
 import 'layout/overview.dart';
+import 'more/about_us.dart';
+import 'more/contact_us.dart';
 
 Widget getPage(String pageKey) {
   switch (pageKey) {
     case intro_page:
       return Introduction();
+
+    case getting_started_page:
+      return GettingStarted();
 
     case typography:
       return TypographyPage();
@@ -92,6 +95,12 @@ Widget getPage(String pageKey) {
 
     case component_dropdown:
       return DropdownPage();
+
+    case aboutUs_page:
+      return AboutUsPage();
+
+    case contactUs_page:
+      return ContactUsPage();
 
     default:
       return Center(

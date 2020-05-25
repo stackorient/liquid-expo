@@ -1,4 +1,5 @@
-const intro_page = 'p0s0';
+const intro_page = '_p0s0';
+const getting_started_page = 'p0s0';
 const theming_page = 'p0s1';
 const typography = 'p0s2';
 const ltext_documentation = 'p0s3';
@@ -22,10 +23,13 @@ const component_collapse = "p2s13";
 const component_Expansion_panel = "p2s14";
 const component_form = "p2s15";
 const component_dropdown = "p2s16";
+const aboutUs_page = "p3s0";
+const contactUs_page = "p3s1";
 
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
     "Introduction": intro_page,
+    "Quick Start": getting_started_page,
     "Theming": theming_page,
     "Typography": typography,
     "LText": ltext_documentation,
@@ -53,5 +57,9 @@ final Map<String, Map<String, String>> docsMenus = {
     "LExpansionPanel": component_Expansion_panel,
     "LForm": component_form,
     "LDropdown": component_dropdown,
-  }
+  },
+  "More": {
+    "About Us": aboutUs_page,
+    "Contact Us": contactUs_page,
+  },
 };

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:liquid/liquid.dart';
 
-import 'widgets/home_drawer.dart';
+import '../../../core/injector/injector.dart';
+import '../../../core/routing/route_manager.dart';
+import '../../../core/routing/routes.dart';
 import '../../nav/navbar.dart';
+import 'widgets/home_drawer.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,9 +31,11 @@ class HomePage extends StatelessWidget {
             child: LRow(
               gutter: 40.0,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              // crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              axis: LRowAxis.belowLG(Axis.vertical),
               columns: <LColumn>[
                 LColumn(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     LAnimatedBox(
                       margin: LBoxEdgeInsets.all(
@@ -47,16 +52,15 @@ class HomePage extends StatelessWidget {
                       constraints: BoxConstraints(
                         maxWidth: 490.0,
                       ),
-                      child: Text(
-                        "Build responsive, cross platform projects with the world’s "
-                        "most advance flutter UI library highly inspired by Bootstrap.\n\n"
-                        "Liquid is an open source toolkit for developing cross platform apps using Flutter."
-                        " Quickly create a SPA or a complete app for android, ios or Web with our web compatible"
-                        " widgets, powerful responsive grid system and extensive prebuilt components.",
-                        style: mq.isXS || mq.isSM
-                            ? typography.lead.size(16.0).copyWith(height: 1.5)
-                            : typography.lead.copyWith(height: 1.5),
-                        textAlign: mq.isXS || mq.isSM
+                      child: LText(
+                        (mq.isXS || mq.isSM || mq.isMD
+                                ? "\l.h1{Build fast, responsive, cross platform apps with Liquid.}\n\n"
+                                : "\l.display4{Build fast, responsive, cross platform apps with Liquid.}\n\n") +
+                            "\l.lead{Liquid is an open source UI toolkit for developing cross platform apps using Flutter."
+                                " Quickly create a apps for Andorid, IOS, Web or Desktop with our"
+                                " powerful grid system, powerful text processor, extensive prebuilt components and"
+                                " a lot utilities.}",
+                        textAlign: mq.isXS || mq.isSM || mq.isMD
                             ? TextAlign.center
                             : TextAlign.left,
                       ),
@@ -65,14 +69,19 @@ class HomePage extends StatelessWidget {
                       constraints: BoxConstraints(
                         maxWidth: 490.0,
                       ),
-                      alignment: mq.isXS || mq.isSM
+                      alignment: mq.isXS || mq.isSM || mq.isMD
                           ? Alignment.center
                           : Alignment.centerLeft,
                       padding: const EdgeInsets.only(top: 20.0),
                       child: LOutlineButton.text(
                         text: "Get Started",
                         size: LElementSize.large,
-                        onPressed: () {},
+                        onPressed: () {
+                          injector<RouteManager>()
+                              .navigtor
+                              .currentState
+                              .pushReplacementNamed(docsRoute);
+                        },
                       ),
                     ),
                   ],

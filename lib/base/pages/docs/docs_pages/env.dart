@@ -1,4 +1,5 @@
-const intro_page = 'p0s0';
+const intro_page = '_p0s0';
+const getting_started_page = 'p0s0';
 const theming_page = 'p0s1';
 const typography = 'p0s2';
 const ltext_documentation = 'p0s3';
@@ -28,6 +29,7 @@ const contactUs_page = "p3s1";
 final Map<String, Map<String, String>> docsMenus = {
   "Getting Started": {
     "Introduction": intro_page,
+    "Quick Start": getting_started_page,
     "Theming": theming_page,
     "Typography": typography,
     "LText": ltext_documentation,

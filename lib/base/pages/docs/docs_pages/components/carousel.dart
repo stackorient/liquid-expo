@@ -333,13 +333,13 @@ LCarousel(
                   items: [
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/daily/?mountain,sunset",
+                        "https://source.unsplash.com/daily/?mountain",
                         fit: BoxFit.cover,
                       ),
                     ),
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/daily/?mountain,sunset",
+                        "https://source.unsplash.com/daily/?sunset",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -361,7 +361,7 @@ LCarousel(
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: Text(
-            "With Slider",
+            "With Slide Indicator",
             style: _theme.typographyTheme.h4,
           ),
         ),
@@ -389,13 +389,13 @@ LCarousel(
                   items: [
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/random/?mountain,sunset",
+                        "https://source.unsplash.com/random/?mountain",
                         fit: BoxFit.cover,
                       ),
                     ),
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/random/?mountain,sunset",
+                        "https://source.unsplash.com/random/?sunset",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -490,7 +490,8 @@ LCarousel(
                       caption: LCarouselCaption(
                         titleText: "Third Slide",
                         subTitleText:
-                            "By \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heypnd){@heyrjs}.",
+                            "By \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heypnd}"
+                            " and \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heyrjs}.",
                         actions: <Widget>[
                           LFlatButton.text(
                             type: LElementType.danger,
@@ -543,13 +544,13 @@ LCarousel(
                   items: [
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/random/?mountain,sunset",
+                        "https://source.unsplash.com/random/?mountain",
                         fit: BoxFit.cover,
                       ),
                     ),
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/random/?mountain,sunset",
+                        "https://source.unsplash.com/random/?sunset",
                         fit: BoxFit.cover,
                       ),
                     ),

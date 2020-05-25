@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid/liquid.dart';
-import 'package:liquid_website/base/base.dart';
+
 import '../../code_highlight.dart';
 
 class LTextPage extends StatelessWidget {
@@ -59,16 +59,6 @@ LiquidApp(
          ),
        ),
      ),
-     "green": LStyleBlock(
-       style: LSpanStyle(
-         style: TextStyle(color: Colors.green),
-       ),
-     ),
-     "blue": LStyleBlock(
-       style: LSpanStyle(
-         style: TextStyle(color: Colors.blue),
-       ),
-     )
    },
   );
   """;
@@ -136,8 +126,11 @@ LiquidApp(
           padding: const EdgeInsets.all(10.0),
           child: Image.asset('assets/images/ltextexp.png'),
         ),
-        LText("\l.h4.bold{With inlineStyleSheet}\n"
-            "To define a particular style to a single component."),
+        LText(
+          "\l.h4.bold{With inlineStyleSheet}\n"
+          "Inline Style Sheet helps to define a \l.bold{StyleSheet} which is only available "
+          "to \l.bold{LText} in which it is defined.",
+        ),
         LRow(
           crossAxisAlignment: CrossAxisAlignment.center,
           gutter: 10.0,
@@ -170,8 +163,10 @@ LiquidApp(
           ],
         ),
         LText("\l.h4.bold{Global StyleSheet}\n"
-            "To define the style globally in LiquidApp to use it as global text theme in your app."),
-        LText("\l.bullet.h5.bold{With Link}\n"),
+            "To define global styleSheet use \l.bold{LiquidApp}'s "
+            "\l.bold.underline{styleSheet} parameter."),
+        LText(
+            "\l.bullet.h5.bold{Example: How to define a Link styleSheet globally.}\n"),
         LBox(
           height: LBoxDimension.all(250.0),
           child: LRow(
@@ -185,7 +180,8 @@ LiquidApp(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   LText(
-                      "Contact the creators, \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs}.\n"),
+                      "Contact the creators, \l.link(href=https://twitter.com/heypnd){@heypnd} "
+                      "and \l.link(href=https://twitter.com/heyrjs){@heyrjs}.\n"),
                 ],
               ),
               LColumn.child(
@@ -205,12 +201,12 @@ LiquidApp(
             "   \l.bullet.bold{overline}\n"
             "   \l.bullet.bold{capitalize}\n"
             "   \l.bullet.bold{uppercase}\n"
-            "   \l.bullet.bold{lowercase} n "
+            "   \l.bullet.bold{lowercase}\n"
             "   \l.bullet.bold{trim}\n"
             "   \l.bullet.bold{trim-left}\n"
             "   \l.bullet.bold{trim-right}\n"
-            "   \l.bullet.bold{color(hex=hex color code)\n"
-            "   \l.bullet.bold{highlight(hex=hex_color)\n"
+            "   \l.bullet.bold{color(hex=hex color code)}\n"
+            "   \l.bullet.bold{highlight(hex=hex_color)}\n"
             "   \l.bullet.bold{capitalize}\n"
             "   \l.bullet.bold{h1}\n"
             "   \l.bullet.bold{h2}\n"
@@ -221,7 +217,7 @@ LiquidApp(
             "   \l.bullet.bold{small}\n"
             "   \l.bullet.bold{p}\n"
             "   \l.bullet.bold{display1}\n"
-            "   \l.bullet.bold{display2  "
+            "   \l.bullet.bold{display2}\n"
             "   \l.bullet.bold{display3}\n"
             "   \l.bullet.bold{display4}\n"
             "   \l.bullet.bold{lead}\n"
@@ -229,7 +225,10 @@ LiquidApp(
             "   \l.bullet.bold{bullet}"),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 15.0),
-          child: LText("\l.h4.bold{Example}\n"),
+          child: LText(
+            "\l.h4.bold{Example}\n"
+            "A complex example to build an unordered list using \l.bold{LText}\n",
+          ),
         ),
         LBox(
           height: LBoxDimension.all(250.0),

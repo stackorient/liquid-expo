@@ -23,7 +23,7 @@ class DocsBloc extends Bloc<DocsEvent, DocsState> {
       final Widget page = getPage(event.docPageCode);
 
       if (page != null)
-        yield DocsLoaded(page, event.docPageCode);
+        yield DocsLoaded(page, event.docPageCode, event.docMenu);
       else
         yield DocsError("Some error occured");
     }

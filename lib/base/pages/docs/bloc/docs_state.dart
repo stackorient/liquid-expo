@@ -17,11 +17,12 @@ class DocsLoading extends DocsState {
 class DocsLoaded extends DocsState {
   final Widget docContent;
   final String docCode;
+  final String docMenu;
 
-  DocsLoaded(this.docContent, this.docCode);
+  DocsLoaded(this.docContent, this.docCode, this.docMenu);
 
   @override
-  List<Object> get props => [docContent];
+  List<Object> get props => [docContent, docCode, docMenu];
 }
 
 class DocsError extends DocsState {

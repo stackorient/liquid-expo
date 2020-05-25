@@ -45,7 +45,6 @@ class TypographyPage extends StatelessWidget {
   """;
 
   final _inlinecode = """
-
   LText("\\l.p{Liquid the most advance flutter UI kit.}");
 
   LText("\\l.small{Liquid the most advance flutter UI kit.}");
@@ -53,8 +52,6 @@ class TypographyPage extends StatelessWidget {
   LText("\\l.lead{Liquid the most advance flutter UI kit.}");
 
   LText("\\l.quote{Liquid the most advance flutter UI kit.}");
-
-
   """;
   @override
   Widget build(BuildContext context) {
@@ -132,6 +129,7 @@ class TypographyPage extends StatelessWidget {
           child: LText("\l.bullet.h5.bold{Inline text elements}\n"),
         ),
         LRow(
+          crossAxisAlignment: CrossAxisAlignment.center,
           gutter: 10.0,
           columns: [
             LColumn(
@@ -172,7 +170,7 @@ class TypographyPage extends StatelessWidget {
                 style: LSpanStyle(
                   recognizerHandler: (args) => TapGestureRecognizer()
                     ..onTap = () => BlocProvider.of<DocsBloc>(context).add(
-                          LoadDocFor(ltext_documentation),
+                          LoadDocFor(ltext_documentation, "Getting Started"),
                         ),
                 ),
               ),

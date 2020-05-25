@@ -3,43 +3,10 @@ import 'package:liquid/liquid.dart';
 
 import '../../code_highlight.dart';
 
-class GettingStarted extends StatelessWidget {
-  final String _title = "Getting Started";
-  final String _subtitle = "Get started with Liquid, the world’s"
-      " most advance flutter UI kit for building responsive,"
-      " beautiful, cross-platform applications.";
-
-  final String _step1 = """
-// pubspec.yaml
-
-dependencies:
-  flutter:
-    sdk: flutter
-    
-  liquid: <latest-version>   
-""";
-  final String _step2 = """
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({
-    Key key,
-  })  : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return LiquidApp(
-      title: 'My New Liquid App',
-      theme: ThemeData(),
-      liquidTheme: LiquidThemeData(),
-      liquidTheme
-      home: MyHomePage(),
-    );
-  }
-} 
-""";
+class ThemingSection extends StatelessWidget {
+  final String _title = "Liquid Theming";
+  final String _subtitle =
+      "Change the look and feel of liquid components using \l.bold{LiquidTheme}";
 
   @override
   Widget build(BuildContext context) {
@@ -113,33 +80,6 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ],
-        ),
-        LText(
-          "\l.h5{Quick Start}\n"
-          "Starting with liquid is simple and quick\n"
-          "\l.h5{Step 1. Add liquid to pubspec.yaml}",
-        ),
-        codeText(
-          context,
-          _step1,
-          lang: 'yaml',
-        ),
-        LText(
-          "\l.h5{Step 2. Wrap your Top Widget with LiquidApp}\n",
-        ),
-        codeText(
-          context,
-          _step2,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: LText(
-            "\l.bold{LiquidApp} will provides\n"
-            "   \l.bullet{LiquidTheme}\n"
-            "   \l.bullet{LiquidStateManager}\n"
-            "   \l.bullet{Liquid Style Class Provider}\n"
-            "\l.bold{NOTE} : LiquidApp wraps MaterialApp internally. \l.bold.underline{LiquidCupertinoApp} will be available in next major update.",
-          ),
         ),
       ],
     );

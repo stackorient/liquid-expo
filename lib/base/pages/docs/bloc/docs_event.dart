@@ -6,9 +6,10 @@ abstract class DocsEvent extends Equatable {
 
 class LoadDocFor extends DocsEvent {
   final String docPageCode;
+  final String docMenu;
 
-  LoadDocFor(this.docPageCode);
+  LoadDocFor(this.docPageCode, this.docMenu);
 
   @override
-  List<Object> get props => [docPageCode];
+  List<Object> get props => [docPageCode, docMenu];
 }

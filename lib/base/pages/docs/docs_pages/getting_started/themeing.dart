@@ -6,7 +6,82 @@ import '../../code_highlight.dart';
 class ThemingSection extends StatelessWidget {
   final String _title = "Liquid Theming";
   final String _subtitle =
-      "Change the look and feel of liquid components using \l.bold{LiquidTheme}";
+      "\l.lead{Change the look and feel of liquid components.";
+
+  final _themeAppliedCode = """
+child: LiquidTheme(
+  theme: LiquidThemeData(
+    colors: LiquidColors(
+      primary: Colors.pink,
+      secondary: Colors.blue[900],
+      success: Colors.brown,
+    ),
+    alertTheme: LiquidAlertTheme(
+      padding: const EdgeInsets.all(30.0),
+    ),
+  ),
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: LFlatButton.text(
+          text: "Primary",
+          type: LElementType.primary,
+          onPressed: () {},
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: LBadge.text(
+          "Secondary badge",
+          type: LElementType.secondary,
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: LAlert(
+          text: "Hello World",
+          type: LElementType.success,
+        ),
+      ),
+    ],
+  ),
+),
+  """;
+
+  final _nonthemeCode = """
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: [
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: LFlatButton.text(
+        text: "Primary",
+        type: LElementType.primary,
+        onPressed: () {},
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: LBadge.text(
+        "Secondary badge",
+        type: LElementType.secondary,
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: LAlert(
+        text: "Hello World",
+        type: LElementType.success,
+      ),
+    ),
+  ],
+);
+  
+  """;
 
   @override
   Widget build(BuildContext context) {
@@ -28,59 +103,108 @@ class ThemingSection extends StatelessWidget {
                 : _theme.typographyTheme.display4,
           ),
         ),
-        Text(
+        LText(
           _subtitle,
-          style: mq.isSM || mq.isXS
-              ? _theme.typographyTheme.p
-              : _theme.typographyTheme.lead,
         ),
         SizedBox(height: 35.0),
         Text(
-          "Features",
+          "Changing theme properties",
           style: _theme.typographyTheme.h4,
         ),
-        Text(
-          "Liquid comes with a powerful grid system, extensive array of prebuilt"
-          " components, utilities and raw components to extend from.",
-          style: _theme.typographyTheme.p,
+        LText(
+          "\nWith few lines of code you can change the whole look of your app.",
         ),
+        LText("\l.h4.bullet{Default Theme}\n"),
         LRow(
           margin: const EdgeInsets.symmetric(vertical: 20.0),
           axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
-              child: LAlert(
-                heading: LAlertHeading(
-                  text: "Powerful Grid System",
-                ),
-                text: "Use our powerful grid engine to build layouts of all"
-                    "shapes and sizes. Liquid comes with 12 column system with five default responsive tiers.",
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: LFlatButton.text(
+                      text: "Primary",
+                      type: LElementType.primary,
+                      onPressed: () {},
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: LBadge.text(
+                      "Secondary badge",
+                      type: LElementType.secondary,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: LAlert(
+                      text: "Hello World",
+                      type: LElementType.success,
+                    ),
+                  ),
+                ],
               ),
             ),
-            LColumn.child(
-              child: LAlert(
-                type: LElementType.success,
-                heading: LAlertHeading(
-                  text: "Extensive Prebuilt Components",
-                ),
-                text: "Liquid Components are build from the ground up"
-                    "to work perfectly on Web, IOS, Android and Desktop."
-                    " incluing Forms, Collapse, ScrollSpy and others.",
-              ),
-            ),
-            LColumn.child(
-              child: LAlert(
-                type: LElementType.warning,
-                heading: LAlertHeading(
-                  text: "Powerful Text Processor & Utilities",
-                ),
-                text: "Liquid also comes with a powerful text processor"
-                    " & utility methods, thanks to the dart's extension methods.",
-              ),
-            ),
+            LColumn.child(child: codeText(context, _nonthemeCode))
           ],
         ),
+        LText("\l.h4.bullet{Custom Theme}\n"
+            "You can directly use \l.bold{LiquidTheme} for particular widget tree or use"
+            " \l.bold{LiquidApp}'s liquidTheme to apply global theme.\n"
+            "\l.bold{NOTE: LiquidTheme is only applied on Liquid Components by default.}\n"),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn.child(
+              child: LiquidTheme(
+                theme: LiquidThemeData(
+                  colors: LiquidColors(
+                    primary: Colors.pink,
+                    secondary: Colors.blue[900],
+                    success: Colors.brown,
+                  ),
+                  alertTheme: LiquidAlertTheme(
+                    padding: const EdgeInsets.all(30.0),
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: LFlatButton.text(
+                        text: "Primary",
+                        type: LElementType.primary,
+                        onPressed: () {},
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: LBadge.text(
+                        "Secondary badge",
+                        type: LElementType.secondary,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: LAlert(
+                        text: "Hello World",
+                        type: LElementType.success,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            LColumn.child(child: codeText(context, _themeAppliedCode))
+          ],
+        )
       ],
     );
   }

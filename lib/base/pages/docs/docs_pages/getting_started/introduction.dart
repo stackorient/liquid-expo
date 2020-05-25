@@ -476,10 +476,11 @@ size: LElementSize.large,
             heading: LAlertHeading(
               text: "Looks Better In Desktop",
             ),
-            text:
-                "Liquid's LRow becomes vertical in XS breakpoint. so come back to it on device"
-                " with larger screen.\n"
-                "\l.bold{NOTE}: You can change this behaviour using \l.bold{axis} property of \l.bold{LRow}",
+            child: LText(
+              "Liquid's LRow becomes vertical in XS breakpoint. so come back to it on device"
+              " with larger screen.\n"
+              "\l.bold{NOTE}: You can change this behaviour using \l.bold{axis} property of \l.bold{LRow}",
+            ),
           ),
         ),
         LRow(

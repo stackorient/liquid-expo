@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'components/components.dart';
 import 'env.dart';
 import 'getting_started/getting_started_pages.dart';
-import 'layout/overview.dart';
+import 'layout/layout_pages.dart';
 import 'more/about_us.dart';
 import 'more/contact_us.dart';
 
@@ -26,6 +26,12 @@ Widget getPage(String pageKey) {
 
     case layout_overview:
       return LayoutOverview();
+
+    case layout_grid:
+      return GridSystem();
+
+    case layout_utils:
+      return LayoutUtility();
 
     case component_alert:
       return AlertPage();

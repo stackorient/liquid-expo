@@ -461,7 +461,7 @@ LFlatButton(
           margin: LBoxEdgeInsets.all(EdgeInsets.symmetric(vertical: 10.0)),
           child: LAlert(
             heading: LAlertHeading(
-              text: "Looks Better In Desktop",
+              text: "Looks Better on wider screen",
             ),
             child: LText(
               "Liquid's LRow becomes vertical in XS breakpoint. so come back to it on device"

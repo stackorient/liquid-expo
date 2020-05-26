@@ -8,32 +8,25 @@ class CollapsePage extends StatelessWidget {
       " and can be controlled programmatically";
 
   final _linercode2 = """
-
-  final GlobalKey<LCollapseState> _collapseKey = GlobalKey<LCollapseState>();
-
-  ...
-
-
-  LCollapse(
-     key: _collapseKey,
-     // duration: Duration(seconds: 10),
-     child: Center(
-         child: LText("Hey I am \l.uppercase.bold{visible} now...")),
-     background: Colors.green[300],
-   ),
-
-  ...
-
-  LFlatButton.text(
-    text: "Toggle Collapse",
-    onPressed: () {
-      if (_collapseKey.currentState.isCollapsed)
-        _collapseKey.currentState.open();
-      else
-        _collapseKey.currentState.close();
-   }),
-
-
+final GlobalKey<LCollapseState> _collapseKey = GlobalKey<LCollapseState>();
+//...
+LCollapse(
+  key: _collapseKey,
+  // duration: Duration(seconds: 10),
+  child: Center(
+      child: LText("Hey I am \l.uppercase.bold{visible} now...")),
+  background: Colors.green[100],
+),
+//...
+LFlatButton.text(
+  text: "Toggle Collapse",
+  onPressed: () {
+    if (_collapseKey.currentState.isCollapsed)
+      _collapseKey.currentState.open();
+    else
+      _collapseKey.currentState.close();
+  }
+);
   """;
 
   final GlobalKey<LCollapseState> _collapseKey = GlobalKey<LCollapseState>();
@@ -63,29 +56,33 @@ class CollapsePage extends StatelessWidget {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
+        SizedBox(height: 20.0),
+        LText("\l.h5{Example}"),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
-            LColumn(lg: 4, xl: 4, children: [
-              LCollapse(
-                key: _collapseKey,
-                // duration: Duration(seconds: 10),
-                child: Center(
-                    child: LText("Hey I am \l.uppercase.bold{visible} now...")),
-                background: Colors.green[300],
-              ),
-              LFlatButton.text(
-                  text: "Toggle Collapse",
-                  onPressed: () {
-                    if (_collapseKey.currentState.isCollapsed)
-                      _collapseKey.currentState.open();
-                    else
-                      _collapseKey.currentState.close();
-                  }),
-            ]),
+            LColumn(
+              lg: 4,
+              xl: 4,
+              children: [
+                LCollapse(
+                  key: _collapseKey,
+                  child: Center(
+                      child:
+                          LText("Hey I am \l.uppercase.bold{visible} now...")),
+                  background: Colors.green[100],
+                ),
+                LFlatButton.text(
+                    text: "Toggle Collapse",
+                    onPressed: () {
+                      if (_collapseKey.currentState.isCollapsed)
+                        _collapseKey.currentState.open();
+                      else
+                        _collapseKey.currentState.close();
+                    }),
+              ],
+            ),
             LColumn.child(
               child: codeText(context, _linercode2),
             )

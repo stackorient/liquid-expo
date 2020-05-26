@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:liquid_ui/liquid_ui.dart';
-import 'package:liquid_website/base/base.dart';
 
+import '../../base.dart';
 import '../../nav/navbar.dart';
 import 'bloc/docs_bloc.dart';
 import 'side_menu.dart';

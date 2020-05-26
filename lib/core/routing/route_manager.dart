@@ -29,7 +29,7 @@ class RouteManager extends ChangeNotifier {
   }
 
   Route _generateRoute(String routeName, RouteSettings settings) {
-    final Map<String, dynamic> args = settings.arguments;
+    // final Map<String, dynamic> args = settings.arguments;
 
     switch (routeName) {
       case homeRoute:

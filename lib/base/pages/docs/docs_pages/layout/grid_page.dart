@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_ui/liquid_ui.dart';
-import 'package:liquid_website/base/pages/docs/code_highlight.dart';
+
+import '../../code_highlight.dart';
 
 class GridSystem extends StatelessWidget {
   final String _title = "Grid System";

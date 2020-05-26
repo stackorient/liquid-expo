@@ -23,11 +23,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LiquidApp(
-      title: 'Liquid Expo',
-      theme: theme,
-      initialRoute: RouteManager.initialRoute,
-      onGenerateRoute: _routeManager.onGenerateRoute,
-      navigatorKey: _routeManager.navigtor,
       styleSheet: {
         "link": LStyleBlock(
           style: LSpanStyle(
@@ -42,7 +37,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
       },
-      navigatorObservers: [_routeManager.observer],
+      materialApp: MaterialApp(
+        title: 'Liquid Expo',
+        theme: theme,
+        initialRoute: RouteManager.initialRoute,
+        onGenerateRoute: _routeManager.onGenerateRoute,
+        navigatorKey: _routeManager.navigtor,
+        navigatorObservers: [_routeManager.observer],
+      ),
     );
   }
 }

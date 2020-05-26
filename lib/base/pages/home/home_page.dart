@@ -80,15 +80,21 @@ class HomePage extends StatelessWidget {
                           ? Alignment.center
                           : Alignment.centerLeft,
                       padding: const EdgeInsets.only(top: 20.0),
-                      child: LOutlineButton.text(
-                        text: "Get Started",
-                        size: LElementSize.large,
-                        onPressed: () {
-                          injector<RouteManager>()
-                              .navigtor
-                              .currentState
-                              .pushReplacementNamed(docsRoute);
-                        },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          LOutlineButton.text(
+                            text: "Get Started",
+                            size: LElementSize.medium,
+                            onPressed: () {
+                              injector<RouteManager>()
+                                  .navigtor
+                                  .currentState
+                                  .pushReplacementNamed(docsRoute);
+                            },
+                          ),
+                          LText('\l.small{Currently v.1.0.0}')
+                        ],
                       ),
                     ),
                   ],

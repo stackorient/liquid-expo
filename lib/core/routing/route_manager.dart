@@ -44,6 +44,9 @@ class RouteManager extends ChangeNotifier {
               child: DocsPage(),
             ),
             settings);
+      case exampleRoute:
+        _currentRoute = exampleRoute;
+        return _getRoute(ExamplesPage(), settings);
       default:
         _currentRoute = null;
         return _getRoute(NotFoundPage(), settings);

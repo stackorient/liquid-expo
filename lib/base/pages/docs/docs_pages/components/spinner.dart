@@ -7,7 +7,7 @@ class SpinnerPage extends StatelessWidget {
   final _subtitle =
       "Indicate the loading state of a component or page with Liquid spinners.";
 
-  final _linearcode = """
+  final _lspinner = """
 
   LSpinner(
     diameter: 30.0,
@@ -16,7 +16,7 @@ class SpinnerPage extends StatelessWidget {
   ),
   """;
 
-  final _linercode2 = """
+  final _lspinner2 = """
 
   LSpinner(
     diameter: 50.0,
@@ -27,7 +27,7 @@ class SpinnerPage extends StatelessWidget {
 
   """;
 
-  final _circlecode1 = """
+  final _growspinner = """
 
  LGrowSpinner(
    diameter: 50.0,
@@ -35,7 +35,7 @@ class SpinnerPage extends StatelessWidget {
 
   """;
 
-  final _circlecode2 = """
+  final _growspinner2 = """
 
 LGrowSpinner(
    color: _theme.colors.success,
@@ -68,18 +68,12 @@ LGrowSpinner(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "LSpinner",
-          style: _theme.typographyTheme.h4,
+        LText(
+          "\n\n\l.h4{LSpinner}",
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Liquid [LSpinner] can be used to show the loading state in your projects"
-            " Use [LSpinner] for lightweight loading indicator.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "Liquid [LSpinner] can be used to show the loading state in your projects"
+          " Use [LSpinner] for lightweight loading indicator.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -96,20 +90,13 @@ LGrowSpinner(
               ),
             ),
             LColumn.child(
-              child: codeText(context, _linearcode),
+              child: codeText(context, _lspinner),
             )
           ],
         ),
-        Text(
-          "Variations",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Allows to change bar color, width, diameter etc.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{Variations}\n"
+          "Allows to change bar color, width, diameter etc.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -127,7 +114,7 @@ LGrowSpinner(
               ),
             ),
             LColumn.child(
-              child: codeText(context, _linercode2),
+              child: codeText(context, _lspinner2),
             )
           ],
         ),
@@ -160,7 +147,7 @@ LGrowSpinner(
               ),
             ),
             LColumn.child(
-              child: codeText(context, _circlecode1),
+              child: codeText(context, _growspinner),
             )
           ],
         ),
@@ -189,7 +176,7 @@ LGrowSpinner(
               ),
             ),
             LColumn.child(
-              child: codeText(context, _circlecode2),
+              child: codeText(context, _growspinner2),
             )
           ],
         ),

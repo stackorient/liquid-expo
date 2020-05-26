@@ -193,7 +193,7 @@ LCarousel(
    showIndicator: true,
    enableIndicatorTapControl: true,
    withControls: true,
-   canScroll: true,
+   canScroll: false,
    items: [
      LCarouselItem(
        child: Image.network(
@@ -256,8 +256,8 @@ LCarousel(
             LColumn.child(
               lg: 4,
               xl: 6,
-              child: LBox(
-                height: LBoxDimension.all(250.0),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
                 child: LCarousel(
                   withCaption: true,
                   autoScroll: true,
@@ -329,8 +329,8 @@ LCarousel(
             LColumn.child(
               lg: 4,
               xl: 6,
-              child: LBox(
-                height: LBoxDimension.all(250.0),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
                 child: LCarousel(
                   withControls: true,
                   canScroll: true,
@@ -386,8 +386,8 @@ LCarousel(
             LColumn.child(
               lg: 4,
               xl: 6,
-              child: LBox(
-                height: LBoxDimension.all(250.0),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
                 child: LCarousel(
                   showIndicator: true,
                   enableIndicatorTapControl: true,
@@ -445,8 +445,8 @@ LCarousel(
             LColumn.child(
               lg: 4,
               xl: 6,
-              child: LBox(
-                height: LBoxDimension.all(250.0),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
                 child: LCarousel(
                   withCaption: true,
                   showIndicator: true,
@@ -527,14 +527,14 @@ LCarousel(
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: Text(
-            "Enable Scrolling",
+            "Disable Scrolling",
             style: _theme.typographyTheme.h4,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 15.0),
           child: Text(
-            "To enable scrolling of the carousel items.",
+            "To disable scrolling of the carousel items.",
             style: _theme.typographyTheme.p,
           ),
         ),
@@ -546,14 +546,14 @@ LCarousel(
             LColumn.child(
               lg: 4,
               xl: 6,
-              child: LBox(
-                height: LBoxDimension.all(250.0),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
                 child: LCarousel(
                   autoScroll: true,
                   showIndicator: true,
                   enableIndicatorTapControl: true,
                   withControls: true,
-                  canScroll: true,
+                  canScroll: false,
                   items: [
                     LCarouselItem(
                       child: Image.network(

@@ -67,15 +67,11 @@ class MyApp extends StatelessWidget {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "Features",
-          style: _theme.typographyTheme.h4,
-        ),
-        Text(
+        SizedBox(height: 20.0),
+        LText(
+          "\l.h4{Features}\n"
           "Liquid comes with a powerful grid system, extensive array of prebuilt"
           " components, utilities and raw components to extend from.",
-          style: _theme.typographyTheme.p,
         ),
         LRow(
           margin: const EdgeInsets.symmetric(vertical: 20.0),
@@ -131,15 +127,12 @@ class MyApp extends StatelessWidget {
           context,
           _step2,
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: LText(
-            "\l.bold{LiquidApp} will provides\n"
-            "   \l.bullet{LiquidTheme}\n"
-            "   \l.bullet{LiquidStateManager}\n"
-            "   \l.bullet{Liquid Style Class Provider}\n"
-            "\.bold{NOTE} : LiquidApp wraps MaterialApp internally. \l.bold.underline{LiquidCupertinoApp} will be available in next major update.",
-          ),
+        LText(
+          "\l.bold{LiquidApp} will provides\n"
+          "   \l.bullet{LiquidTheme}\n"
+          "   \l.bullet{LiquidStateManager}\n"
+          "   \l.bullet{Liquid Style Class Provider}\n"
+          "\l.bold{NOTE} : LiquidApp wraps MaterialApp internally. \l.bold.underline{LiquidCupertinoApp} will be available in next major update.",
         ),
       ],
     );

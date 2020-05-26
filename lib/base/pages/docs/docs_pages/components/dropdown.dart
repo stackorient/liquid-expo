@@ -126,12 +126,12 @@ class Dropdown2 extends StatelessWidget {
           onTap: () {},
         ),
         LDropdownItem(
-          text: "\l.link(href=https://twitter.com/heyrjs)@heyrjs",
+          text: "\l.link(href=https://twitter.com/heyrjs){@heyrjs}",
           onTap: () {
             print("pressed");
           },
           onLongPress: () {
-            print("\l.link(href=https://twitter.com/heypnd)@heypnd");
+            print("\l.link(href=https://twitter.com/heypnd){@heypnd}");
           },
         ),
         LDropdownItem(
@@ -170,10 +170,7 @@ class DropdownPage extends StatelessWidget {
 
   LDropdown(
    key: _dropdown,
-   scrollToClose: false,
-   scrollable: true,
-   // backdrop: Colors.red.withOpacity(0.4),
-
+   scrollable: false,
    elevation: 10.0,
    trigger: LFlatButton.text(
      text: "Dropdown",
@@ -449,15 +446,15 @@ class DropdownPage extends StatelessWidget {
               : _theme.typographyTheme.lead,
         ),
         SizedBox(height: 35.0),
-        LBox(
-          height: LBoxDimension.all(450.0),
+        Container(
+          constraints: BoxConstraints(maxHeight: 600.0),
           child: LRow(
             axis: LRowAxis.belowLG(Axis.vertical),
             gutter: 10.0,
             crossAxisAlignment: CrossAxisAlignment.center,
             columns: [
               LColumn(lg: 4, xl: 4, children: [
-                Dropdown1(),
+                Dropdown1(scrollable: false),
               ]),
               LColumn.child(
                 child: codeText(context, _linearcode),
@@ -466,7 +463,7 @@ class DropdownPage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 25.0),
+          padding: const EdgeInsets.only(top: 15.0),
           child: LText(
             " \l.h4.bold{With Scroll to close}\n"
             "Whether [LDropdown] should close when a trigger changes its position",
@@ -556,7 +553,7 @@ class DropdownPage extends StatelessWidget {
           padding: const EdgeInsets.only(top: 25.0),
           child: LText(
             "\l.h4.bold{With backdrop}\n"
-            "When `scrollable` is `false`, the dropdown will show a backdrop"
+            "When \l.bold{scrollable} is \lbold{false}, the dropdown will show a backdrop"
             " which on tap event, dismisses the active dropdown"
             " default is Black with opacity 26%",
           ),

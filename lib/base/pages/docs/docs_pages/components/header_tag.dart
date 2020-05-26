@@ -41,17 +41,10 @@ LHeaderTag(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "Example",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Creates Tags of variable color and sizes.",
-            style: _theme.typographyTheme.p,
-          ),
+        SizedBox(height: 20.0),
+        LText(
+          "\l.h4{Example}\n"
+          "Creates Tags of variable color and sizes.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -71,19 +64,9 @@ LHeaderTag(
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Text(
-            "Sizes",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Create Tags of variable sizes.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{Sizes}\n"
+          "Create Tags of variable sizes.\n\n",
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5.0),
@@ -108,19 +91,9 @@ LHeaderTag(
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-          child: Text(
-            "Colors",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Create tags of variable colors.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Colors}\n"
+          "Create tags of variable colors.\n\n",
         ),
         LColumn(
           crossAxisAlignment: CrossAxisAlignment.start,

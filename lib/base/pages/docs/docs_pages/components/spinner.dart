@@ -68,8 +68,9 @@ LGrowSpinner(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
+        SizedBox(height: 20.0),
         LText(
-          "\n\n\l.h4{LSpinner}",
+          "\l.h4{LSpinner}\n",
         ),
         LText(
           "Liquid [LSpinner] can be used to show the loading state in your projects"
@@ -96,7 +97,7 @@ LGrowSpinner(
         ),
         LText(
           "\l.h4{Variations}\n"
-          "Allows to change bar color, width, diameter etc.\n",
+          "Allows to change bar color, width, diameter etc.",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -118,21 +119,11 @@ LGrowSpinner(
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "LGrowSpinner",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Repeatedly growing spinner."
-            " If you want a fancy border spinner, switch to the grow spinner."
-            " While it doesn’t technically spin, it does repeatedly grow!",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{LGrowSpinner}\n"
+          "Repeatedly growing spinner."
+          " If you want a fancy border spinner, switch to the grow spinner."
+          " While it doesn’t technically spin, it does repeatedly grow!",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -151,16 +142,9 @@ LGrowSpinner(
             )
           ],
         ),
-        Text(
-          "Variations",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Allows to change colors and diameter accordingly.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Variations}\n"
+          "Allows to change colors and diameter accordingly.",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),

@@ -7,7 +7,7 @@ class ModelPage extends StatelessWidget {
   final _subtitle = " A utility function for displaying [LModel] on"
       "the screen.";
 
-  final _linearcode = """
+  final _modelfunc = """
 
 void _showModel(BuildContext context) {
   showLModel(
@@ -204,17 +204,12 @@ positionTween: Tween(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "Modal Components",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Below is a static modal example (meaning its position and display have been overridden). Included are the modal header, modal body (required for padding), and modal footer (optional). We ask that you include modal headers with dismiss actions whenever possible, or provide another explicit dismiss action.",
-            style: _theme.typographyTheme.p,
-          ),
+        SizedBox(height: 20.0),
+        LText(
+          "\l.h4{Modal Components}\n"
+          "Below is a static modal example (meaning its position and display have been overridden)."
+          " Included are the modal header, modal body (required for padding), and modal footer (optional)."
+          " We ask that you include modal headers with dismiss actions whenever possible, or provide another explicit dismiss action.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -252,15 +247,12 @@ positionTween: Tween(
               ),
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(400.0),
-                  child: codeText(context, _modalExmpl)),
+              child: codeText(context, _modalExmpl),
             )
           ],
         ),
-        Text(
-          "Live Demo",
-          style: _theme.typographyTheme.h4,
+        LText(
+          "\n\l.h4{Live Demo}\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -277,22 +269,13 @@ positionTween: Tween(
               ),
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(400.0),
-                  child: codeText(context, _linearcode)),
+              child: codeText(context, _modelfunc),
             )
           ],
         ),
-        Text(
-          "Flow in animations",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "To change offset for model flow animations.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Flow in animations}\n"
+          "To change offset for model flow animations.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),

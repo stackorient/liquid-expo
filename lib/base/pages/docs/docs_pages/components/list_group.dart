@@ -8,7 +8,7 @@ class ListGroupPage extends StatelessWidget {
       "List groups are a flexible and powerful component for displaying a series of content."
       " Modify and extend them to support just about any content within.";
 
-  final _code = """
+  final _listgrpexm = """
 
  LListGroup(
   direction: Axis.vertical,
@@ -33,7 +33,7 @@ class ListGroupPage extends StatelessWidget {
 ),
   """;
 
-  final _headCode = """
+  final _listitemexmp = """
 
   LListItem(
     title: Text("Item 1"),
@@ -49,7 +49,7 @@ class ListGroupPage extends StatelessWidget {
 
   """;
 
-  final _activecode = """
+  final _listitemexmp2 = """
 
  LListItem(
     selected: true,
@@ -71,7 +71,7 @@ class ListGroupPage extends StatelessWidget {
 
   """;
 
-  final _horizontalCode = """
+  final _listgrpexmp2 = """
 
  LListGroup(
    direction: Axis.horizontal,
@@ -121,10 +121,9 @@ class ListGroupPage extends StatelessWidget {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "Example",
-          style: _theme.typographyTheme.h4,
+        SizedBox(height: 20.0),
+        LText(
+          "\l.h4{Example}\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -157,34 +156,15 @@ class ListGroupPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _code),
+              child: codeText(context, _listgrpexm),
             )
           ],
         ),
-        Text(
-          "Contents",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "To know about LListItem, active and disabled items.",
-            style: _theme.typographyTheme.p,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "LListItem",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Add child to the LListGroup. And allows to add title and other widgets at trailing and leading positions.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Contents}\n"
+          "To know about LListItem, active and disabled items.\n\n"
+          "\l.bullet.h5{LListItem}\n"
+          "Add child to the LListGroup. And allows to add title and other widgets at trailing and leading positions.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -211,23 +191,13 @@ class ListGroupPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _headCode),
+              child: codeText(context, _listitemexmp),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "Active and Disabled Items",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Allows to set or change the listitem accordingly there active or disabled state.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.bullet.h5{Active and Disabled Items}\n"
+          "Allows to set or change the listitem accordingly there active or disabled state.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -260,23 +230,13 @@ class ListGroupPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _activecode),
+              child: codeText(context, _listitemexmp2),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "Flush",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Removes the side border of listItems in listGroup except the seperator side between two adjacent list items..",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.bullet.h5{Flush}\n"
+          "Removes the side border of listItems in listGroup except the seperator side between two adjacent list items.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -316,23 +276,13 @@ class ListGroupPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _code),
+              child: codeText(context, _listgrpexm),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0, bottom: 10.0),
-          child: Text(
-            "Horizontal variation",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
-          child: Text(
-            "Alligns List group in a horizontal direction.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.bullet.h5{Horizontal variation}\n"
+          "Alligns List group in a horizontal direction.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -354,18 +304,18 @@ class ListGroupPage extends StatelessWidget {
                     selected: true,
                   ),
                   LListItem(
-                    title: Text("Item 1"),
+                    title: Text("Item 2"),
                     trailing: LBadge.text("45"),
                     onTap: () {},
                   ),
                   LListItem(
-                    title: Text("Item 2"),
+                    title: Text("Item 3"),
                   ),
                 ],
               ),
             ),
             LColumn.child(
-              child: codeText(context, _horizontalCode),
+              child: codeText(context, _listgrpexmp2),
             )
           ],
         ),

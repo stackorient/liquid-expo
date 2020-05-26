@@ -7,7 +7,7 @@ class ProgressPage extends StatelessWidget {
   final _subtitle =
       "Documentation and examples for using Liquid's custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.";
 
-  final _linearcode = """
+  final _progindicator = """
 
   LProgressIndicator(
     progress: 0.2,
@@ -21,7 +21,7 @@ class ProgressPage extends StatelessWidget {
   ),
   """;
 
-  final _linercode2 = """
+  final _progindicator2 = """
 
   LProgressIndicator(
     progress: 0.45,
@@ -39,7 +39,7 @@ class ProgressPage extends StatelessWidget {
 
   """;
 
-  final _circlecode1 = """
+  final _circleindicator = """
 
  LCircularProgressIndicator(
      progress: 0.6,
@@ -54,7 +54,7 @@ class ProgressPage extends StatelessWidget {
 
   """;
 
-  final _circlecode2 = """
+  final _circleindicator2 = """
 
  LColumn.child(
   lg: 4,
@@ -97,17 +97,10 @@ class ProgressPage extends StatelessWidget {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "LProgressIndicator",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Displays Linear progress indicator [LProgressIndicator].",
-            style: _theme.typographyTheme.p,
-          ),
+        SizedBox(height: 20.0),
+        LText(
+          "\l.h4{LProgressIndicator}\n"
+          "Displays Linear progress indicator [LProgressIndicator].\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -129,20 +122,13 @@ class ProgressPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _linearcode),
+              child: codeText(context, _progindicator),
             )
           ],
         ),
-        Text(
-          "Variations",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Allows to change background and bar colors or width, border radius etc.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Variations}\n"
+          "Allows to change background and bar colors or width, border radius etc.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -167,24 +153,12 @@ class ProgressPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _linercode2),
+              child: codeText(context, _progindicator2),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "LCircularProgressIndicator",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Displays Circular progress indicator [LCircularProgressIndicator].",
-            style: _theme.typographyTheme.p,
-          ),
-        ),
+        LText("\n\l.h4{LCircularProgressIndicator}\n"
+            "Displays Circular progress indicator [LCircularProgressIndicator].\n\n"),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
@@ -205,20 +179,13 @@ class ProgressPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _circlecode1),
+              child: codeText(context, _circleindicator),
             )
           ],
         ),
-        Text(
-          "Variations",
-          style: _theme.typographyTheme.h4,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Allows to change background and bar colors or thickness, diameter etc.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Variations}\n"
+          "Allows to change background and bar colors or thickness, diameter etc.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -241,7 +208,7 @@ class ProgressPage extends StatelessWidget {
               ),
             ),
             LColumn.child(
-              child: codeText(context, _circlecode2),
+              child: codeText(context, _circleindicator2),
             )
           ],
         ),

@@ -91,7 +91,7 @@ class NavBar extends StatelessWidget {
           LFlatButton.text(
             text: "SPONSOR",
             type: LElementType.warning,
-            onPressed: () {},
+            onPressed: null,
           ),
           SizedBox(width: 10.0),
           LFlatButton.text(
@@ -179,8 +179,11 @@ class NavBar extends StatelessWidget {
           ),
           LOutlineButton.text(
             text: "Examples",
-            textStyle: TextStyle(color: Colors.white),
-            onPressed: () {},
+            textStyle: TextStyle(color: Colors.white).weight(
+                currentRoute == exampleRoute
+                    ? FontWeight.w700
+                    : FontWeight.normal),
+            onPressed: () => openPage(exampleRoute),
           ),
         ],
       ),

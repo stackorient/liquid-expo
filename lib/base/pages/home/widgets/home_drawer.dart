@@ -125,6 +125,7 @@ class HomeDrawer extends StatelessWidget {
               style: theme.typographyTheme.h6.withColor(Colors.amber[700]),
               textAlign: TextAlign.center,
             ),
+            enabled: false,
           ),
           LListItem(
             title: Text(

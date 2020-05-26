@@ -26,8 +26,7 @@ Container(
       Alignment.center,
       Alignment.bottomRight, //default
     ),
-    child: Image.network(
-        "https://source.unsplash.com/random/320x180/?mountains"),
+    child: Image.network("https://source.unsplash.com/random/320x180/?mountains"),
   ),
 ),
   """;
@@ -72,7 +71,7 @@ Container(
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 35.0),
+          padding: const EdgeInsets.only(bottom: 20.0),
           child: Text(
             _subtitle,
             style: mq.isSM || mq.isXS
@@ -88,18 +87,19 @@ Container(
           ),
         ),
         LText(_lboxDescription),
-        LText("\n\l.h5{Liquid has 5 breakpoints definations}\n"
-            "\l.bullet.h6{xs < 576px}\n"
-            "\l.bullet.h6{sm >= 576px}\n"
-            "\l.bullet.h6{md >= 768px}\n"
-            "\l.bullet.h6{lg >= 992px}\n"
-            "\l.bullet.h6{xl >= 1200px}\n"),
-        SizedBox(height: 20.0),
         LText(
-          "\l.h5{Example: Change screen size to see LBox in action.}\n\n"
+          "\n\l.h5{Liquid has 5 breakpoint definations}\n"
+          "\l.bullet.h6{xs < 576px}\n"
+          "\l.bullet.h6{sm >= 576px}\n"
+          "\l.bullet.h6{md >= 768px}\n"
+          "\l.bullet.h6{lg >= 992px}\n"
+          "\l.bullet.h6{xl >= 1200px}\n",
+        ),
+        LText(
+          "\l.h5{Example: Change screen size to see LBox in action.}\n"
           "In Below example, The image will not render on \l.bold{MD} breakpoint,\n"
           "also image \l.bold{alignment} will be center in \l.bold{XS and SM} breakpoint.\n"
-          "\l.bold{NOTE: You can use LAnimatedBox, which will animate any property change in LBox}\n\n",
+          "\l.bold{NOTE: You can use LAnimatedBox, which will animate any property change in LBox}\n",
         ),
         LRow(
           axis: LRowAxis.belowXL(Axis.vertical),

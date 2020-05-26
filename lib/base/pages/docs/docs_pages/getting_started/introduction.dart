@@ -176,12 +176,11 @@ LRow(
       children: <Widget>[
         buildTitle(mq, _theme),
         buildSubtitle(mq, _theme),
-        SizedBox(height: 35.0),
+        SizedBox(height: 20.0),
         buildInteractiveColumn(context),
         buildForms(context),
         buildButtons(context),
         buildltext(context),
-        Divider(),
         LFlatButton.text(
           text: "Continue to Quick Start",
           onPressed: () {
@@ -202,68 +201,65 @@ LRow(
         LText(
             "\n\l.h4{Style Text with CSS like } \l.h4.color(hex=#0062e7){Style Classes}\n"
             "\l.lead{Liquid comes with a powerful text processor to easily style your text just like in CSS}"),
-        Container(
-          margin: EdgeInsets.only(top: 15.0),
-          child: LRow(
-            axis: LRowAxis.belowLG(Axis.vertical),
-            columns: [
-              LColumn(
-                children: [
-                  LText("\l.lead{Styling Text in Flutter}\n\n"),
-                  RichText(
-                    text: TextSpan(
-                      text: "The quick",
-                      children: [
-                        TextSpan(
-                          text: " brown fox ",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFF2994A),
-                          ),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          columns: [
+            LColumn(
+              children: [
+                LText("\l.lead{Styling Text in Flutter}\n\n"),
+                RichText(
+                  text: TextSpan(
+                    text: "The quick",
+                    children: [
+                      TextSpan(
+                        text: " brown fox ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFF2994A),
                         ),
-                        TextSpan(
-                          text: "jumps over the lazy dog.",
-                        ),
-                      ],
-                      style: TextStyle(color: Colors.black),
-                    ),
+                      ),
+                      TextSpan(
+                        text: "jumps over the lazy dog.",
+                      ),
+                    ],
+                    style: TextStyle(color: Colors.black),
                   ),
-                  codeText(context, widget._richText),
-                ],
-              ),
-              LColumn(
-                children: [
-                  LText(
-                      "\l.lead{Styling Text with Liquid's} \l.lead.bold{LText}\n\n"),
-                  LText(
-                    "\l.capitalize{The quick brown fox jumps over the lazy dog}.",
-                  ),
-                  codeText(context, """
+                ),
+                codeText(context, widget._richText),
+              ],
+            ),
+            LColumn(
+              children: [
+                LText(
+                    "\l.lead{Styling Text with Liquid's} \l.lead.bold{LText}\n\n"),
+                LText(
+                  "\l.capitalize{The quick brown fox jumps over the lazy dog}.",
+                ),
+                codeText(context, """
 LText(
-"\\l.capitalize{The quick brown fox jumps over the lazy dog}",
+  "\\l.capitalize{The quick brown fox jumps over the lazy dog}",
 ),            
-                    """),
-                  LText(
-                    "The quick \l.italic.underline{brown fox} jumps over the \l.bold{lazy} dog.",
-                    textAlign: TextAlign.center,
-                  ),
-                  codeText(context, """
+                  """),
+                LText(
+                  "The quick \l.italic.underline{brown fox} jumps over the \l.bold{lazy} dog.",
+                  textAlign: TextAlign.center,
+                ),
+                codeText(context, """
 LText(
-"The quick \\l.italic.underline{brown fox} jumps over the \l.bold{lazy} dog.",
+  "The quick \\l.italic.underline{brown fox} jumps over the \\l.bold{lazy} dog.",
 ),            
-                    """),
-                  LText(
-                    "The quick \l.bold.color(hex=#F2994A){brown fox} jumps over the lazy dog.",
-                  ),
-                  codeText(context, """
+                  """),
+                LText(
+                  "The quick \l.bold.color(hex=#F2994A){brown fox} jumps over the lazy dog.",
+                ),
+                codeText(context, """
 LText(
-"The quick \\l.bold.color(hex=#F2994A){brown fox} jumps over the lazy dog.",
+  "The quick \\l.bold.color(hex=#F2994A){brown fox} jumps over the lazy dog.",
 ),            
-                    """),
-                ],
-              ),
-            ],
-          ),
+                  """),
+              ],
+            ),
+          ],
         ),
       ],
     );
@@ -279,93 +275,88 @@ LText(
           "\l.lead{Liquid is highly inspired by CSS frameworks like}"
           " \l.lead.color(hex=#7952b3){Bootstrap} \l.lead{and} \l.lead.color(hex=#01d1b2){Bulma}.",
         ),
-        Container(
-            margin: EdgeInsets.only(top: 15.0),
-            child: LRow(
-              axis: LRowAxis.belowLG(Axis.vertical),
-              columns: [
-                LColumn(
-                  children: [
-                    codeText(
-                      context,
-                      """
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          columns: [
+            LColumn(
+              children: [
+                codeText(
+                  context,
+                  """
 LFlatButton.text(
-text: "Button",
-onPressed:(){}
+  text: "Button",
+  onPressed:(){}
 )
-              """,
-                      fontSize: 12.0,
-                    ),
-                    LFlatButton.text(text: "Button", onPressed: () {}),
-                  ],
+          """,
+                  fontSize: 12.0,
                 ),
-                LColumn(
-                  children: [
-                    codeText(
-                      context,
-                      """
+                LFlatButton.text(text: "Button", onPressed: () {}),
+              ],
+            ),
+            LColumn(
+              children: [
+                codeText(
+                  context,
+                  """
 LFlatButton.text(
-text: "Button",
-onPressed:(){}
-type: LElementType.success,
+  text: "Button",
+  onPressed:(){}
+  type: LElementType.success,
 )
-              """,
-                      fontSize: 12.0,
-                    ),
-                    LFlatButton.text(
-                      text: "Button",
-                      onPressed: () {},
-                      type: LElementType.success,
-                    ),
-                  ],
+          """,
+                  fontSize: 12.0,
                 ),
-                LColumn(
-                  children: [
-                    codeText(
-                      context,
-                      """
-LFlatButton.text(
-text: "Button",
-onPressed:(){}
-type: LElementType.success,
-size: LElementSize.large,
-)
-              """,
-                      fontSize: 12.0,
-                      scrollable: false,
-                    ),
-                    LFlatButton.text(
-                      text: "Button",
-                      onPressed: () {},
-                      type: LElementType.success,
-                      size: LElementSize.large,
-                    ),
-                  ],
-                ),
-                LColumn(
-                  flexible: false,
-                  children: [
-                    codeText(
-                      context,
-                      """
-LFlatButton(
-child: LSpinner(thickness: 1.0),
-onPressed: null,
-size: LElementSize.large,
-),
-              """,
-                      fontSize: 12.0,
-                      scrollable: false,
-                    ),
-                    LFlatButton(
-                      child: LSpinner(thickness: 1.0),
-                      onPressed: null,
-                      size: LElementSize.large,
-                    ),
-                  ],
+                LFlatButton.text(
+                  text: "Button",
+                  onPressed: () {},
+                  type: LElementType.success,
                 ),
               ],
-            ))
+            ),
+            LColumn(
+              children: [
+                codeText(
+                  context,
+                  """
+LFlatButton.text(
+  text: "Button",
+  onPressed:(){}
+  type: LElementType.success,
+  size: LElementSize.large,
+)
+          """,
+                  fontSize: 12.0,
+                ),
+                LFlatButton.text(
+                  text: "Button",
+                  onPressed: () {},
+                  type: LElementType.success,
+                  size: LElementSize.large,
+                ),
+              ],
+            ),
+            LColumn(
+              children: [
+                codeText(
+                  context,
+                  """
+LFlatButton(
+  child: LSpinner(thickness: 1.0),
+  onPressed: null,
+  size: LElementSize.large,
+),
+          """,
+                  fontSize: 12.0,
+                ),
+                LFlatButton(
+                  child: LSpinner(thickness: 1.0),
+                  onPressed: null,
+                  size: LElementSize.large,
+                ),
+              ],
+            ),
+          ],
+        )
       ],
     );
   }
@@ -380,82 +371,78 @@ size: LElementSize.large,
           "\l.lead{Liquid Form have all the HTML form features, easy validation, serialization,\n"
           "field access, field states such as isTouched, isDirty, etc.}",
         ),
-        Container(
-          margin: EdgeInsets.only(top: 15.0),
-          constraints: BoxConstraints(maxHeight: 550.0),
-          child: LRow(
-            axis: LRowAxis.belowLG(Axis.vertical),
-            columns: [
-              LColumn.child(
-                child: codeText(context, widget._formEg),
-              ),
-              LColumn.child(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                  child: LForm(
-                    manager: manager,
-                    onSubmit: () {
-                      if (manager.formState.validate()) {
-                        final state = manager.formState;
-                        final serializedData = state.serialize();
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          columns: [
+            LColumn.child(
+              child: codeText(context, widget._formEg),
+            ),
+            LColumn.child(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: LForm(
+                  manager: manager,
+                  onSubmit: () {
+                    if (manager.formState.validate()) {
+                      final state = manager.formState;
+                      final serializedData = state.serialize();
 
-                        showAlert(
-                          context,
-                          content:
-                              "\l.bold{Serialized Form Data}\n ${serializedData.toString()}\n\n"
-                              "\l.bold{Form State}\n"
-                              "\l.bullet{is Dirty} : ${state.isDirty}\n"
-                              "\l.bullet{is Pristine} : ${state.isPristine}\n"
-                              "\l.bullet{is Submitted} : ${state.isSubmitted}\n"
-                              "\l.bullet{is Valid} : ${state.isValid}\n"
-                              "\l.bullet{is Invalid} : ${state.isInvalid}\n",
-                        );
-                      }
-                    },
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: LTextFormField(
-                            name: "fullName",
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(gapPadding: 0),
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 10.0),
-                              labelText: "Full Name",
-                            ),
-                            validators: [
-                              LRequiredValidator(),
-                            ],
+                      showAlert(
+                        context,
+                        content:
+                            "\l.bold{Serialized Form Data}\n ${serializedData.toString()}\n\n"
+                            "\l.bold{Form State}\n"
+                            "\l.bullet{is Dirty} : ${state.isDirty}\n"
+                            "\l.bullet{is Pristine} : ${state.isPristine}\n"
+                            "\l.bullet{is Submitted} : ${state.isSubmitted}\n"
+                            "\l.bullet{is Valid} : ${state.isValid}\n"
+                            "\l.bullet{is Invalid} : ${state.isInvalid}\n",
+                      );
+                    }
+                  },
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: LTextFormField(
+                          name: "fullName",
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(gapPadding: 0),
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 10.0),
+                            labelText: "Full Name",
                           ),
+                          validators: [
+                            LRequiredValidator(),
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: LTextFormField(
-                            name: "email",
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(gapPadding: 0),
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 10.0),
-                              labelText: "Email",
-                            ),
-                            validators: [
-                              LRequiredValidator(),
-                              LEmailValidator(),
-                            ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: LTextFormField(
+                          name: "email",
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(gapPadding: 0),
+                            contentPadding:
+                                EdgeInsets.symmetric(horizontal: 10.0),
+                            labelText: "Email",
                           ),
+                          validators: [
+                            LRequiredValidator(),
+                            LEmailValidator(),
+                          ],
                         ),
-                        LFlatButton.text(
-                          text: "Submit",
-                          onPressed: () => manager.formState.submit(),
-                        ),
-                      ],
-                    ),
+                      ),
+                      LFlatButton.text(
+                        text: "Submit",
+                        onPressed: () => manager.formState.submit(),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ],
     );
@@ -513,13 +500,9 @@ size: LElementSize.large,
               ),
             ),
             LColumn.child(
-              child: Container(
-                constraints: BoxConstraints(maxHeight: 550.0, minHeight: 300.0),
-                child: codeText(
-                  context,
-                  getColContent(),
-                  fontSize: 12.0,
-                ),
+              child: codeText(
+                context,
+                getColContent(),
               ),
             ),
           ],

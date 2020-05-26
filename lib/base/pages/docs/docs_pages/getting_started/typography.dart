@@ -9,50 +9,48 @@ import '../env.dart';
 
 class TypographyPage extends StatelessWidget {
   final _title = "Typography";
-  final _subtitle =
-      "Documentation and example for Liquid typography, including other elements like headings, displays, links etc.";
+  final _subtitle = "Documentation and example for Liquid typography, including"
+      " other elements like headings, displays, links etc.";
 
   final _linearcode = """
-
-  LText("Hello \l.bold.italic.underline{World}");
-
+LText("Hello \l.bold.italic.underline{World}");
   """;
+
   final _headingcode = """
+LiquidTheme.of(context).typographyTheme.h1;
 
-  LiquidTheme.of(context).typographyTheme.h1;
+LiquidTheme.of(context).typographyTheme.h2;
 
-  LiquidTheme.of(context).typographyTheme.h2;
-  
-  LiquidTheme.of(context).typographyTheme.h3;
+LiquidTheme.of(context).typographyTheme.h3;
 
-  LiquidTheme.of(context).typographyTheme.h4;
+LiquidTheme.of(context).typographyTheme.h4;
 
-  LiquidTheme.of(context).typographyTheme.h5;
+LiquidTheme.of(context).typographyTheme.h5;
 
-  LiquidTheme.of(context).typographyTheme.h6;
-
+LiquidTheme.of(context).typographyTheme.h6;
   """;
+
   final _displaycode = """
+LiquidTheme.of(context).typographyTheme.display1;
 
-  LiquidTheme.of(context).typographyTheme.display1;
+LiquidTheme.of(context).typographyTheme.display2;
 
-  LiquidTheme.of(context).typographyTheme.display2;
+LiquidTheme.of(context).typographyTheme.display3;
 
-  LiquidTheme.of(context).typographyTheme.display3;
-
-  LiquidTheme.of(context).typographyTheme.display4;
-
+LiquidTheme.of(context).typographyTheme.display4;
   """;
 
   final _inlinecode = """
-  LText("\\l.p{Liquid the most advance flutter UI kit.}");
+LText("\\l.p{Liquid the most advance flutter UI kit.}\\n");
 
-  LText("\\l.small{Liquid the most advance flutter UI kit.}");
+LText("\\l.small{Liquid the most advance flutter UI kit.}\\n");
 
-  LText("\\l.lead{Liquid the most advance flutter UI kit.}");
+LText("\\l.lead{Liquid the most advance flutter UI kit.}\\n");
 
-  LText("\\l.quote{Liquid the most advance flutter UI kit.}");
+LText("\\l.quote{Liquid the most advance flutter UI kit.}\\n");
+
   """;
+
   @override
   Widget build(BuildContext context) {
     final _theme = LiquidTheme.of(context);
@@ -78,24 +76,21 @@ class TypographyPage extends StatelessWidget {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        LText("\l.h4.bold{Default Text Styles}\n"),
+        SizedBox(height: 20.0),
         LText("\l.bullet.h5.bold{Headings}\n"),
         LRow(
           mainAxisAlignment: MainAxisAlignment.center,
-          gutter: 10.0,
+          axis: LRowAxis.all(Axis.vertical),
           columns: [
             LColumn(
-              lg: 6,
-              xl: 6,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                LText("\l.h1{h1 heading}\n\n"),
-                LText("\l.h2{h2 heading}\n\n"),
-                LText("\l.h3{h3 heading}\n\n"),
-                LText("\l.h4{h4 heading}\n\n"),
-                LText("\l.h5{h5 heading}\n\n"),
-                LText("\l.h6{h6 heading}\n\n"),
+                LText("\l.h1{h1 heading}\n"),
+                LText("\l.h2{h2 heading}\n"),
+                LText("\l.h3{h3 heading}\n"),
+                LText("\l.h4{h4 heading}\n"),
+                LText("\l.h5{h5 heading}\n"),
+                LText("\l.h6{h6 heading}\n"),
               ],
             ),
             LColumn.child(
@@ -103,13 +98,11 @@ class TypographyPage extends StatelessWidget {
             )
           ],
         ),
-        LText("\l.bullet.h5.bold{Display Headings}\n"),
+        LText("\l.bullet.h5.bold{Displays}\n"),
         LRow(
-          gutter: 10.0,
+          axis: LRowAxis.all(Axis.vertical),
           columns: [
             LColumn(
-              lg: 6,
-              xl: 6,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -129,19 +122,17 @@ class TypographyPage extends StatelessWidget {
           child: LText("\l.bullet.h5.bold{Inline text elements}\n"),
         ),
         LRow(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          axis: LRowAxis.all(Axis.vertical),
           columns: [
             LColumn(
-              lg: 6,
-              xl: 6,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                LText("\l.p{Liquid the most advance flutter UI kit.}\n\n"),
-                LText("\l.small{Liquid the most advance flutter UI kit.}\n\n"),
-                LText("\l.lead{Liquid the most advance flutter UI kit.}\n\n"),
-                LText("\l.quote{Liquid the most advance flutter UI kit.}\n\n"),
+                LText("\l.p{Liquid the most advance flutter UI kit.}\n"),
+                LText("\l.small{Liquid the most advance flutter UI kit.}\n"),
+                LText("\l.lead{Liquid the most advance flutter UI kit.}\n"),
+                LText("\l.quote{Liquid the most advance flutter UI kit.}\n"),
               ],
             ),
             LColumn.child(
@@ -150,10 +141,10 @@ class TypographyPage extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 25.0),
+          padding: const EdgeInsets.only(top: 20.0),
           child: LText(
             "\l.h4.bold{LText}\n"
-            "The [LText] widget displays text that uses multiple different styles.",
+            "The \l.bold{LText} widget displays text that uses multiple different styles.",
           ),
         ),
         Padding(
@@ -182,8 +173,9 @@ class TypographyPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
-              lg: 6,
-              xl: 6,
+              md: 3,
+              lg: 3,
+              xl: 3,
               mainAxisAlignment: MainAxisAlignment.center,
               child: LText("Hello \l.bold.italic.underline{World}"),
             ),
@@ -191,7 +183,6 @@ class TypographyPage extends StatelessWidget {
               child: codeText(
                 context,
                 _linearcode,
-                scrollable: mq.isXS || mq.isSM || mq.isMD,
               ),
             )
           ],

@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:liquid/liquid.dart';
+import 'package:liquid_ui/liquid_ui.dart';
 
 import '../../bloc/docs_bloc.dart';
 import '../../code_highlight.dart';

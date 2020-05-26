@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:liquid/liquid.dart';
+import 'package:liquid_ui/liquid_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'base/base.dart';
 import 'core/core.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:liquid/liquid.dart';
+import 'package:liquid_ui/liquid_ui.dart';
 import 'package:liquid_website/base/pages/docs/code_highlight.dart';
 
 class LayoutUtility extends StatelessWidget {

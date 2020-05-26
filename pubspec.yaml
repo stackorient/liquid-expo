@@ -24,10 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  liquid:
+  liquid_ui:
     git:
-      url: git@github.com:stackorient/Liquid-Flutter.git
-      path: liquid
+      url: git@github.com:stackorient/Liquid.git
+      path: liquid_ui
       ref: master
   flutter_icons: ^1.1.0
   get_it: ^4.0.2

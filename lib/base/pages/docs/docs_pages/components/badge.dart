@@ -73,6 +73,10 @@ LRaisedButton.icon(
               : _theme.typographyTheme.lead,
         ),
         SizedBox(height: 20.0),
+        Text(
+          "Example",
+          style: _theme.typographyTheme.h4,
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5.0),
           child: Text(

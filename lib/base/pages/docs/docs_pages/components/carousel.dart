@@ -4,218 +4,215 @@ import '../../code_highlight.dart';
 
 class CarouselPage extends StatelessWidget {
   final _title = "LCarousel";
-  final _subtitle = "A slideshow component for cycling through elements—images"
-      " or slides of text—like a carousel."
-      "Carousels don’t automatically normalize slide dimensions."
-      "As such, you may need to use additional utilities or custom styles to appropriately size content."
-      "While carousels support previous/next controls and indicators, they’re not explicitly required."
-      "Add and customize as you see fit.";
+  final _subtitle =
+      "A carousel is a list of cards that can be shuffled to display"
+      " different content. Ideally, each card contains a different item that the user "
+      "can browse from left and right. Carousel is an effective way of displaying"
+      " images or content cards. They can add visual interest and reduce clutter.";
 
   final _code = """
- LCarousel(
-   withCaption: true,
-   autoScroll: true,
-   withControls: true,
-   canScroll: true,
-   showIndicator: true,
-   enableIndicatorTapControl: true,
-   items: [
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain",
-         fit: BoxFit.cover,
-       ),
-       caption: LCarouselCaption(
-         titleText: "First Slide",
-         subTitleText: "By @heypnd and @heyrjs",
-         actions: <Widget>[
-           LFlatButton.text(
-             text: "Accept",
-             onPressed: () {},
-             margin: const EdgeInsets.only(top: 10.0),
-             size: LElementSize.small,
-           ),
-         ],
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain,sunset",
-         fit: BoxFit.cover,
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?sunrise",
-         fit: BoxFit.cover,
-       ),
-     ),
-   ],
- ),
-  
+LCarousel(
+  withCaption: true,
+  autoScroll: true,
+  withControls: true,
+  canScroll: true,
+  showIndicator: true,
+  enableIndicatorTapControl: true,
+  items: [
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?golden,bridge",
+        fit: BoxFit.cover,
+      ),
+      caption: LCarouselCaption(
+        titleText: "First Slide Title",
+        subTitleText: "with some subtitle",
+        actions: <Widget>[
+          LFlatButton.text(
+            text: "A Button",
+            onPressed: () {},
+            margin: const EdgeInsets.only(top: 10.0),
+            type: LElementType.warning,
+            size: LElementSize.small,
+          ),
+        ],
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?sunset",
+        fit: BoxFit.cover,
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?sunrise",
+        fit: BoxFit.cover,
+      ),
+    ),
+  ],
+ );
   """;
 
-  final _headCode = """
-
-  LCarousel(
-   withControls: true,
-   canScroll: true,
-   items: [
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain,sunset",
-         fit: BoxFit.cover,
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain,sunset",
-         fit: BoxFit.cover,
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?sunrise",
-         fit: BoxFit.cover,
-       ),
-     ),
-   ],
- ),
-  
+  final _withControl = """
+LCarousel(
+  withControls: true,
+  canScroll: true,
+  items: [
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?mountain,sunset",
+        fit: BoxFit.cover,
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?mountain,sunset",
+        fit: BoxFit.cover,
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?sunrise",
+        fit: BoxFit.cover,
+      ),
+    ),
+  ],
+);
   """;
 
   final _imageCode = """
-
 LCarousel(
-   showIndicator: true,
-   enableIndicatorTapControl: true,
-   withControls: true,
-   canScroll: true,
-   items: [
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain,sunset",
-         fit: BoxFit.cover,
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain,sunset",
-         fit: BoxFit.cover,
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?sunrise",
-         fit: BoxFit.cover,
-       ),
-     ),
-   ],
- ),
-
+  showIndicator: true,
+  enableIndicatorTapControl: true,
+  withControls: true,
+  canScroll: true,
+  items: [
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?mountain,sunset",
+        fit: BoxFit.cover,
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?mountain,sunset",
+        fit: BoxFit.cover,
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?sunrise",
+        fit: BoxFit.cover,
+      ),
+    ),
+  ],
+);
   """;
 
   final _colorCode = """
-
- LCarousel(
-     withCaption: true,
-     showIndicator: true,
-     enableIndicatorTapControl: true,
-     withControls: true,
-     canScroll: true,
-     items: [
-       LCarouselItem(
-         child: Image.network(
-           "https://source.unsplash.com/random/?mountain",
-           fit: BoxFit.cover,
-         ),
-         caption: LCarouselCaption(
-           titleText: "First Slide",
-           subTitleText: "By @heypnd and @heyrjs",
-           actions: <Widget>[
-             LFlatButton.text(
-               type: LElementType.primary,
-               text: "Accept",
-               onPressed: () {},
-               margin: const EdgeInsets.only(top: 10.0),
-               size: LElementSize.small,
-             ),
-           ],
-         ),
-       ),
-       LCarouselItem(
-         child: Image.network(
-           "https://source.unsplash.com/random/?mountain",
-           fit: BoxFit.cover,
-         ),
-         caption: LCarouselCaption(
-           titleText: "Second Slide",
-           subTitleText: "By @heypnd and @heyrjs",
-           actions: <Widget>[
-             LFlatButton.text(
-               type: LElementType.success,
-               text: "Accept",
-               onPressed: () {},
-               margin: const EdgeInsets.only(top: 10.0),
-               size: LElementSize.small,
-             ),
-           ],
-         ),
-       ),
-       LCarouselItem(
-         child: Image.network(
-           "https://source.unsplash.com/random/?mountain",
-           fit: BoxFit.cover,
-         ),
-         caption: LCarouselCaption(
-           titleText: "Third Slide",
-           subTitleText: "By @heypnd and @heyrjs",
-           actions: <Widget>[
-             LFlatButton.text(
-               type: LElementType.danger,
-               text: "Accept",
-               onPressed: () {},
-               margin: const EdgeInsets.only(top: 10.0),
-               size: LElementSize.small,
-             ),
-           ],
-         ),
-       ),
-     ],
-   ),
-
+LCarousel(
+  withCaption: true,
+  showIndicator: true,
+  enableIndicatorTapControl: true,
+  withControls: true,
+  canScroll: true,
+  items: [
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/daily/?mountain",
+        fit: BoxFit.cover,
+      ),
+      caption: LCarouselCaption(
+        titleText: "First Slide",
+        subTitleText:
+            "By \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heypnd}"
+            " and \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heyrjs}.",
+        actions: <Widget>[
+          LFlatButton.text(
+            type: LElementType.primary,
+            text: "Button",
+            onPressed: () {},
+            margin: const EdgeInsets.only(top: 10.0),
+            size: LElementSize.small,
+          ),
+        ],
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/daily/?mountain",
+        fit: BoxFit.cover,
+      ),
+      caption: LCarouselCaption(
+        titleText: "Second Slide",
+        subTitleText:
+            "By \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heypnd}"
+            " and \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heyrjs}.",
+        actions: <Widget>[
+          LFlatButton.text(
+            type: LElementType.success,
+            text: "Button",
+            onPressed: () {},
+            margin: const EdgeInsets.only(top: 10.0),
+            size: LElementSize.small,
+          ),
+        ],
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/daily/?mountain",
+        fit: BoxFit.cover,
+      ),
+      caption: LCarouselCaption(
+        titleText: "Third Slide",
+        subTitleText:
+            "By \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heypnd}"
+            " and \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heyrjs}.",
+        actions: <Widget>[
+          LFlatButton.text(
+            type: LElementType.danger,
+            text: "Button",
+            onPressed: () {},
+            margin: const EdgeInsets.only(top: 10.0),
+            size: LElementSize.small,
+          ),
+        ],
+      ),
+    ),
+  ],
+);
   """;
 
   final _borderCode = """
-
 LCarousel(
-  autoScroll:true,
-   showIndicator: true,
-   enableIndicatorTapControl: true,
-   withControls: true,
-   canScroll: false,
-   items: [
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain,sunset",
-         fit: BoxFit.cover,
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?mountain,sunset",
-         fit: BoxFit.cover,
-       ),
-     ),
-     LCarouselItem(
-       child: Image.network(
-         "https://source.unsplash.com/random/?sunrise",
-         fit: BoxFit.cover,
-       ),
-     ),
-   ],
- ),
-
+  autoScroll: true,
+  showIndicator: true,
+  enableIndicatorTapControl: true,
+  withControls: true,
+  canScroll: false,
+  items: [
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?mountain,sunset",
+        fit: BoxFit.cover,
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?mountain,sunset",
+        fit: BoxFit.cover,
+      ),
+    ),
+    LCarouselItem(
+      child: Image.network(
+        "https://source.unsplash.com/random/?sunrise",
+        fit: BoxFit.cover,
+      ),
+    ),
+  ],
+);
 """;
 
   @override
@@ -252,10 +249,10 @@ LCarousel(
           axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
               lg: 4,
-              xl: 6,
               child: AspectRatio(
                 aspectRatio: 16 / 9,
                 child: LCarousel(
@@ -268,17 +265,18 @@ LCarousel(
                   items: [
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/random/?mountain",
+                        "https://source.unsplash.com/random/?golden,bridge",
                         fit: BoxFit.cover,
                       ),
                       caption: LCarouselCaption(
-                        titleText: "First Slide",
-                        subTitleText: "By @heypnd and @heyrjs",
+                        titleText: "First Slide Title",
+                        subTitleText: "with some subtitle",
                         actions: <Widget>[
                           LFlatButton.text(
-                            text: "Accept",
+                            text: "A Button",
                             onPressed: () {},
                             margin: const EdgeInsets.only(top: 10.0),
+                            type: LElementType.warning,
                             size: LElementSize.small,
                           ),
                         ],
@@ -286,7 +284,7 @@ LCarousel(
                     ),
                     LCarouselItem(
                       child: Image.network(
-                        "https://source.unsplash.com/random/?mountain,sunset",
+                        "https://source.unsplash.com/random/?sunset",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -301,25 +299,13 @@ LCarousel(
               ),
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(250.0),
-                  child: codeText(context, _code)),
+              child: codeText(context, _code),
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "With Controls",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "To add controls to the carousel.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{With Controls}\n"
+          "Add controls to the carousel.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -358,29 +344,16 @@ LCarousel(
               ),
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(250.0),
-                  child: codeText(context, _headCode)),
+              child: codeText(context, _withControl),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "With Slide Indicator",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "To add slider to the carousel and add click on to the slider.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{With Slide Indicator}\n"
+          "Add slide indicator to the carousel.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
@@ -417,25 +390,13 @@ LCarousel(
               ),
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(250.0),
-                  child: codeText(context, _imageCode)),
+              child: codeText(context, _imageCode),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "With Caption",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "To add overlay captions to the carousel items.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{With Caption}\n"
+          "Add an overlay caption to the carousel items.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -461,11 +422,13 @@ LCarousel(
                       ),
                       caption: LCarouselCaption(
                         titleText: "First Slide",
-                        subTitleText: "By @heypnd and @heyrjs",
+                        subTitleText:
+                            "By \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heypnd}"
+                            " and \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heyrjs}.",
                         actions: <Widget>[
                           LFlatButton.text(
                             type: LElementType.primary,
-                            text: "Accept",
+                            text: "Button",
                             onPressed: () {},
                             margin: const EdgeInsets.only(top: 10.0),
                             size: LElementSize.small,
@@ -480,11 +443,13 @@ LCarousel(
                       ),
                       caption: LCarouselCaption(
                         titleText: "Second Slide",
-                        subTitleText: "By @heypnd and @heyrjs",
+                        subTitleText:
+                            "By \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heypnd}"
+                            " and \l.link.color(hex=#ADD8E6).underline(href=https://twitter.com/heypnd){@heyrjs}.",
                         actions: <Widget>[
                           LFlatButton.text(
                             type: LElementType.success,
-                            text: "Accept",
+                            text: "Button",
                             onPressed: () {},
                             margin: const EdgeInsets.only(top: 10.0),
                             size: LElementSize.small,
@@ -505,7 +470,7 @@ LCarousel(
                         actions: <Widget>[
                           LFlatButton.text(
                             type: LElementType.danger,
-                            text: "Accept",
+                            text: "Button",
                             onPressed: () {},
                             margin: const EdgeInsets.only(top: 10.0),
                             size: LElementSize.small,
@@ -518,29 +483,16 @@ LCarousel(
               ),
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(250.0),
-                  child: codeText(context, _colorCode)),
+              child: codeText(context, _colorCode),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "Disable Scrolling",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "To disable scrolling of the carousel items.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{Disable Scrolling}\n"
+          "Disable scrolling of the carousel.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
@@ -578,9 +530,7 @@ LCarousel(
               ),
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(250.0),
-                  child: codeText(context, _borderCode)),
+              child: codeText(context, _borderCode),
             )
           ],
         ),

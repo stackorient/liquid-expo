@@ -163,262 +163,247 @@ class DropdownPage extends StatelessWidget {
       "Dropdowns are toggleable, contextual overlays for displaying lists of links and more.";
 
   final _linearcode = """
+final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
 
-  final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
+//...
 
-  ....
-
-  LDropdown(
-   key: _dropdown,
-   scrollable: false,
-   elevation: 10.0,
-   trigger: LFlatButton.text(
-     text: "Dropdown",
-     onPressed: () {
-       _dropdown.currentState.toggleDropdown();
-     },
-     type: LElementType.warning,
-   ),
-   itemBuilder: (context) => [
-     LDropdownItem.header(text: "Option 1"),
-     LDropdownItem(
-       text: "First Item",
-       onTap: () {},
-     ),
-     LDropdownItem(
-       text: "Second Item",
-       onTap: () {
-         print("pressed");
-       },
-       onLongPress: () {
-         print("long pressed");
-       },
-     ),
-     LDropdownItem(
-       text: "Third Item",
-       onTap: () {},
-     ),
-     LDropdownItem.divider(
-       thickness: 2,
-     ),
-     LDropdownItem.header(text: "Options"),
-     LDropdownItem.withChild(
-         child: Row(
-       // mainAxisSize: MainAxisSize.min,
-       children: <Widget>[
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-       ],
-     )),
-   ],
- ),
-
-
+LDropdown(
+  key: _dropdown,
+  scrollable: false,
+  elevation: 10.0,
+  trigger: LFlatButton.text(
+    text: "Dropdown",
+    onPressed: () {
+      _dropdown.currentState.toggleDropdown();
+    },
+    type: LElementType.warning,
+  ),
+  itemBuilder: (context) => [
+    LDropdownItem.header(text: "Option 1"),
+    LDropdownItem(
+      text: "First Item",
+      onTap: () {},
+    ),
+    LDropdownItem(
+      text: "Second Item",
+      onTap: () {
+        print("pressed");
+      },
+      onLongPress: () {
+        print("long pressed");
+      },
+    ),
+    LDropdownItem(
+      text: "Third Item",
+      onTap: () {},
+    ),
+    LDropdownItem.divider(
+      thickness: 2,
+    ),
+    LDropdownItem.header(text: "Options"),
+    LDropdownItem.withChild(
+      child: Row(
+      // mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        LIconButton(
+          icon: Icon(Icons.ac_unit),
+          onPressed: () {},
+        ),
+        LIconButton(
+          icon: Icon(Icons.ac_unit),
+          onPressed: () {},
+        ),
+        LIconButton(
+          icon: Icon(Icons.ac_unit),
+          onPressed: () {},
+        ),
+      ],
+    ),
+  )],
+);
   """;
   final _scrolltoclosecode = """
+final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
 
-  final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
-
-  ....
-
-  LDropdown(
-   key: _dropdown,
-   scrollToClose: true,
-   elevation: 10.0,
-   trigger: LFlatButton.text(
-     text: "Dropdown",
-     onPressed: () {
-       _dropdown.currentState.toggleDropdown();
-     },
-     type: LElementType.warning,
-   ),
-   itemBuilder: (context) => [
-     LDropdownItem.header(text: "Option 1"),
-     LDropdownItem(
-       text: "First Item",
-       onTap: () {},
-     ),
-     LDropdownItem(
-       text: "Second Item",
-       onTap: () {
-         print("pressed");
-       },
-       onLongPress: () {
-         print("long pressed");
-       },
-     ),
-     LDropdownItem(
-       text: "Third Item",
-       onTap: () {},
-     ),
-     LDropdownItem.divider(
-       thickness: 2,
-     ),
-     LDropdownItem.header(text: "Options"),
-     LDropdownItem.withChild(
-         child: Row(
-       // mainAxisSize: MainAxisSize.min,
-       children: <Widget>[
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-       ],
-     )),
-   ],
- ),
-
-
+//...
+LDropdown(
+  key: _dropdown,
+  scrollToClose: true,
+  elevation: 10.0,
+  trigger: LFlatButton.text(
+    text: "Dropdown",
+    onPressed: () {
+      _dropdown.currentState.toggleDropdown();
+    },
+    type: LElementType.warning,
+  ),
+  itemBuilder: (context) => [
+  LDropdownItem.header(text: "Option 1"),
+  LDropdownItem(
+    text: "First Item",
+    onTap: () {},
+  ),
+  LDropdownItem(
+    text: "Second Item",
+    onTap: () {
+      print("pressed");
+    },
+    onLongPress: () {
+      print("long pressed");
+    },
+  ),
+  LDropdownItem(
+    text: "Third Item",
+    onTap: () {},
+  ),
+  LDropdownItem.divider(
+    thickness: 2,
+  ),
+  LDropdownItem.header(text: "Options"),
+  LDropdownItem.withChild(
+    child: Row(
+    // mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      LIconButton(
+        icon: Icon(Icons.ac_unit),
+        onPressed: () {},
+      ),
+      LIconButton(
+        icon: Icon(Icons.ac_unit),
+        onPressed: () {},
+      ),
+      LIconButton(
+        icon: Icon(Icons.ac_unit),
+        onPressed: () {},
+      ),
+    ]),
+  )],
+);
   """;
   final _scrollablecode = """
+final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
 
-  final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
+//...
 
-  ....
+LDropdown(
+  key: _dropdown,
+  scrollToClose: false,
+  scrollable: true,
+  
 
-  LDropdown(
-   key: _dropdown,
-   scrollToClose: false,
-   scrollable: true,
-   
-
-   elevation: 10.0,
-   trigger: LFlatButton.text(
-     text: "Dropdown",
-     onPressed: () {
-       _dropdown.currentState.toggleDropdown();
-     },
-     type: LElementType.warning,
-   ),
-   itemBuilder: (context) => [
-     LDropdownItem.header(text: "Option 1"),
-     LDropdownItem(
-       text: "First Item",
-       onTap: () {},
-     ),
-     LDropdownItem(
-       text: "Second Item",
-       onTap: () {
-         print("pressed");
-       },
-       onLongPress: () {
-         print("long pressed");
-       },
-     ),
-     LDropdownItem(
-       text: "Third Item",
-       onTap: () {},
-     ),
-     LDropdownItem.divider(
-       thickness: 2,
-     ),
-     LDropdownItem.header(text: "Options"),
-     LDropdownItem.withChild(
-         child: Row(
-       // mainAxisSize: MainAxisSize.min,
-       children: <Widget>[
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-       ],
-     )),
-   ],
- ),
-
-
+  elevation: 10.0,
+  trigger: LFlatButton.text(
+    text: "Dropdown",
+    onPressed: () {
+      _dropdown.currentState.toggleDropdown();
+    },
+    type: LElementType.warning,
+  ),
+  itemBuilder: (context) => [
+  LDropdownItem.header(text: "Option 1"),
+  LDropdownItem(
+    text: "First Item",
+    onTap: () {},
+  ),
+  LDropdownItem(
+    text: "Second Item",
+    onTap: () {
+      print("pressed");
+    },
+    onLongPress: () {
+      print("long pressed");
+    },
+  ),
+  LDropdownItem(
+    text: "Third Item",
+    onTap: () {},
+  ),
+  LDropdownItem.divider(
+    thickness: 2,
+  ),
+  LDropdownItem.header(text: "Options"),
+  LDropdownItem.withChild(
+    child: Row(
+    // mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      LIconButton(
+        icon: Icon(Icons.ac_unit),
+        onPressed: () {},
+      ),
+      LIconButton(
+        icon: Icon(Icons.ac_unit),
+        onPressed: () {},
+      ),
+      LIconButton(
+        icon: Icon(Icons.ac_unit),
+        onPressed: () {},
+      ),
+    ]),
+  )],
+ );
   """;
   final _backdropcode = """
+final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
 
-  final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
+//...
 
-  ....
+LDropdown(
+  key: _dropdown,
+  scrollToClose: false,
+  scrollable: false,//@required
+  backdrop: _theme.colors.info.lighten(0.1),
 
-  LDropdown(
-   key: _dropdown,
-   scrollToClose: false,
-   scrollable: false,//@required
-   backdrop: _theme.colors.info.lighten(0.1),
-
-   elevation: 10.0,
-   trigger: LFlatButton.text(
-     text: "Dropdown",
-     onPressed: () {
-       _dropdown.currentState.toggleDropdown();
-     },
-     type: LElementType.warning,
-   ),
-   itemBuilder: (context) => [
-     LDropdownItem.header(text: "Option 1"),
-     LDropdownItem(
-       text: "First Item",
-       onTap: () {},
-     ),
-     LDropdownItem(
-       text: "Second Item",
-       onTap: () {
-         print("pressed");
-       },
-       onLongPress: () {
-         print("long pressed");
-       },
-     ),
-     LDropdownItem(
-       text: "Third Item",
-       onTap: () {},
-     ),
-     LDropdownItem.divider(
-       thickness: 2,
-     ),
-     LDropdownItem.header(text: "Options"),
-     LDropdownItem.withChild(
-         child: Row(
-       // mainAxisSize: MainAxisSize.min,
-       children: <Widget>[
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-         LIconButton(
-           icon: Icon(Icons.ac_unit),
-           onPressed: () {},
-         ),
-       ],
-     )),
-   ],
- ),
-
-
+  elevation: 10.0,
+  trigger: LFlatButton.text(
+    text: "Dropdown",
+    onPressed: () {
+      _dropdown.currentState.toggleDropdown();
+    },
+    type: LElementType.warning,
+  ),
+  itemBuilder: (context) => [
+    LDropdownItem.header(text: "Option 1"),
+    LDropdownItem(
+      text: "First Item",
+      onTap: () {},
+    ),
+    LDropdownItem(
+      text: "Second Item",
+      onTap: () {
+        print("pressed");
+      },
+      onLongPress: () {
+        print("long pressed");
+      },
+    ),
+    LDropdownItem(
+      text: "Third Item",
+      onTap: () {},
+    ),
+    LDropdownItem.divider(
+      thickness: 2,
+    ),
+    LDropdownItem.header(text: "Options"),
+    LDropdownItem.withChild(
+      child: Row(
+      // mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        LIconButton(
+          icon: Icon(Icons.ac_unit),
+          onPressed: () {},
+        ),
+        LIconButton(
+          icon: Icon(Icons.ac_unit),
+          onPressed: () {},
+        ),
+        LIconButton(
+          icon: Icon(Icons.ac_unit),
+          onPressed: () {},
+        ),
+      ]),
+    ),
+  ],
+);
   """;
   @override
   Widget build(BuildContext context) {
@@ -445,29 +430,24 @@ class DropdownPage extends StatelessWidget {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Container(
-          constraints: BoxConstraints(maxHeight: 600.0),
-          child: LRow(
-            axis: LRowAxis.belowLG(Axis.vertical),
-            gutter: 10.0,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            columns: [
-              LColumn(lg: 4, xl: 4, children: [
-                Dropdown1(scrollable: false),
-              ]),
-              LColumn.child(
-                child: codeText(context, _linearcode),
-              )
-            ],
-          ),
+        SizedBox(height: 20.0),
+        LText("\l.h4{Example}\n"),
+        LRow(
+          axis: LRowAxis.belowLG(Axis.vertical),
+          gutter: 10.0,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          columns: [
+            LColumn(lg: 4, xl: 4, children: [
+              Dropdown1(scrollable: false),
+            ]),
+            LColumn.child(
+              child: codeText(context, _linearcode),
+            )
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 15.0),
-          child: LText(
-            " \l.h4.bold{With Scroll to close}\n"
-            "Whether [LDropdown] should close when a trigger changes its position",
-          ),
+        LText(
+          "\l.h4.bold{With Scroll to close}\n"
+          "Whether [LDropdown] should close when a trigger changes its position\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -486,13 +466,10 @@ class DropdownPage extends StatelessWidget {
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: LText(
-            " \l.h4.bold{With scrollable}\n"
-            " If your trigger is in a [Scrollable] like [ListView], [SingleChildScrollView], etc."
-            " and `scrollable` is `true` then [LDropdown] will follow trigger on scroll",
-          ),
+        LText(
+          "\l.h4.bold{With scrollable}\n"
+          " If your trigger is in a \l.bold{Scrollable} like \l.bold{ListView}, \l.bold{SingleChildScrollView}, etc."
+          " and \l.bold.italic{scrollable} is \l.highlight{true} then \l.bold{LDropdown} will follow trigger on scroll",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -511,11 +488,8 @@ class DropdownPage extends StatelessWidget {
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: LText(
-            " \l.h4.bold{With position}\n",
-          ),
+        LText(
+          "\l.h4.bold{With position}\n",
         ),
         Wrap(
           alignment: WrapAlignment.start,
@@ -549,31 +523,29 @@ class DropdownPage extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: LText(
-            "\l.h4.bold{With backdrop}\n"
-            "When \l.bold{scrollable} is \lbold{false}, the dropdown will show a backdrop"
-            " which on tap event, dismisses the active dropdown"
-            " default is Black with opacity 26%",
-          ),
+        LText(
+          "\n\l.h4.bold{Backdrop Color}\n"
+          "When \l.bold{scrollable} is \lbold{false}, the dropdown will show a backdrop"
+          " which on tap event, dismisses the active dropdown.\n"
+          "\l.bold{NOTE: Default is Black with opacity 26%}\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
-            LColumn(lg: 4, xl: 4, children: [
-              Dropdown2(
-                scrollToClose: false,
-                scrollable: false,
-                backdrop: _theme.colors.danger.withOpacity(0.2),
-              ),
-            ]),
+            LColumn(
+              lg: 4,
+              xl: 4,
+              children: [
+                Dropdown2(
+                  scrollToClose: false,
+                  scrollable: false,
+                  backdrop: _theme.colors.danger.withOpacity(0.2),
+                ),
+              ],
+            ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(400.0),
-                  child: codeText(context, _backdropcode)),
+              child: codeText(context, _backdropcode),
             ),
           ],
         ),

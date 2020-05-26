@@ -5,108 +5,93 @@ import '../../code_highlight.dart';
 class CardPage extends StatelessWidget {
   final _title = "LCard";
   final _subtitle = " A card is a flexible and extensible content container."
-      "It includes options for header [LCardHeader] and footer [LCardFooter], [LCardBody],"
-      "contextual background colors, and powerful display options.";
+      "It includes options for header (LCardHeader), footer (LCardFooter) and a body (LCardBody).";
 
   final _code = """
-
 LCard(
-   elevation: 5.0,
-   header: LCardHeader(title: "title"),
-   footer: LCardFooter(
-     actions: <Widget>[Text('Footer')],
-   ),
-   color: Colors.white,
-   image: LCardImage(
-     image: NetworkImage(
-       'https://source.unsplash.com/random/',
-     ),
-   ),
-   body: LCardBody(
-     subTitle:
-         "hi how are you? @heyrjs and @heypnd ",
-     title: "Hello",
-     child: LOutlineButton.text(
-       text: "welcome",
-       type:  LElementType.success,
-     ),
-   ),
- ),
-  
+  elevation: 5.0,
+  header: LCardHeader(title: "Card Header"),
+  footer: LCardFooter(
+    actions: <Widget>[Text('Footer')],
+  ),
+  color: Colors.white,
+  image: LCardImage(
+    image: NetworkImage(
+      'https://source.unsplash.com/daily/',
+    ),
+    fit: BoxFit.cover,
+  ),
+  body: LCardBody(
+    title: "Card Title",
+    subTitle: "This is a subtitle for card.",
+  ),
+);
   """;
 
   final _headCode = """
-
- LCard(
-   header: LCardHeader(title: 'Header'),
-   footer: LCardFooter(
-     actions: <Widget>[Text('Footer')],
-   ),
-   body: LCardBody(
-     title: 'Title to the card body',
-     child: LFlatButton.text(
-       text: 'Welcome',
-       type: LElementType.success,
-     ),
-   ),
- )
-  
+LCard(
+  header: LCardHeader(title: 'Header'),
+  footer: LCardFooter(
+    actions: <Widget>[Text('Footer')],
+  ),
+  body: LCardBody(
+    title: 'Card Title',
+    child: LFlatButton.text(
+      text: 'Welcome',
+      type: LElementType.success,
+    ),
+  ),
+)  
   """;
 
   final _imageCode = """
-
 LCard(
-   image: LCardImage(
-     image: NetworkImage(
-       'https://source.unsplash.com/random/',
-     ),
-   ),
-   body: LCardBody(
-     title: 'Title to the card body',
-   ),
- )
-
+  image: LCardImage(
+    image: NetworkImage(
+      'https://source.unsplash.com/random/',
+    ),
+  ),
+  body: LCardBody(
+    title: 'Card Tiitle',
+  ),
+);
   """;
 
   final _colorCode = """
-
- LCard(
-   color: Colors.amber,
-   border: Border.all(color: Colors.redAccent),
-   header: LCardHeader(title: 'Header'),
-   footer: LCardFooter(
-     actions: <Widget>[Text('Footer')],
-   ),
-   body: LCardBody(
-     title: 'Add border to the card.',
-     child: LFlatButton.text(
-       text: 'Border',
-       type: LElementType.success,
-       onPressed: () {},
-     ),
-   ),
- ),
-
+LCard(
+  elevation: 10.0,
+  color: Colors.amber,
+  header: LCardHeader(title: 'Header'),
+  footer: LCardFooter(
+    actions: <Widget>[Text('Footer')],
+  ),
+  body: LCardBody(
+    title: 'Change color of the card.',
+    child: LFlatButton.text(
+      text: 'Border',
+      type: LElementType.success,
+      onPressed: () {},
+    ),
+  ),
+);
   """;
 
   final _borderCode = """
-
 LCard(
-   border: Border.all(color: Colors.redAccent),
-   header: LCardHeader(title: 'Header'),
-   footer: LCardFooter(
-     actions: <Widget>[Text('Footer')],
-   ),
-   body: LCardBody(
-     title: 'Add border to the card.',
-     child: LFlatButton.text(
-       text: 'Border',
-       type: LElementType.success,
-       onPressed: () {},
-     ),
-   ),
- )
-
+  border: Border.all(color: Colors.pink),
+  header: LCardHeader(title: 'Header'),
+  footer: LCardFooter(
+    actions: <Widget>[Text('Footer')],
+  ),
+  body: LCardBody(
+    title: 'Add border to the card.',
+    child: LFlatButton.text(
+      text: 'Border',
+      type: LElementType.success,
+      onPressed: () {},
+    ),
+  ),
+);
 """;
 
   @override
@@ -134,7 +119,7 @@ LCard(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
+        SizedBox(height: 20.0),
         Text(
           "Example",
           style: _theme.typographyTheme.h4,
@@ -149,7 +134,7 @@ LCard(
               xl: 4,
               child: LCard(
                 elevation: 5.0,
-                header: LCardHeader(title: "title"),
+                header: LCardHeader(title: "Card Header"),
                 footer: LCardFooter(
                   actions: <Widget>[Text('Footer')],
                 ),
@@ -161,14 +146,8 @@ LCard(
                   fit: BoxFit.cover,
                 ),
                 body: LCardBody(
-                  subTitle:
-                      "hi how are you? \l.link(href=https://twitter.com/heyrjs){@heyrjs} and \l.link(href=https://twitter.com/heypnd){@heypnd} ",
-                  title: "Hello",
-                  child: LOutlineButton.text(
-                    text: "welcome",
-                    type: LElementType.success,
-                    onPressed: () {},
-                  ),
+                  title: "Card Title",
+                  subTitle: "This is a subtitle for card.",
                 ),
               ),
             ),
@@ -177,61 +156,36 @@ LCard(
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Text(
-            "Content types",
-            style: _theme.typographyTheme.h4,
-          ),
+        LText(
+          "\n\l.h4{Content types}\n"
+          "Cards support a wide variety of content, including \l.bold{images},"
+          " \l.bold{text}, \l.bold{list groups}, \l.bold{links}, and more.\n"
+          "Holds various fields to modify cards accordingly like header, footer, and border etc.\n",
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Cards support a wide variety of content, including images, text, list groups, links, and more. Holds various fields to modify cards accordingly like header, footer, and border etc.",
-            style: _theme.typographyTheme.p,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: Text(
-            "Body",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20.0),
-          child: Text(
-            "The building block and content area to the card.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{Body}\n"
+          "The building block and content area to the card use \l.bold{LCardBody} to define Card body.\n",
         ),
         LColumn.child(
-            child: LCard(
-          body: LCardBody(
-            title: 'Title to the card body',
-            subTitle:
-                'Created by \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs}',
-            child: LFlatButton.text(
-              text: 'Welcome',
-              type: LElementType.success,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          child: LCard(
+            body: LCardBody(
+              title: 'Title to the card body',
+              subTitle:
+                  'Created by \l.link(href=https://twitter.com/heypnd){@heypnd} and \l.link(href=https://twitter.com/heyrjs){@heyrjs}',
+              child: LFlatButton.text(
+                text: 'Welcome',
+                type: LElementType.success,
+              ),
             ),
           ),
-        )),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: LText(
-            "\l.h4{Header and Footer}",
-          ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: LText(
-            "\l.h4{Add header and Footer elements to the card.}",
-          ),
+        LText(
+          "\n\l.h4{Header and Footer}\n"
+          "Add header and Footer elements to the card.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
@@ -244,7 +198,7 @@ LCard(
                     actions: <Widget>[Text('Footer')],
                   ),
                   body: LCardBody(
-                    title: 'Title to the card body',
+                    title: 'Card Title',
                     child: LFlatButton.text(
                       text: 'Welcome',
                       type: LElementType.success,
@@ -258,23 +212,12 @@ LCard(
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "Card Image",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "Add image to the card.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{Card Image}\n"
+          "Add image to the card.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
@@ -289,7 +232,7 @@ LCard(
                     fit: BoxFit.cover,
                   ),
                   body: LCardBody(
-                    title: 'Title to the card body',
+                    title: 'Card Title',
                   ),
                 ),
               ),
@@ -299,23 +242,12 @@ LCard(
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "Card Border",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "Add border to the card.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Card Border}\n"
+          "Add border to the card.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
@@ -323,7 +255,7 @@ LCard(
               xl: 4,
               child: LColumn.child(
                 child: LCard(
-                  border: Border.all(color: Colors.redAccent),
+                  border: Border.all(color: Colors.pink),
                   header: LCardHeader(title: 'Header'),
                   footer: LCardFooter(
                     actions: <Widget>[Text('Footer')],
@@ -344,23 +276,12 @@ LCard(
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Text(
-            "Colors",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 15.0),
-          child: Text(
-            "Allows to customize.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\l.h4{Background}\n"
+          "Change background color card.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 20.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(

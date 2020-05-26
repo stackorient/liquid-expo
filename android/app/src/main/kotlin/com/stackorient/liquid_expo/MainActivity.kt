@@ -1,4 +1,4 @@
-package com.example.liquid_website
+package com.stackorient.liquid_expo
 
 import io.flutter.embedding.android.FlutterActivity
 

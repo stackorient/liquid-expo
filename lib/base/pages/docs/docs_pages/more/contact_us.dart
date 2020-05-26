@@ -56,12 +56,12 @@ class ContactUsPage extends StatelessWidget {
           ],
         ),
         LText(
-            '\n\n\l.quote.italic{Regarding any query} \l.link(href=mailto:support@stackorient.com){mail} us.\n\n\n\n'),
-        LText('\l.h4.bold{Contact the Team}\n\n'),
+            '\n\l.quote.italic{Regarding any query} \l.link(href=mailto:support@stackorient.com){mail} us.\n'),
+        LText('\l.h4.bold{Contact the Team}\n'),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            LText('\l.bullet.lead.italic{Pulkit Nanda }\n'),
+            LText('\l.bullet.lead.italic{Pulkit Nanda }'),
             LIconButton(
               splashThickness: 5.0,
               icon: Icon(FontAwesome.linkedin_square, color: Colors.blue),
@@ -89,7 +89,7 @@ class ContactUsPage extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            LText('\l.bullet.lead.italic{Raj Singh }\n'),
+            LText('\l.bullet.lead.italic{Raj Singh }'),
             LIconButton(
               splashThickness: 5.0,
               icon: Icon(FontAwesome.linkedin_square, color: Colors.blue),

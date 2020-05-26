@@ -1,21 +1,21 @@
 {
-    "name": "liquid_website",
-    "short_name": "liquid_website",
+    "name": "Liquid Expo - Build fast, responsive, cross platform apps with Liquid.",
+    "short_name": "Liquid Expo",
     "start_url": ".",
     "display": "minimal-ui",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Liquid is an open-source UI toolkit for developing cross-platform apps using Flutter.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "icons/Icon-192.png",
+            "src": "icons/logo.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "icons/Icon-512.png",
+            "src": "icons/logo.png",
             "sizes": "512x512",
             "type": "image/png"
         }

@@ -28,7 +28,10 @@
 .packages
 .pub-cache/
 .pub/
-/build/
+/build/app
+/build/kotlin
+/build/url_launcher
+/build/url_launcher_web
 
 # Web related
 lib/generated_plugin_registrant.dart

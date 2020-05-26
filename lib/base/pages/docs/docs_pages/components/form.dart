@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:liquid/liquid.dart';
-import 'package:liquid_website/base/base.dart';
 import '../../code_highlight.dart';
 
 class Forms extends StatelessWidget {
@@ -54,7 +53,7 @@ class FormPage extends StatelessWidget {
   final _subtitle =
       "Create LForm with help of custom components, LTextFormField, validators and layout options.";
 
-  final _linearcode = """
+  final _formexample = """
 
  final _manager = FormManager(); // An effecient replacement of GlobalKey<LFormState>
 
@@ -246,7 +245,7 @@ Padding(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
+        SizedBox(height: 20.0),
         LText("\l.h4.bold{Features}\n"),
         LText("\l.bullet.h5.bold{States}\n"
             "   \l.bullet.bold{isEnabled} - True if field is enabled.\n"
@@ -260,12 +259,9 @@ Padding(
         LText("\l.bullet.h5.bold{Serializer}\n"
             "   \l.bullet.bold{serialize()} - return a serialized map of the form fields"
             " you need to provide [name] parameter to field constructor for serializing that particular field.\n"),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: LText(
-            "\l.h4.bold{Form Manager}\n"
-            "With \l.bold{LFormManager} we don't need to build controllers for every textFormField.",
-          ),
+        LText(
+          "\n\l.h4.bold{Form Manager}\n"
+          "With \l.bold{LFormManager} we don't need to build controllers for every textFormField.\n\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -380,19 +376,15 @@ Padding(
               ],
             ),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(400.0),
-                  child: codeText(context, _linearcode)),
+              child: codeText(context, _formexample),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: LText(
-            " \l.h4.bold{Validators}\n"
-            " Most commonly used validators from email to ip packet validators and credit and debit card validators"
-            "  are already included in \l.bold{LForm} validators. ",
-          ),
+        LText(
+          " \l.h4.bold{Validators}\n"
+          " Most commonly used validators from email"
+          " to ip packet validators and credit and debit card validators"
+          "  are already included in \l.bold{LForm} validators.\n ",
         ),
         LText(
             "\l.bullet.h6.bold{LAlphaNumericValidator} - It only validates the strings holding only alpha-numeric values.\n\n"
@@ -419,31 +411,25 @@ Padding(
             "combine multiple validators in a single validator. \l.bold{LEmailValidator} is"
             "one the default combined validator. Below is its original implementation.\n\n"),
         codeText(context, _combinedCode),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: LText("\l.h5.bold{Validation Type}\n"
-              "LCombinedValidator has the following validation types\n\n"
-              "   \l.bullet.bold{allTrue} - all validators should validate to \l.bold{true}.\n"
-              "   \l.bullet.bold{allFalse} - all validators should validate to \l.bold{false}.\n"
-              "   \l.bullet.bold{atLeastOneTrue} - atleast one validator should validate to \l.bold{true}.\n"
-              "   \l.bullet.bold{atLeastOneFalse} - atleast one validator should validate to \l.bold{false}.\n"
-              "   \l.bullet.bold{atMostOneTrue} - atmost one validator should validate to \l.bold{true}\n"
-              "   \l.bullet.bold{atMostOneFalse} - atmost one validator should validate to \l.bold{false}\n"),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: LText("\l.h5.bold{LTextFormField}\n"
-              "The current state of a [LFormField]. Passed to the [LFormFieldBuilder] method"
-              "for use in constructing the form field's widget.\n\n"
-              "   \l.bullet.bold{isEnabled} - True if field is enabled.\n"
-              "   \l.bullet.bold{isPristine} - True if the field has not been modified.\n"
-              "   \l.bullet.bold{isDirty} - True if the field has been modified.\n"
-              "   \l.bullet.bold{isValid} - True if the current value is valid.change when [validate] method is called\n"
-              "   \l.bullet.bold{isInvalid} - True if the current value is invalid, change when [validate] method is called\n"
-              "   \l.bullet.bold{isTouched} - True if the field is touched.\n"
-              "   \l.bullet.bold{isUntouched} - True if the field is touched.\n"
-              "   \l.bullet.bold{errorText} - The current validation error returned by the [LFormField.validator]\n"),
-        ),
+        LText("\n\l.h5.bold{Validation Type}\n"
+            "LCombinedValidator has the following validation types\n\n"
+            "   \l.bullet.bold{allTrue} - all validators should validate to \l.bold{true}.\n"
+            "   \l.bullet.bold{allFalse} - all validators should validate to \l.bold{false}.\n"
+            "   \l.bullet.bold{atLeastOneTrue} - atleast one validator should validate to \l.bold{true}.\n"
+            "   \l.bullet.bold{atLeastOneFalse} - atleast one validator should validate to \l.bold{false}.\n"
+            "   \l.bullet.bold{atMostOneTrue} - atmost one validator should validate to \l.bold{true}\n"
+            "   \l.bullet.bold{atMostOneFalse} - atmost one validator should validate to \l.bold{false}\n"),
+        LText("\n\l.h5.bold{LTextFormField}\n"
+            "The current state of a [LFormField]. Passed to the [LFormFieldBuilder] method"
+            "for use in constructing the form field's widget.\n\n"
+            "   \l.bullet.bold{isEnabled} - True if field is enabled.\n"
+            "   \l.bullet.bold{isPristine} - True if the field has not been modified.\n"
+            "   \l.bullet.bold{isDirty} - True if the field has been modified.\n"
+            "   \l.bullet.bold{isValid} - True if the current value is valid.change when [validate] method is called\n"
+            "   \l.bullet.bold{isInvalid} - True if the current value is invalid, change when [validate] method is called\n"
+            "   \l.bullet.bold{isTouched} - True if the field is touched.\n"
+            "   \l.bullet.bold{isUntouched} - True if the field is touched.\n"
+            "   \l.bullet.bold{errorText} - The current validation error returned by the [LFormField.validator]\n\n"),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
@@ -516,9 +502,7 @@ Padding(
                   ),
                 ]),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(400.0),
-                  child: codeText(context, _fieldCode)),
+              child: codeText(context, _fieldCode),
             )
           ],
         ),

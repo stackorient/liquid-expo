@@ -49,7 +49,7 @@ Container(
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 35.0),
+          padding: const EdgeInsets.only(bottom: 20.0),
           child: Text(
             _subtitle,
             style: mq.isSM || mq.isXS
@@ -57,37 +57,34 @@ Container(
                 : _theme.typographyTheme.lead,
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: LColumn(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              LText(
-                "\l.h5{Active Breakpoint Status}\n"
-                "You can access currently active breakpoint using \l.bold{MediaQueryData} \n",
-              ),
-              LText(
-                "\l.bullet.bold{.isXS}\n"
-                "\l.bullet.bold{.isSM}\n"
-                "\l.bullet.bold{.isMD}\n"
-                "\l.bullet.bold{.isLG}\n"
-                "\l.bullet.bold{.isXL}\n\n"
-                "Or use \l.bold{.activeBreakpoint} to get active \l.bold{LBreakPoint}.\n",
-              ),
-              LRow(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                axis: LRowAxis.all(Axis.vertical),
-                columns: [
-                  LColumn.child(
-                    child: getContainer(mq),
-                  ),
-                  LColumn.child(
-                    child: codeText(context, _code1),
-                  ),
-                ],
-              ),
-            ],
-          ),
+        LColumn(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            LText(
+              "\l.h5{Active Breakpoint Status}\n"
+              "You can access currently active breakpoint using \l.bold{MediaQueryData}\n",
+            ),
+            LText(
+              "\l.bullet.bold{.isXS}\n"
+              "\l.bullet.bold{.isSM}\n"
+              "\l.bullet.bold{.isMD}\n"
+              "\l.bullet.bold{.isLG}\n"
+              "\l.bullet.bold{.isXL}\n"
+              "Or use \l.bold{.activeBreakpoint} to get active \l.bold{LBreakPoint}.\n",
+            ),
+            LRow(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              axis: LRowAxis.all(Axis.vertical),
+              columns: [
+                LColumn.child(
+                  child: getContainer(mq),
+                ),
+                LColumn.child(
+                  child: codeText(context, _code1),
+                ),
+              ],
+            ),
+          ],
         ),
       ],
     );
@@ -95,16 +92,16 @@ Container(
 
   Widget getContainer(MediaQueryData mq) => Container(
         decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: Colors.grey[100],
           borderRadius: BorderRadius.circular(5.0),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+        padding: const EdgeInsets.all(20.0),
         width: double.infinity,
         child: LText("\l.h6{Active Status}\n"
             "\l.h6{XL:} \l.h6.bold.uppercase{${mq.isXL}}\n"
             "\l.h6{LG:} \l.h6.bold.uppercase{${mq.isLG}}\n"
             "\l.h6{MD:} \l.h6.bold.uppercase{${mq.isMD}}\n"
             "\l.h6{SM:} \l.h6.bold.uppercase{${mq.isSM}}\n"
-            "\l.h6{XS:} \l.h6.bold.uppercase{${mq.isXS}}\n"),
+            "\l.h6{XS:} \l.h6.bold.uppercase{${mq.isXS}}"),
       );
 }

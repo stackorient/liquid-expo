@@ -8,58 +8,67 @@ class BreadCrumbPage extends StatelessWidget {
       "Indicate the current page’s location within a navigational hierarchy that automatically adds separators.";
 
   final _code = """
-
 LBreadCrumbs(
-   items: [
-     LBreadCrumbItem(
-       'text1',
-       activeColor: _theme.colors.primary,
-       active: true,
-       onTap: () {},
-     ),
-     LBreadCrumbItem(
-       'text2',
-       activeColor: _theme.colors.primary,
-       // active: true,
-       onTap: () {},
-     ),
-     LBreadCrumbItem(
-       'text3',
-       activeColor: _theme.colors.primary,
-       // active: true,
-       onTap: () {},
-     )
-   ],
- ),
-  
+  items: [
+    LBreadCrumbItem(
+      'page 1',
+      onTap: () {},
+    ),
+    LBreadCrumbItem(
+      'page 2',
+      onTap: () {},
+    ),
+    LBreadCrumbItem(
+      'page 3',
+      activeColor: _theme.colors.success,
+      active: true,
+    )
+  ],
+);
   """;
 
-  final _headCode = """
-
- LBreadCrumbs(
-   seperator: Icon(Icons.accessibility_new),
-   items: [
-     LBreadCrumbItem(
-       'text1',
-       activeColor: _theme.colors.primary,
-       active: true,
-       onTap: () {},
-     ),
-     LBreadCrumbItem(
-       'text2',
-       activeColor: _theme.colors.primary,
-       // active: true,
-       onTap: () {},
-     ),
-     LBreadCrumbItem(
-       'text3',
-       activeColor: _theme.colors.primary,
-       // active: true,
-       onTap: () {},
-     )
-   ],
- ),
-  
+  final _sepCode = """
+LBreadCrumbs(
+  seperator: Icon(
+    Icons.arrow_forward,
+    size: 12,
+  ),
+  items: [
+    LBreadCrumbItem(
+      'one',
+      onTap: () {},
+    ),
+    LBreadCrumbItem(
+      'two',
+      onTap: () {},
+    ),
+    LBreadCrumbItem(
+      'three',
+      active: true,
+    )
+  ],
+); 
+  """;
+  final _spacingCode = """
+LBreadCrumbs(
+  spacing: 20.0,
+  items: [
+    LBreadCrumbItem(
+      'text1',
+      onTap: () {},
+    ),
+    LBreadCrumbItem(
+      'text2',
+      // active: true,
+      onTap: () {},
+    ),
+    LBreadCrumbItem(
+      'text3',
+      active: true,
+      onTap: () {},
+    )
+  ],
+); 
   """;
 
   @override
@@ -87,11 +96,8 @@ LBreadCrumbs(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "Example",
-          style: _theme.typographyTheme.h4,
-        ),
+        SizedBox(height: 20.0),
+        LText("\l.h4{Example}"),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
@@ -103,21 +109,17 @@ LBreadCrumbs(
               child: LBreadCrumbs(
                 items: [
                   LBreadCrumbItem(
-                    'text1',
-                    activeColor: _theme.colors.primary,
+                    'page 1',
+                    onTap: () {},
+                  ),
+                  LBreadCrumbItem(
+                    'page 2',
+                    onTap: () {},
+                  ),
+                  LBreadCrumbItem(
+                    'page 3',
+                    activeColor: _theme.colors.success,
                     active: true,
-                    onTap: () {},
-                  ),
-                  LBreadCrumbItem(
-                    'text2',
-                    activeColor: _theme.colors.primary,
-                    // active: true,
-                    onTap: () {},
-                  ),
-                  LBreadCrumbItem(
-                    'text3',
-                    activeColor: _theme.colors.primary,
-                    // active: true,
                     onTap: () {},
                   )
                 ],
@@ -138,7 +140,7 @@ LBreadCrumbs(
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5.0),
           child: Text(
-            "Changes the seperators between the LBreadCrumb items.",
+            "Changes the seperators between the items.",
             style: _theme.typographyTheme.p,
           ),
         ),
@@ -151,31 +153,28 @@ LBreadCrumbs(
               lg: 4,
               xl: 4,
               child: LBreadCrumbs(
-                seperator: Icon(Icons.accessibility_new),
+                seperator: Icon(
+                  Icons.arrow_forward,
+                  size: 12,
+                ),
                 items: [
                   LBreadCrumbItem(
-                    'text1',
-                    activeColor: _theme.colors.primary,
+                    'one',
+                    onTap: () {},
+                  ),
+                  LBreadCrumbItem(
+                    'two',
+                    onTap: () {},
+                  ),
+                  LBreadCrumbItem(
+                    'three',
                     active: true,
-                    onTap: () {},
-                  ),
-                  LBreadCrumbItem(
-                    'text2',
-                    activeColor: _theme.colors.primary,
-                    // active: true,
-                    onTap: () {},
-                  ),
-                  LBreadCrumbItem(
-                    'text3',
-                    activeColor: _theme.colors.primary,
-                    // active: true,
-                    onTap: () {},
                   )
                 ],
               ),
             ),
             LColumn.child(
-              child: codeText(context, _headCode),
+              child: codeText(context, _sepCode),
             )
           ],
         ),
@@ -206,27 +205,23 @@ LBreadCrumbs(
                 items: [
                   LBreadCrumbItem(
                     'text1',
-                    activeColor: _theme.colors.primary,
-                    active: true,
                     onTap: () {},
                   ),
                   LBreadCrumbItem(
                     'text2',
-                    activeColor: _theme.colors.primary,
                     // active: true,
                     onTap: () {},
                   ),
                   LBreadCrumbItem(
                     'text3',
-                    activeColor: _theme.colors.primary,
-                    // active: true,
+                    active: true,
                     onTap: () {},
                   )
                 ],
               ),
             ),
             LColumn.child(
-              child: codeText(context, _headCode),
+              child: codeText(context, _spacingCode),
             )
           ],
         ),

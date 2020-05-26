@@ -9,7 +9,7 @@ class ExpansionPage extends StatelessWidget {
       " expanded or collapsed. The body of the panel is only visible when it is"
       " expanded.";
 
-  final _linearcode = """
+  final _expansionexmp = """
 
   LExpansionPanel(
     caption: LBadge.icon(
@@ -54,7 +54,7 @@ class ExpansionPage extends StatelessWidget {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
+        SizedBox(height: 20.0),
         LRow(
           useMediaQuery: false,
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -79,7 +79,7 @@ class ExpansionPage extends StatelessWidget {
                   child: LFlatButton.text(text: "This was collapsed."),
                 ),
               ),
-              SizedBox(height: 50.0),
+              SizedBox(height: 25.0),
               LExpansionPanel(
                 background: _theme.colors.info.lighten(0.1),
                 caption: LBadge.icon(
@@ -99,7 +99,7 @@ class ExpansionPage extends StatelessWidget {
               ),
             ]),
             LColumn.child(
-              child: codeText(context, _linearcode),
+              child: codeText(context, _expansionexmp),
             )
           ],
         ),

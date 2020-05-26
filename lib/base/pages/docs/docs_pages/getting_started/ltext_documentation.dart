@@ -6,9 +6,9 @@ import '../../code_highlight.dart';
 class LTextPage extends StatelessWidget {
   final _title = "LText";
   final _subtitle =
-      "The [LText] widget displays text that uses multiple different styles.\n"
+      "The LText widget displays text that uses multiple different styles.\n"
       "The text to display is described using a series of styleClass, and each of"
-      "which has an associated style [LStyleBlock] that is used for parsing of associated style.";
+      "which has an associated style LStyleBlock that is used for parsing of associated style.";
 
   final _linearcode = """
   LText(
@@ -100,14 +100,14 @@ LText(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
+        SizedBox(height: 20.0),
         LRow(
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(
-              lg: 6,
-              xl: 6,
+              md: 3,
+              lg: 3,
+              xl: 3,
               mainAxisAlignment: MainAxisAlignment.center,
               child: LText("Hello \l.bold.italic.underline{World}"),
             ),
@@ -128,11 +128,11 @@ LText(
         ),
         LRow(
           crossAxisAlignment: CrossAxisAlignment.center,
-          gutter: 10.0,
           columns: [
             LColumn(
-              lg: 6,
-              xl: 6,
+              md: 4,
+              lg: 4,
+              xl: 4,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 LText(
@@ -160,23 +160,23 @@ LText(
         ),
         LText("\l.h4.bold{Global StyleSheet}\n"
             "To define global styleSheet use \l.bold{LiquidApp}'s "
-            "\l.bold.underline{styleSheet} parameter.\n\n"),
+            "\l.bold.underline{styleSheet} parameter.\n"),
         LText(
             "\l.bullet.h5.bold{Example: How to define a Link styleSheet globally.}\n"),
         LRow(
-          gutter: 10.0,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           columns: [
-            LColumn(
-              lg: 6,
-              xl: 6,
+            LColumn.child(
+              md: 4,
+              lg: 4,
+              xl: 4,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                LText(
-                    "Contact the creators, \l.link(href=https://twitter.com/heypnd){@heypnd} "
-                    "and \l.link(href=https://twitter.com/heyrjs){@heyrjs}.\n"),
-              ],
+              child: LText(
+                "\nYou can found us on twitter, "
+                "\l.link(href=https://twitter.com/heypnd){@heypnd} "
+                "and \l.link(href=https://twitter.com/heyrjs){@heyrjs}.\n",
+              ),
             ),
             LColumn.child(
               child: codeText(context, _displaycode,
@@ -199,8 +199,8 @@ LText(
             "   \l.bullet.bold{trim}\n"
             "   \l.bullet.bold{trim-left}\n"
             "   \l.bullet.bold{trim-right}\n"
-            "   \l.bullet.bold{color(hex=hex color code)}\n"
-            "   \l.bullet.bold{highlight(hex=hex_color)}\n"
+            "   \l.bullet.bold{color(hex=hex_code)}\n"
+            "   \l.bullet.bold{highlight(hex=hex_code)}\n"
             "   \l.bullet.bold{capitalize}\n"
             "   \l.bullet.bold{h1}\n"
             "   \l.bullet.bold{h2}\n"
@@ -233,14 +233,15 @@ LText(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                LText("\l.h5.bold.color(hex=#e846d2){StackOrient}\n"
+                LText("\l.h5.bold.color(hex=#04E474){StackOrient}\n"
                     "\l.bullet.h6.bold{Services}\n"
                     "   \l.bullet{App development}\n"
                     "   \l.bullet{Web development}\n"
                     "   \l.bullet{Flutter development}\n"
                     "   \l.bullet{Backend Services}\n"
                     "   \l.bullet{UI & UX Design}\n"
-                    "\l.quote.italic{Contact Us} \l.h6.link(href=https://stackorient.com){here}\n"),
+                    "\l.quote.italic{Contact Us} "
+                    "\l.h6.link(href=https://stackorient.com){here}\n"),
               ],
             ),
             LColumn.child(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/atom-one-dark.dart';
-import 'package:flutter_highlight/themes/atom-one-light.dart';
 import 'package:liquid/liquid.dart';
 
 Widget codeText(BuildContext context, String code,
@@ -31,31 +30,34 @@ Widget codeText(BuildContext context, String code,
     ),
   );
 
-  return Stack(
-    children: <Widget>[
-      _scrollable ?? _codeContent,
-      Positioned(
-        right: 0.0,
-        top: 13.0,
-        child: Tooltip(
-          message: "Copy to Clipboard",
-          child: LRaisedButton.icon(
-            icon: Icon(Icons.content_copy),
-            label: Text("Copy"),
-            size: LElementSize.small,
-            pushAction: LRaisedButtonPushAction.pushDown,
-            onPressed: () async {
-              await Clipboard.setData(ClipboardData(text: code));
-              Scaffold.of(context).showSnackBar(
-                SnackBar(
-                  content: Text("Copied to clipboard"),
-                  behavior: SnackBarBehavior.floating,
-                ),
-              );
-            },
+  return Container(
+    constraints: BoxConstraints(maxHeight: 550.0),
+    child: Stack(
+      children: <Widget>[
+        _scrollable ?? _codeContent,
+        Positioned(
+          right: 0.0,
+          top: 13.0,
+          child: Tooltip(
+            message: "Copy to Clipboard",
+            child: LRaisedButton.icon(
+              icon: Icon(Icons.content_copy),
+              label: Text("Copy"),
+              size: LElementSize.small,
+              pushAction: LRaisedButtonPushAction.pushDown,
+              onPressed: () async {
+                await Clipboard.setData(ClipboardData(text: code));
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Copied to clipboard"),
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
+              },
+            ),
           ),
         ),
-      ),
-    ],
+      ],
+    ),
   );
 }

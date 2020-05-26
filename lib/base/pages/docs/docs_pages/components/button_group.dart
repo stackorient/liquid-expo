@@ -8,52 +8,48 @@ class ButtonGroup extends StatelessWidget {
       "Group a series of buttons together on a single line with the button group.";
 
   final _code = """
-
 LButtonGroup(
-   children: [
-     LFlatButton.text(
-       text: 'Left',
-       type: LElementType.dark,
-       onPressed: () {},
-     ),
-     LFlatButton.text(
-       text: 'Middle',
-       type: LElementType.dark,
-       onPressed: () {},
-     ),
-     LFlatButton.text(
-       text: 'Right',
-       type: LElementType.dark,
-       onPressed: () {},
-     ),
-   ],
- ),
-  
+  children: [
+    LFlatButton.text(
+      text: 'Left',
+      type: LElementType.dark,
+      onPressed: () {},
+    ),
+    LFlatButton.text(
+      text: 'Middle',
+      type: LElementType.dark,
+      onPressed: () {},
+    ),
+    LFlatButton.text(
+      text: 'Right',
+      type: LElementType.dark,
+      onPressed: () {},
+    ),
+  ],
+);
   """;
 
   final _headCode = """
-
- LButtonGroup(
-    direction: Axis.vertical,
-    children: [
-      LFlatButton.text(
-        text: 'Left',
-        type: LElementType.dark,
-        onPressed: () {},
-      ),
-      LFlatButton.text(
-        text: 'Middle',
-        type: LElementType.dark,
-        onPressed: () {},
-      ),
-      LFlatButton.text(
-        text: 'Right',
-        type: LElementType.dark,
-        onPressed: () {},
-      ),
-    ],
-  ),
-
+LButtonGroup(
+  direction: Axis.vertical,
+  children: [
+    LFlatButton.text(
+      text: 'Left',
+      type: LElementType.dark,
+      onPressed: () {},
+    ),
+    LFlatButton.text(
+      text: 'Middle',
+      type: LElementType.dark,
+      onPressed: () {},
+    ),
+    LFlatButton.text(
+      text: 'Right',
+      type: LElementType.dark,
+      onPressed: () {},
+    ),
+  ],
+),
   """;
 
   @override
@@ -81,7 +77,7 @@ LButtonGroup(
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        SizedBox(height: 35.0),
+        SizedBox(height: 20.0),
         Text(
           "Example",
           style: _theme.typographyTheme.h4,
@@ -119,25 +115,15 @@ LButtonGroup(
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-          child: Text(
-            "Sizes",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(
-            "Instead of applying sizing to every button try adding to the group.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Sizes}\n"
+          "Instead of applying sizing to every button try adding to the group.\n",
         ),
         LColumn(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: LButtonGroup(
                 size: LElementSize.large,
                 children: [
@@ -160,7 +146,7 @@ LButtonGroup(
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: LButtonGroup(
                 size: LElementSize.medium,
                 children: [
@@ -183,7 +169,7 @@ LButtonGroup(
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: LButtonGroup(
                 size: LElementSize.normal,
                 children: [
@@ -206,7 +192,7 @@ LButtonGroup(
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(bottom: 8.0),
               child: LButtonGroup(
                 size: LElementSize.small,
                 children: [
@@ -230,23 +216,12 @@ LButtonGroup(
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0, bottom: 10.0),
-          child: Text(
-            "Vertical variation",
-            style: _theme.typographyTheme.h4,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
-          child: Text(
-            "Alligns button group in a vertical direction.",
-            style: _theme.typographyTheme.p,
-          ),
+        LText(
+          "\n\l.h4{Vertical variation}\n"
+          "Change button group axis to vertical direction.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
-          gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
           columns: [
             LColumn.child(

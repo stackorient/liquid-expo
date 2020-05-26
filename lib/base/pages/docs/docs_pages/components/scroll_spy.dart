@@ -86,7 +86,7 @@ class ScrollSpyPage extends StatelessWidget {
   final _subtitle = "LScrollSpy can help in tracking certain elements and"
       " which element the user's screen is currently centered on.";
 
-  final _linearcode = """
+  final eqlheight = """
 
 class ScrollSpy extends StatefulWidget {
   @override
@@ -162,7 +162,7 @@ class _ScrollSpyState extends State<ScrollSpy> {
  
   """;
 
-  final _linearcode2 = """
+  final diffheight = """
 
 class ScrollSpy extends StatefulWidget {
   @override
@@ -262,12 +262,9 @@ class _ScrollSpyState extends State<ScrollSpy> {
               ? _theme.typographyTheme.p
               : _theme.typographyTheme.lead,
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: LText(
-            " \l.h4.bold{With equal child height}\n"
-            "Provide \l.bold{ItemExtent} and \l.bold{ItemExtentBuilder} equal to null. ",
-          ),
+        LText(
+          "\n\l.h4.bold{With equal child height}\n"
+          "Provide \l.bold{ItemExtent} and \l.bold{ItemExtentBuilder} equal to null. \n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -280,18 +277,13 @@ class _ScrollSpyState extends State<ScrollSpy> {
               ),
             ]),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(400.0),
-                  child: codeText(context, _linearcode)),
+              child: codeText(context, eqlheight),
             )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 25.0),
-          child: LText(
-            " \l.h4.bold{With different child height}\n"
-            "Use \l.bold{ItemExtentBuilder} to generate height based on item index or item id. ",
-          ),
+        LText(
+          "\n\l.h4.bold{With different child height}\n"
+          "Use \l.bold{ItemExtentBuilder} to generate height based on item index or item id. ",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -304,9 +296,7 @@ class _ScrollSpyState extends State<ScrollSpy> {
               ),
             ]),
             LColumn.child(
-              child: LBox(
-                  height: LBoxDimension.all(400.0),
-                  child: codeText(context, _linearcode2)),
+              child: codeText(context, diffheight),
             )
           ],
         ),

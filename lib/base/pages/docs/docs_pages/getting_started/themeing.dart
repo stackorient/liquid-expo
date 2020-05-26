@@ -6,7 +6,7 @@ import '../../code_highlight.dart';
 class ThemingSection extends StatelessWidget {
   final String _title = "Liquid Theming";
   final String _subtitle =
-      "\l.lead{Change the look and feel of liquid components.";
+      "\l.lead{Change the look and feel of liquid components.}\n";
 
   final _themeAppliedCode = """
 child: LiquidTheme(
@@ -106,17 +106,13 @@ Column(
         LText(
           _subtitle,
         ),
-        SizedBox(height: 35.0),
-        Text(
-          "Changing theme properties",
-          style: _theme.typographyTheme.h4,
-        ),
+        SizedBox(height: 20.0),
         LText(
-          "\nWith few lines of code you can change the whole look of your app.",
+          "\l.h4{Changing theme properties}\n"
+          "With few lines of code you can change the whole look of your app.\n"
+          "\l.h4.bullet{Default Theme}\n",
         ),
-        LText("\l.h4.bullet{Default Theme}\n"),
         LRow(
-          margin: const EdgeInsets.symmetric(vertical: 20.0),
           axis: LRowAxis.belowLG(Axis.vertical),
           gutter: 10.0,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -154,7 +150,7 @@ Column(
         ),
         LText("\l.h4.bullet{Custom Theme}\n"
             "You can directly use \l.bold{LiquidTheme} for particular widget tree or use"
-            " \l.bold{LiquidApp}'s liquidTheme to apply global theme.\n"
+            "\l.bold{LiquidApp}'s liquidTheme to apply global theme.\n\n"
             "\l.bold{NOTE: LiquidTheme is only applied on Liquid Components by default.}\n"),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -202,7 +198,9 @@ Column(
                 ),
               ),
             ),
-            LColumn.child(child: codeText(context, _themeAppliedCode))
+            LColumn.child(
+              child: codeText(context, _themeAppliedCode),
+            )
           ],
         )
       ],

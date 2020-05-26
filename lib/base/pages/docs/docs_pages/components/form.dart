@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:liquid/liquid.dart';
-import 'package:liquid_website/base/base.dart';
 import '../../code_highlight.dart';
 
 class Forms extends StatelessWidget {

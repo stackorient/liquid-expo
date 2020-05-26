@@ -19,6 +19,8 @@ dependencies:
   liquid: <latest-version>   
 """;
   final String _step2 = """
+import 'package:liquid/liquid.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -32,9 +34,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return LiquidApp(
       title: 'My New Liquid App',
-      theme: ThemeData(),
-      liquidTheme: LiquidThemeData(),
-      liquidTheme
       home: MyHomePage(),
     );
   }

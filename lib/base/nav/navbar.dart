@@ -1,9 +1,24 @@
+import 'package:flare_flutter/flare_actor.dart';
+import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:liquid/liquid.dart';
 
+import '../../core/core.dart';
+
 class NavBar extends StatelessWidget {
   final GlobalKey<LDropdownState> _dropdown = GlobalKey<LDropdownState>();
+
+  final FlareControls controls = FlareControls()
+    ..onCompleted('flow')
+    ..play('flow');
+
+  void replay() => controls.play('flow');
+
+  void startLoop() {
+    controls.isActive.removeListener(replay);
+    controls.isActive.addListener(replay);
+  }
 
   _openDropDown() {
     _dropdown.currentState.toggleDropdown();
@@ -12,6 +27,8 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _theme = LiquidTheme.of(context);
+    final _currentRoute = injector<RouteManager>().currentRoute;
+    startLoop();
 
     return LBox(
       margin: LBoxEdgeInsets.aboveMD(
@@ -20,10 +37,10 @@ class NavBar extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          buildMenuBtn(),
+          buildMenuBtn(context),
           buildLogo(),
           buildLiquidText(_theme),
-          buildNavMenu(),
+          buildNavMenu(_currentRoute, _theme),
           LBox(
             visibility: LBoxVisibility(xs: false, sm: false, xl: false),
             child: buildDropdown(),
@@ -70,13 +87,12 @@ class NavBar extends StatelessWidget {
       visibility: LBoxVisibility(xs: false),
       child: Row(
         children: <Widget>[
-          SizedBox(width: 30.0),
           LFlatButton.text(
             text: "SPONSOR",
             type: LElementType.warning,
             onPressed: () {},
           ),
-          SizedBox(width: 15.0),
+          SizedBox(width: 10.0),
           LFlatButton.text(
             text: "Pub",
             type: LElementType.light,
@@ -118,7 +134,14 @@ class NavBar extends StatelessWidget {
     );
   }
 
-  LBox buildNavMenu() {
+  void openPage(String routeName) {
+    injector<RouteManager>()
+        .navigtor
+        .currentState
+        .pushReplacementNamed(routeName);
+  }
+
+  LBox buildNavMenu(String currentRoute, LiquidThemeData theme) {
     return LBox(
       visibility: LBoxVisibility(sm: false, xs: false),
       padding: LBoxEdgeInsets.aboveMD(
@@ -129,13 +152,19 @@ class NavBar extends StatelessWidget {
         children: [
           LOutlineButton.text(
             text: "Home",
-            textStyle: TextStyle(color: Colors.white),
-            onPressed: () {},
+            textStyle: TextStyle(color: Colors.white).weight(
+                currentRoute == homeRoute
+                    ? FontWeight.w700
+                    : FontWeight.normal),
+            onPressed: () => openPage(homeRoute),
           ),
           LOutlineButton.text(
             text: "Documentation",
-            textStyle: TextStyle(color: Colors.white),
-            onPressed: () {},
+            textStyle: TextStyle(color: Colors.white).weight(
+                currentRoute == docsRoute
+                    ? FontWeight.w700
+                    : FontWeight.normal),
+            onPressed: () => openPage(docsRoute),
           ),
           LOutlineButton.text(
             text: "Examples",
@@ -152,24 +181,35 @@ class NavBar extends StatelessWidget {
       padding: const EdgeInsets.only(left: 10.0),
       child: Text(
         "Liquid",
-        style: theme.typographyTheme.h5.family('Poppins'),
+        style:
+            theme.typographyTheme.h5.family('Poppins').withColor(Colors.white),
       ),
     );
   }
 
-  Image buildLogo() => Image.asset(
-        "assets/logos/logo_big_border.png",
-        height: 42.0,
+  Widget buildLogo() => GestureDetector(
+        onTap: () => openPage(homeRoute),
+        child: Container(
+          height: 42.0,
+          width: 42.0,
+          child: FlareActor(
+            "assets/flare/liquid.flr",
+            fit: BoxFit.contain,
+            controller: controls,
+          ),
+        ),
       );
 
-  LBox buildMenuBtn() {
+  LBox buildMenuBtn(BuildContext context) {
     return LBox(
       visibility: LBoxVisibility.aboveSM(false),
       margin: LBoxEdgeInsets.belowMD(EdgeInsets.only(right: 10.0)),
       child: LIconButton(
         icon: Icon(Icons.menu),
         color: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
       ),
     );
   }

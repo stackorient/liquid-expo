@@ -1,16 +1,14 @@
-# liquid_website
+# Liquid Expo
 
-A new Flutter project.
+<img src="assets/logos/logo_big.png" height="150">
 
-## Getting Started
+A Documentation for [Liquid](https://github.com/stackorient/Liquid-Flutter) visit [**HERE**](https://)
 
-This project is a starting point for a Flutter application.
+## About Liquid
+### Build fast, responsive, cross platform apps with Liquid.
 
-A few resources to get you started if this is your first Flutter project:
+Liquid is an open source UI toolkit for developing cross platform apps using **[Flutter](https://flutter.dev/docs)**. Quickly create a apps for Andorid, IOS, Web or Desktop with our powerful grid system, powerful text processor, extensive prebuilt components and a lot utilities.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Authors
+- [Raj Singh](https://www.linkedin.com/in/raj457036/)
+- [Pulkit Nanda](https://www.linkedin.com/in/pulkit-nanda/)

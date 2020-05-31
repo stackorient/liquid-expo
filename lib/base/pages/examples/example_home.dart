@@ -19,6 +19,7 @@ class ExamplesPage extends StatelessWidget {
           "\nSubscribe us on \l.link(href=https://www.youtube.com/channel/UCDQxuqnVSnR5Z1shJs9108g){YouTube}"
           " to get latest tutorials.\n"
           "Also Follow \l.bold{#MadeWithLiquid}",
+          textAlign: TextAlign.center,
         ),
       ),
     );

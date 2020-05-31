@@ -35,7 +35,7 @@ class CounterBlock extends StatelessWidget {
 class Introduction extends StatefulWidget {
   final String _title = "Introduction";
   final String _subtitle =
-      "Liquid comes a powerful 12 column grid system, a powerful text processor, "
+      "Liquid comes with a 12 column grid system, a powerful text processor, "
       " extensive prebuilt components and dozens of utilities.";
 
   final String _formEg = """
@@ -411,7 +411,7 @@ LFlatButton(
                             border: OutlineInputBorder(gapPadding: 0),
                             contentPadding:
                                 EdgeInsets.symmetric(horizontal: 10.0),
-                            labelText: "Full Name",
+                            labelText: "  Full Name ",
                           ),
                           validators: [
                             LRequiredValidator(),
@@ -426,7 +426,7 @@ LFlatButton(
                             border: OutlineInputBorder(gapPadding: 0),
                             contentPadding:
                                 EdgeInsets.symmetric(horizontal: 10.0),
-                            labelText: "Email",
+                            labelText: "  Email ",
                           ),
                           validators: [
                             LRequiredValidator(),

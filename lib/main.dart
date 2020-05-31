@@ -7,9 +7,11 @@ import 'core/core.dart';
 
 void main() async {
   await setupInjector();
-  runApp(MyApp(
-    routeManager: injector<RouteManager>(),
-  ));
+  runApp(
+    MyApp(
+      routeManager: injector<RouteManager>(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
                 ..onTap = () => href != null ? launch(href) : null;
             },
             style: TextStyle(
-              color: Colors.blue[800],
+              color: Colors.blue[900],
             ),
           ),
         ),

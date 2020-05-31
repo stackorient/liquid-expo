@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                 ..onTap = () => href != null ? launch(href) : null;
             },
             style: TextStyle(
-              color: Colors.blue[800],
+              color: Colors.blue[900],
             ),
           ),
         ),

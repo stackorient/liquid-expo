@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_ui/liquid_ui.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/injector/injector.dart';
 import '../../../core/routing/route_manager.dart';
@@ -100,10 +101,29 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 LColumn.child(
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: Container(
-                      color: Colors.black38,
+                  child: GestureDetector(
+                    onTap: () =>
+                        launch("https://www.youtube.com/watch?v=vsSawrejGWs"),
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/intro.jpg"),
+                          ),
+                        ),
+                        child: Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          color: Colors.black26,
+                          child: Icon(
+                            Icons.play_circle_outline,
+                            size: 98.0,
+                            color: Colors.white,
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                      ),
                     ),
                   ),
                 ),

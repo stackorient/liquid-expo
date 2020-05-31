@@ -35,7 +35,7 @@ class CounterBlock extends StatelessWidget {
 class Introduction extends StatefulWidget {
   final String _title = "Introduction";
   final String _subtitle =
-      "Liquid comes a powerful 12 column grid system, a powerful text processor, "
+      "Liquid comes with a powerful 12 column grid system, a powerful text processor, "
       " extensive prebuilt components and dozens of utilities.";
 
   final String _formEg = """

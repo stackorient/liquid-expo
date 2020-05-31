@@ -7,9 +7,11 @@ import 'core/core.dart';
 
 void main() async {
   await setupInjector();
-  runApp(MyApp(
-    routeManager: injector<RouteManager>(),
-  ));
+  runApp(
+    MyApp(
+      routeManager: injector<RouteManager>(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

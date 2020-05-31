@@ -62,10 +62,10 @@ class HomePage extends StatelessWidget {
                             (mq.isXS || mq.isSM || mq.isMD
                                     ? "\l.h1{Build fast, responsive, cross platform apps with Liquid.}\n\n"
                                     : "\l.display4{Build fast, responsive, cross platform apps with Liquid.}\n\n") +
-                                "\l.lead{Liquid is an open source UI toolkit for developing cross platform apps using Flutter."
-                                    " Quickly create a apps for Andorid, IOS, Web or Desktop with our"
-                                    " powerful grid system, powerful text processor, extensive prebuilt components and"
-                                    " a lot utilities.}",
+                                "\l.lead{Liquid is an open source UI toolkit for developing cross platform apps in Flutter."
+                                    " Quickly create apps for Andorid, IOS, Web or Desktop with our"
+                                    " powerful grid system, forms, text processor, extensive prebuilt components and"
+                                    " dozens of utilities.}",
                             textAlign: mq.isXS || mq.isSM || mq.isMD
                                 ? TextAlign.center
                                 : TextAlign.left,

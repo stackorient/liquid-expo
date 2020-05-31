@@ -1,8 +1,9 @@
 'use strict';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "cd8d43e7f07e730db7799ca1eafcf561",
+  "assets/AssetManifest.json": "4613be226c456758817e600d5a8aa55a",
 "assets/assets/flare/liquid.flr": "a8db0bcd5241b4478a98603141d17669",
+"assets/assets/images/intro.jpg": "8626bc3ca792e4bc7904b8fe3cdb7bbe",
 "assets/assets/images/ltextexp.png": "45b5d96b07a113f2cbbc6e5e7d8a1d1f",
 "assets/assets/logos/logo-horizontal.png": "385f1bdf077d9938d82b2568e18727f7",
 "assets/assets/logos/logo-vertical.png": "b084449cc6b3935728bf53ec7c9762bf",
@@ -13,7 +14,7 @@ const RESOURCES = {
 "assets/assets/logos/logo_with_title.svg": "21d64a7c65695f4d4fc32ab42261ea4d",
 "assets/assets/logos/only_text.png": "cf7bae0196a3711af185d552b8d11e73",
 "assets/assets/logos/only_text.svg": "6ee407e1ca5da5bba78689f58fa2824d",
-"assets/FontManifest.json": "a1c552b27767112273ba8e673937bc02",
+"assets/FontManifest.json": "122fab38bc0119ccbb585071ba954333",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/fonts/Poppins/Poppins-Black.ttf": "42cf9f0820d16f3ac2c26a7710ce70f2",
 "assets/fonts/Poppins/Poppins-BlackItalic.ttf": "16dc9819cb371f042475ae8b0c309cba",
@@ -46,8 +47,7 @@ const RESOURCES = {
 "assets/fonts/Roboto/Roboto-Thin.ttf": "321de678e592d0b8f44f1a82d7ca4b62",
 "assets/fonts/Roboto/Roboto-ThinItalic.ttf": "35a9c89aff1396595ad345e378a32aca",
 "assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf": "b4618f1f7f4cee0ac09873fcc5a966f9",
-"assets/LICENSE": "3069f7d8705a203af44cf2711c937907",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
+"assets/LICENSE": "09f9fef7cc0de692b995f99156a9f9b9",
 "assets/packages/flutter_icons/fonts/AntDesign.ttf": "3a2ba31570920eeb9b1d217cabe58315",
 "assets/packages/flutter_icons/fonts/Entypo.ttf": "744ce60078c17d86006dd0edabcd59a7",
 "assets/packages/flutter_icons/fonts/EvilIcons.ttf": "140c53a7643ea949007aa9a282153849",
@@ -68,7 +68,7 @@ const RESOURCES = {
 "index.html": "2dd612d0f2a6665a0aa881ddb6615d83",
 "/": "2dd612d0f2a6665a0aa881ddb6615d83",
 "logo.png": "583245140c528b0635b30ceeadd39a5f",
-"main.dart.js": "c3b6ccb4a768acc6722bcca8607d3b98",
+"main.dart.js": "b6d951ae39e3c1e2a9a0097a0989b21e",
 "manifest.json": "afb5e8eff4e84237544f4308514240a5"
 };
 

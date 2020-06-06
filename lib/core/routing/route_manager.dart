@@ -29,7 +29,7 @@ class RouteManager extends ChangeNotifier {
   }
 
   Route _generateRoute(String routeName, RouteSettings settings) {
-    final Map<String, dynamic> args = settings.arguments;
+    // final Map<String, dynamic> args = settings.arguments;
 
     switch (routeName) {
       case homeRoute:
@@ -44,6 +44,9 @@ class RouteManager extends ChangeNotifier {
               child: DocsPage(),
             ),
             settings);
+      case exampleRoute:
+        _currentRoute = exampleRoute;
+        return _getRoute(ExamplesPage(), settings);
       default:
         _currentRoute = null;
         return _getRoute(NotFoundPage(), settings);

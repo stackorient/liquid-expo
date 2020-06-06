@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:liquid/liquid.dart';
+import 'package:liquid_ui/liquid_ui.dart';
 
 import '../../../../../core/core.dart';
 import '../../bloc/docs_bloc.dart';
@@ -35,7 +35,7 @@ class CounterBlock extends StatelessWidget {
 class Introduction extends StatefulWidget {
   final String _title = "Introduction";
   final String _subtitle =
-      "Liquid comes a powerful 12 column grid system, a powerful text processor, "
+      "Liquid comes with a 12 column grid system, a powerful text processor, "
       " extensive prebuilt components and dozens of utilities.";
 
   final String _formEg = """
@@ -48,13 +48,13 @@ void onFormSubmit() {
     showAlert(
       context,
       content:
-          "\l.bold{Serialized Form Data}\\n \${serializedData.toString()}\\n\\n"
-          "\l.bold{Form State}\\n"
-          "\l.bullet{is Dirty} : \${state.isDirty}\\n"
-          "\l.bullet{is Pristine} : \${state.isPristine}\\n"
-          "\l.bullet{is Submitted} : \${state.isSubmitted}\\n"
-          "\l.bullet{is Valid} : \${state.isValid}\\n"
-          "\l.bullet{is Invalid} : \${state.isInvalid}\\n",
+        "\\l.bold{Serialized Form Data}\\n \${serializedData.toString()}\\n"
+        "\\l.bold{Form State}\\n"
+        "\\l.bullet{is Dirty} : \${state.isDirty}\\n"
+        "\\l.bullet{is Pristine} : \${state.isPristine}\\n"
+        "\\l.bullet{is Submitted} : \${state.isSubmitted}\\n"
+        "\\l.bullet{is Valid} : \${state.isValid}\\n"
+        "\\l.bullet{is Invalid} : \${state.isInvalid}\\n",
     );
   }
 }
@@ -135,7 +135,6 @@ class _IntroductionState extends State<Introduction> {
     setState(() {
       cols.removeLast();
     });
-    print(cols.length);
   }
 
   String getColContent() {
@@ -200,7 +199,7 @@ LRow(
       children: [
         LText(
             "\n\l.h4{Style Text with CSS like } \l.h4.color(hex=#0062e7){Style Classes}\n"
-            "\l.lead{Liquid comes with a powerful text processor to easily style your text just like in CSS}"),
+            "Liquid comes with a powerful text processor to easily style your text just like in CSS\n"),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
           columns: [
@@ -272,8 +271,8 @@ LText(
       children: [
         LText(
           "\n\l.h4{Easy To } \l.h4.color(hex=#0062e7){Learn}\n"
-          "\l.lead{Liquid is highly inspired by CSS frameworks like}"
-          " \l.lead.color(hex=#7952b3){Bootstrap} \l.lead{and} \l.lead.color(hex=#01d1b2){Bulma}.",
+          "Liquid is highly inspired by CSS frameworks like"
+          " \l.color(hex=#7952b3){Bootstrap} and \l.color(hex=#01d1b2){Bulma}.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -368,8 +367,8 @@ LFlatButton(
       children: [
         LText(
           "\l.h4{Powerful Forms}\n"
-          "\l.lead{Liquid Form have all the HTML form features, easy validation, serialization,\n"
-          "field access, field states such as isTouched, isDirty, etc.}",
+          "Liquid Form have all the HTML form features, easy validation, serialization,\n"
+          "field access, field states such as isTouched, isDirty, etc.\n",
         ),
         LRow(
           axis: LRowAxis.belowLG(Axis.vertical),
@@ -378,6 +377,8 @@ LFlatButton(
               child: codeText(context, widget._formEg),
             ),
             LColumn.child(
+              xl: 4,
+              lg: 4,
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: LForm(
@@ -410,7 +411,7 @@ LFlatButton(
                             border: OutlineInputBorder(gapPadding: 0),
                             contentPadding:
                                 EdgeInsets.symmetric(horizontal: 10.0),
-                            labelText: "Full Name",
+                            labelText: "  Full Name ",
                           ),
                           validators: [
                             LRequiredValidator(),
@@ -425,7 +426,7 @@ LFlatButton(
                             border: OutlineInputBorder(gapPadding: 0),
                             contentPadding:
                                 EdgeInsets.symmetric(horizontal: 10.0),
-                            labelText: "Email",
+                            labelText: "  Email ",
                           ),
                           validators: [
                             LRequiredValidator(),
@@ -454,7 +455,8 @@ LFlatButton(
       mainAxisSize: MainAxisSize.min,
       children: [
         LText(
-          "\l.h4{A} \l.h4.color(hex=#0062e7){Simple Yet Powerful} \l.h4{Grid System}\n\l.lead{Add Column they will resize themeselves}",
+          "\l.h4{A} \l.h4.color(hex=#0062e7){Simple Yet Powerful} \l.h4{Grid System}\n"
+          "Add Column they will resize themeselves.\n",
         ),
         LBox(
           visibility: LBoxVisibility.all(false).copyWith(xs: true),

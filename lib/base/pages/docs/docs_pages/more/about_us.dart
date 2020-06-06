@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:liquid/liquid.dart';
+import 'package:liquid_ui/liquid_ui.dart';
 
 class AboutUsPage extends StatelessWidget {
   final _title = "About Us";

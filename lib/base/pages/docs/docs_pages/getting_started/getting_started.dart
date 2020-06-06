@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:liquid/liquid.dart';
+import 'package:liquid_ui/liquid_ui.dart';
 
 import '../../code_highlight.dart';
 
@@ -16,9 +16,11 @@ dependencies:
   flutter:
     sdk: flutter
     
-  liquid: <latest-version>   
+  liquid_ui: <latest-version>
 """;
   final String _step2 = """
+import 'package:liquid_ui/liquid_ui.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -31,11 +33,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LiquidApp(
-      title: 'My New Liquid App',
-      theme: ThemeData(),
-      liquidTheme: LiquidThemeData(),
-      liquidTheme
-      home: MyHomePage(),
+      materialApp: MaterialApp(...)
     );
   }
 } 
@@ -132,7 +130,7 @@ class MyApp extends StatelessWidget {
           "   \l.bullet{LiquidTheme}\n"
           "   \l.bullet{LiquidStateManager}\n"
           "   \l.bullet{Liquid Style Class Provider}\n"
-          "\l.bold{NOTE} : LiquidApp wraps MaterialApp internally. \l.bold.underline{LiquidCupertinoApp} will be available in next major update.",
+          "\l.bold{NOTE:} \l.bold.underline{LiquidCupertinoApp} will be available in next major update.",
         ),
       ],
     );

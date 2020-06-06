@@ -2,7 +2,8 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:liquid/liquid.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:liquid_ui/liquid_ui.dart';
 
 import '../../core/core.dart';
 
@@ -90,13 +91,15 @@ class NavBar extends StatelessWidget {
           LFlatButton.text(
             text: "SPONSOR",
             type: LElementType.warning,
-            onPressed: () {},
+            onPressed: null,
           ),
           SizedBox(width: 10.0),
           LFlatButton.text(
             text: "Pub",
             type: LElementType.light,
-            onPressed: () {},
+            onPressed: () {
+              launch("https://pub.dev/packages/liquid_ui");
+            },
           ),
         ],
       ),
@@ -110,25 +113,33 @@ class NavBar extends StatelessWidget {
           icon: Icon(FontAwesome.github),
           color: color,
           iconSize: 18,
-          onPressed: () {},
+          onPressed: () {
+            launch("https://github.com/stackorient/Liquid");
+          },
         ),
         LIconButton(
           icon: Icon(FontAwesome.linkedin),
           color: color,
           iconSize: 18,
-          onPressed: () {},
+          onPressed: () {
+            launch("https://www.linkedin.com/groups/13861977/");
+          },
         ),
         LIconButton(
           icon: Icon(FontAwesome.youtube_play),
           color: color,
           iconSize: 18,
-          onPressed: () {},
+          onPressed: () {
+            launch("https://www.youtube.com/channel/UCDQxuqnVSnR5Z1shJs9108g");
+          },
         ),
         LIconButton(
           icon: Icon(FontAwesome.instagram),
           color: color,
           iconSize: 18,
-          onPressed: () {},
+          onPressed: () {
+            launch("https://www.instagram.com/stackorient.inc/");
+          },
         ),
       ],
     );
@@ -168,8 +179,11 @@ class NavBar extends StatelessWidget {
           ),
           LOutlineButton.text(
             text: "Examples",
-            textStyle: TextStyle(color: Colors.white),
-            onPressed: () {},
+            textStyle: TextStyle(color: Colors.white).weight(
+                currentRoute == exampleRoute
+                    ? FontWeight.w700
+                    : FontWeight.normal),
+            onPressed: () => openPage(exampleRoute),
           ),
         ],
       ),
@@ -179,10 +193,14 @@ class NavBar extends StatelessWidget {
   Padding buildLiquidText(LiquidThemeData theme) {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
-      child: Text(
-        "Liquid",
-        style:
-            theme.typographyTheme.h5.family('Poppins').withColor(Colors.white),
+      child: GestureDetector(
+        onTap: () => openPage(homeRoute),
+        child: Text(
+          "Liquid",
+          style: theme.typographyTheme.h5
+              .family('Poppins')
+              .withColor(Colors.white),
+        ),
       ),
     );
   }

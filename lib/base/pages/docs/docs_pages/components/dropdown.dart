@@ -126,7 +126,8 @@ class Dropdown2 extends StatelessWidget {
           onTap: () {},
         ),
         LDropdownItem(
-          text: "\l.link(href=https://twitter.com/heyrjs){@heyrjs}",
+          text:
+              "\l.link(href=https://twitter.com/heyrjs){@heyrjs} and \l.link(href=https://twitter.com/heypnd){@heypnd}",
           onTap: () {
             print("pressed");
           },

@@ -8,12 +8,12 @@ const RESOURCES = {
 "assets/assets/logos/logo-horizontal.png": "385f1bdf077d9938d82b2568e18727f7",
 "assets/assets/logos/logo-vertical.png": "b084449cc6b3935728bf53ec7c9762bf",
 "assets/assets/logos/logo.png": "583245140c528b0635b30ceeadd39a5f",
-"assets/assets/logos/logo.svg": "72782fc4ba4bd81a71896fb703a36efd",
+"assets/assets/logos/logo.svg": "43345f4292f906fd2becdeaaf223dae0",
 "assets/assets/logos/logo_big.png": "820e1f28d2b73e6acb81e3c682274654",
 "assets/assets/logos/logo_big_border.png": "0fe6f0047957a7ff2dd49e9a8a759bec",
-"assets/assets/logos/logo_with_title.svg": "21d64a7c65695f4d4fc32ab42261ea4d",
+"assets/assets/logos/logo_with_title.svg": "3e35d8d03a0078fb9d643497943b6ec8",
 "assets/assets/logos/only_text.png": "cf7bae0196a3711af185d552b8d11e73",
-"assets/assets/logos/only_text.svg": "6ee407e1ca5da5bba78689f58fa2824d",
+"assets/assets/logos/only_text.svg": "e5d1138d1821869e645ea04b35944332",
 "assets/FontManifest.json": "122fab38bc0119ccbb585071ba954333",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/fonts/Poppins/Poppins-Black.ttf": "42cf9f0820d16f3ac2c26a7710ce70f2",
@@ -68,7 +68,7 @@ const RESOURCES = {
 "index.html": "2dd612d0f2a6665a0aa881ddb6615d83",
 "/": "2dd612d0f2a6665a0aa881ddb6615d83",
 "logo.png": "583245140c528b0635b30ceeadd39a5f",
-"main.dart.js": "b6d951ae39e3c1e2a9a0097a0989b21e",
+"main.dart.js": "2453382d892ab74cb3f4799b9ca2bd95",
 "manifest.json": "afb5e8eff4e84237544f4308514240a5"
 };
 
